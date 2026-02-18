@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [System.Serializable]
 public abstract class WeaponPart
@@ -6,6 +7,7 @@ public abstract class WeaponPart
     [SerializeField] private string _itemName;
     [SerializeField] private string _itemDescription;
     [SerializeField] private string _itemIconPath;
+    [SerializeField] private List<WeaponModifier> _modifiers;
 
     public string ItemName { get => _itemName; set => _itemName = value; }
     public string ItemDescription { get => _itemDescription; set => _itemDescription = value; }

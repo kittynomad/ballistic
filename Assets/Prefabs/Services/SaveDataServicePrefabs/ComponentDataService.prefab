@@ -49,5 +49,6 @@ MonoBehaviour:
     - _itemName: 
       _itemDescription: 
       _itemIconPath: 
+      _modifiers: []
     _weaponBatteries: []
     _weaponMagazines: []
