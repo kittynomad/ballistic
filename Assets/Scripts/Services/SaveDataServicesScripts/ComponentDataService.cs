@@ -26,4 +26,11 @@ public class ComponentDataService : Service
         File.WriteAllText(Application.persistentDataPath + "/ComponentDatabase.json", s);
 
     }
+
+    [Button]
+    public void LoadPartDatabase()
+    {
+        string r = File.ReadAllText(Application.persistentDataPath + "/ComponentDatabase.json");
+        _parts = JsonUtility.FromJson<PartDatabase>(r);
+    }
 }
