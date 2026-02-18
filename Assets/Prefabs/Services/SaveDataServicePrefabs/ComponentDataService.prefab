@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10331139c1b0caa47ad7d269888be7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ComponentDataService
+  _parts:
+    _weaponFrames:
+    - _itemName: 
+      _itemDescription: 
+      _itemIconPath: 
+    _weaponBatteries: []
+    _weaponMagazines: []

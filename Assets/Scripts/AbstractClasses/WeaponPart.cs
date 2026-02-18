@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public abstract class WeaponPart : MonoBehaviour
+[System.Serializable]
+public abstract class WeaponPart
 {
     [SerializeField] private string _itemName;
     [SerializeField] private string _itemDescription;

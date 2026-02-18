@@ -7,8 +7,11 @@
 // components.
 *****************************************************************************/
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ComponentDataService : Service
 {
+    [SerializeField] private PartDatabase _parts;
 
+    public PartDatabase Parts { get => _parts; set => _parts = value; }
 }

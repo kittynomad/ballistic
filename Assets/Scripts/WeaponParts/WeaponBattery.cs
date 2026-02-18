@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[System.Serializable]
 public class WeaponBattery : WeaponPart
 {
     [SerializeField] private float _capacity;

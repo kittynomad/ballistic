@@ -4,7 +4,8 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PartDatabase
 {
-    [SerializeField] private List<WeaponPart> _weaponParts;
+    [SerializeField] private List<WeaponFrame> _weaponFrames;
+    [SerializeField] private List<WeaponBattery> _weaponBatteries;
+    [SerializeField] private List<WeaponMagazine> _weaponMagazines;
 
-    public List<WeaponPart> WeaponParts { get => _weaponParts; set => _weaponParts = value; }
 }
