@@ -71,3 +71,18 @@ MonoBehaviour:
       _magSize: 6
       _reloadTime: 1
       _automaticFire: 0
+    _weaponMuzzles:
+    - _id: 30000
+      _itemName: Standard Muzzle
+      _itemDescription: normalss
+      _itemIconPath: Textures/particleCat
+      _modifiers: []
+    _weaponAddons:
+    - _id: 40000
+      _itemName: Zappy
+      _itemDescription: makes it snappy
+      _itemIconPath: Textures/particleCat
+      _modifiers:
+      - _modType: 1
+        _modOperator: 0
+        _modStrength: 1000
