@@ -46,9 +46,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComponentDataService
   _parts:
     _weaponFrames:
-    - _itemName: 
-      _itemDescription: 
-      _itemIconPath: 
+    - _id: 00000
+      _itemName: Revolver
+      _itemDescription: basic weapon frame.
+      _itemIconPath: Textures/particleCat
+      _modifiers:
+      - _modType: 0
+        _modOperator: 0
+        _modStrength: 10000
+    _weaponBatteries:
+    - _id: 10000
+      _itemName: Battery
+      _itemDescription: normal battery okay
+      _itemIconPath: Textures/particleCat
       _modifiers: []
-    _weaponBatteries: []
-    _weaponMagazines: []
+      _capacity: 10
+      _rechargeRate: 999
+    _weaponMagazines:
+    - _id: 20000
+      _itemName: Revolver Mag
+      _itemDescription: 6 shots, normal.
+      _itemIconPath: Textures/particleCat
+      _modifiers: []
+      _magSize: 6
+      _reloadTime: 1
+      _automaticFire: 0
