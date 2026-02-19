@@ -10,5 +10,12 @@ using UnityEngine;
 
 public class AssemblyUIService : Service
 {
-
+    private GameObject assemblyUI;
+    public override async Awaitable Initialize()
+    {
+        GameObject temp = Resources.Load("UI/AssemblyScreen") as GameObject;
+        assemblyUI = Instantiate(temp);
+        await assemblyUI.GetComponent<PartListDisplayController>().Initialize();
+        await base.Initialize();
+    }
 }

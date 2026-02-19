@@ -13,24 +13,44 @@ using NaughtyAttributes;
 
 public class ComponentDataService : Service
 {
+    public static ComponentDataService Instance;
+
     [SerializeField] private PartDatabase _parts;
+
     public PartDatabase Parts { get => _parts; set => _parts = value; }
 
-    [Button]
-    public void SavePartDatabase()
+    public override async Awaitable Initialize()
     {
-        string s = JsonUtility.ToJson(_parts, true);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
 
-        GUIUtility.systemCopyBuffer = Application.persistentDataPath + "/ComponentDatabase.json";
-        Debug.Log(Application.persistentDataPath + "/ComponentDatabase.json");
-        File.WriteAllText(Application.persistentDataPath + "/ComponentDatabase.json", s);
-
+        await base.Initialize();
     }
 
     [Button]
-    public void LoadPartDatabase()
+    public void SavePartDatabaseInternally() { SavePartDatabase(Application.streamingAssetsPath); }
+    [Button]
+    public void SavePartDatabaseExternally() { SavePartDatabase(Application.persistentDataPath); }
+    [Button]
+    public void LoadPartDatabaseInternally() { LoadPartDatabase(Application.streamingAssetsPath); }
+    [Button]
+    public void LoadPartDatabaseExternally() { LoadPartDatabase(Application.persistentDataPath); }
+
+    public void SavePartDatabase(string path)
     {
-        string r = File.ReadAllText(Application.persistentDataPath + "/ComponentDatabase.json");
+        string s = JsonUtility.ToJson(_parts, true);
+
+        GUIUtility.systemCopyBuffer = path + "/ComponentDatabase.json";
+        Debug.Log(path + "/ComponentDatabase.json");
+        File.WriteAllText(path + "/ComponentDatabase.json", s);
+
+    }
+
+    public void LoadPartDatabase(string path)
+    {
+        string r = File.ReadAllText(path + "/ComponentDatabase.json");
         _parts = JsonUtility.FromJson<PartDatabase>(r);
     }
 }
