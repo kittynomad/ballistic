@@ -9,6 +9,7 @@ public class Enums
         multishot = 2,
         spread = 3,
         healing = 4,
+        damage = 5,
     }
 
     public enum Operators

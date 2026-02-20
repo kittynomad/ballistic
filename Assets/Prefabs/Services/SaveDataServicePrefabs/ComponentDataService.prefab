@@ -89,7 +89,7 @@ MonoBehaviour:
     - _itemName: Battery
       _id: 10000
       _itemDescription: normal battery okay
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/renderPunchAnim
       _energyCost: 0
       _modifiers: []
       _capacity: 10
