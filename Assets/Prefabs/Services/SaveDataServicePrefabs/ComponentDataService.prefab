@@ -59,7 +59,7 @@ MonoBehaviour:
       _itemDescription: Even Better tm
       _itemIconPath: Textures/revolverTestRender
       _modifiers:
-      - _modType: 0
+      - _modType: 1
         _modOperator: 0
         _modStrength: 10000
     - _id: 00002
@@ -67,7 +67,7 @@ MonoBehaviour:
       _itemDescription: Even Best tm
       _itemIconPath: Textures/revolverTestRender
       _modifiers:
-      - _modType: 0
+      - _modType: 2
         _modOperator: 0
         _modStrength: 10000
     - _id: 00003
@@ -75,7 +75,10 @@ MonoBehaviour:
       _itemDescription: Even Bestest tm
       _itemIconPath: Textures/revolverTestRender
       _modifiers:
-      - _modType: 0
+      - _modType: 4
+        _modOperator: 0
+        _modStrength: 10000
+      - _modType: 2
         _modOperator: 0
         _modStrength: 10000
     _weaponBatteries:
@@ -105,7 +108,13 @@ MonoBehaviour:
       _itemName: Trumpet
       _itemDescription: 'Shoots multiple in a wide spread '
       _itemIconPath: Textures/particleCat
-      _modifiers: []
+      _modifiers:
+      - _modType: 2
+        _modOperator: 2
+        _modStrength: 4
+      - _modType: 3
+        _modOperator: 2
+        _modStrength: 2
     - _id: 30002
       _itemName: Silencer
       _itemDescription: Ah! So Quiet!
