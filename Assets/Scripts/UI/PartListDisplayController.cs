@@ -21,12 +21,31 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     }
 
     [Button]
-    public void TestAddonList()
+    public void LoadMagazineList()
+    {
+        UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponMagazines);
+    }
+
+    [Button]
+    public void LoadBatteryList()
+    {
+        UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponBatteries);
+    }
+
+    [Button]
+    public void LoadFrameList()
+    {
+        UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponFrames);
+    }
+
+    [Button]
+    public void LoadAddonList()
     {
         UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponAddons);
     }
 
-    public void TestMuzzleList()
+    [Button]
+    public void LoadMuzzleList()
     {
         UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponMuzzles);
     }
