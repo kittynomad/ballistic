@@ -49,7 +49,7 @@ MonoBehaviour:
     - _id: 00000
       _itemName: Revolver
       _itemDescription: basic weapon frame.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/revolverTestRender
       _modifiers:
       - _modType: 0
         _modOperator: 0
@@ -57,23 +57,23 @@ MonoBehaviour:
     - _id: 00001
       _itemName: Revolver 2
       _itemDescription: Even Better tm
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/revolverTestRender
       _modifiers:
       - _modType: 0
         _modOperator: 0
         _modStrength: 10000
     - _id: 00002
       _itemName: Revolver 3
-      _itemDescription: Even Better tm
-      _itemIconPath: Textures/particleCat
+      _itemDescription: Even Best tm
+      _itemIconPath: Textures/revolverTestRender
       _modifiers:
       - _modType: 0
         _modOperator: 0
         _modStrength: 10000
     - _id: 00003
-      _itemName: Revolver 3
-      _itemDescription: Even Better tm
-      _itemIconPath: Textures/particleCat
+      _itemName: Revolver 4
+      _itemDescription: Even Bestest tm
+      _itemIconPath: Textures/revolverTestRender
       _modifiers:
       - _modType: 0
         _modOperator: 0
@@ -101,6 +101,16 @@ MonoBehaviour:
       _itemDescription: normalss
       _itemIconPath: Textures/particleCat
       _modifiers: []
+    - _id: 30001
+      _itemName: Trumpet
+      _itemDescription: 'Shoots multiple in a wide spread '
+      _itemIconPath: Textures/particleCat
+      _modifiers: []
+    - _id: 30002
+      _itemName: Silencer
+      _itemDescription: Ah! So Quiet!
+      _itemIconPath: Textures/particleCat
+      _modifiers: []
     _weaponAddons:
     - _id: 40000
       _itemName: Zappy
@@ -108,5 +118,13 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _modifiers:
       - _modType: 1
+        _modOperator: 0
+        _modStrength: 1000
+    - _id: 40001
+      _itemName: Fire thing
+      _itemDescription: owww it burnsss
+      _itemIconPath: Textures/particleCat
+      _modifiers:
+      - _modType: 0
         _modOperator: 0
         _modStrength: 1000

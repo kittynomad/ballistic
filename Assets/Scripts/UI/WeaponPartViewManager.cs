@@ -9,6 +9,7 @@ public class WeaponPartViewManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _partNameUI;
     [SerializeField] private TextMeshProUGUI _partDescriptionUI;
     [SerializeField] private Image _partIconUI;
+    [SerializeField] private GameObject _effectsBox;
 
     [Button]
     public void TestDisplay()
@@ -22,5 +23,13 @@ public class WeaponPartViewManager : MonoBehaviour
         _partDescriptionUI.text = p.ItemDescription;
         var icon = Resources.Load(p.ItemIconPath) as Texture2D;
         _partIconUI.sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f));
+        //_partIconUI.SetNativeSize();
+
+        GameObject effectsPrefab = Resources.Load("UI/ModTag") as GameObject;
+        foreach(WeaponModifier w in p.Modifiers)
+        {
+            GameObject mod = Instantiate(effectsPrefab, _effectsBox.transform);
+            mod.GetComponent<ModifierDisplay>().DisplayModifier(w);
+        }
     }
 }
