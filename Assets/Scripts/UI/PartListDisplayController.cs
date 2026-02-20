@@ -1,16 +1,17 @@
 using UnityEngine;
 using System.Collections.Generic;
+using NaughtyAttributes;
 
 public class PartListDisplayController : MonoBehaviour, IInitializable
 {
     [SerializeField] private GameObject _listParent;
     private GameObject itemDisplayer;
-    private List<GameObject> currentDisplayedParts;
+    private List<GameObject> currentDisplayedParts = new List<GameObject>();
 
     public async Awaitable Initialize()
     {
         itemDisplayer = Resources.Load("UI/PartUIElement") as GameObject;
-        UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponFrames);
+        await UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponFrames);
         return;
     }
 
@@ -19,18 +20,44 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
         throw new System.NotImplementedException();
     }
 
+    [Button]
+    public void TestAddonList()
+    {
+        UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponAddons);
+    }
+
+    public void TestMuzzleList()
+    {
+        UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponMuzzles);
+    }
 
     public async Awaitable UpdateListDisplay<T>(List<T> parts)
     {
+        await ClearListDisplay();
+
         foreach (T p in parts)
         {
             if(p is WeaponPart)
             {
                 WeaponPart temp = p as WeaponPart;
                 GameObject g = Instantiate(itemDisplayer, _listParent.transform);
+                g.GetComponent<WeaponPartViewManager>().InitializePartDisplay(temp);
+                currentDisplayedParts.Add(g);
+                await Awaitable.NextFrameAsync();
             }
                 
         }
         
+    }
+
+    public async Awaitable ClearListDisplay()
+    {
+        while(currentDisplayedParts.Count > 0)
+        {
+            GameObject temp = currentDisplayedParts[currentDisplayedParts.Count - 1];
+            currentDisplayedParts.RemoveAt(currentDisplayedParts.Count - 1);
+            Destroy(temp);
+            await Awaitable.NextFrameAsync();
+        }
     }
 }

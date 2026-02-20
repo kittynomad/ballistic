@@ -54,6 +54,30 @@ MonoBehaviour:
       - _modType: 0
         _modOperator: 0
         _modStrength: 10000
+    - _id: 00001
+      _itemName: Revolver 2
+      _itemDescription: Even Better tm
+      _itemIconPath: Textures/particleCat
+      _modifiers:
+      - _modType: 0
+        _modOperator: 0
+        _modStrength: 10000
+    - _id: 00002
+      _itemName: Revolver 3
+      _itemDescription: Even Better tm
+      _itemIconPath: Textures/particleCat
+      _modifiers:
+      - _modType: 0
+        _modOperator: 0
+        _modStrength: 10000
+    - _id: 00003
+      _itemName: Revolver 3
+      _itemDescription: Even Better tm
+      _itemIconPath: Textures/particleCat
+      _modifiers:
+      - _modType: 0
+        _modOperator: 0
+        _modStrength: 10000
     _weaponBatteries:
     - _id: 10000
       _itemName: Battery
