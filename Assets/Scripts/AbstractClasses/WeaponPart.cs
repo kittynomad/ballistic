@@ -5,10 +5,11 @@ using NaughtyAttributes;
 [System.Serializable]
 public abstract class WeaponPart
 {
-    public string _id;
     public string _itemName;
+    public string _id;
     [SerializeField] private string _itemDescription;
     [SerializeField] private string _itemIconPath;
+    [SerializeField] private int _energyCost;
 
     [SerializeField] private List<WeaponModifier> _modifiers;
 
@@ -17,4 +18,6 @@ public abstract class WeaponPart
     public string ItemIconPath { get => _itemIconPath; set => _itemIconPath = value; }
     public string Id { get => _id; set => _id = value; }
     public List<WeaponModifier> Modifiers { get => _modifiers; set => _modifiers = value; }
+
+    public int EnergyCost { get => _energyCost; set => _energyCost = value; }
 }

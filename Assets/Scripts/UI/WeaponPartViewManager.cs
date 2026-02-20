@@ -25,6 +25,14 @@ public class WeaponPartViewManager : MonoBehaviour
         _partIconUI.sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f));
         //_partIconUI.SetNativeSize();
 
+        print(p.GetType());
+
+        if(p is WeaponMagazine)
+        {
+            WeaponMagazine temp = p as WeaponMagazine;
+            _partDescriptionUI.text = _partDescriptionUI.text + "\nsize: " + temp.MagSize;
+        }
+
         GameObject effectsPrefab = Resources.Load("UI/ModTag") as GameObject;
         foreach(WeaponModifier w in p.Modifiers)
         {
