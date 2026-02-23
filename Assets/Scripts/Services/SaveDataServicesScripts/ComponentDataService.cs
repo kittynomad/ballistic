@@ -41,9 +41,18 @@ public class ComponentDataService : Service
     public void SavePartDatabase(string path)
     {
         string s = JsonUtility.ToJson(_parts, true);
+        try
+        {
+            GUIUtility.systemCopyBuffer = path + "/ComponentDatabase.json";
+            Debug.Log(path + "/ComponentDatabase.json");
+            
+        }
+        catch
+        {
+            Debug.LogWarning("Unable to display save directory");
+        }
 
-        GUIUtility.systemCopyBuffer = path + "/ComponentDatabase.json";
-        Debug.Log(path + "/ComponentDatabase.json");
+
         File.WriteAllText(path + "/ComponentDatabase.json", s);
 
     }

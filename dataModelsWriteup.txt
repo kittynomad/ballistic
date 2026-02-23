@@ -1,0 +1,8 @@
+WeaponPart
+The class that the other saved classes inherit from. Stores item name, description, the path for the item's icon in UI, energy cost, and a list of modifiers tied to the part. While not directly used, all of the saved classes extend from this one, and are used at various stages by both the Assembly UI Service and the Weapon Assembly Service. Each inheriting class represents a different part on the weapon and are interchangeable with parts of the same type, but not of other types (i.e. A WeaponMuzzle could take the place of another WeaponMuzzle, but not a WeaponMagazine).
+
+PartDatabase
+Has 5 separate lists, one for each class which inherits from WeaponPart. PartDatabase is primarily an intermediary, serialized and used as a variable in the component data service
+
+ComponentDataService
+Has an instance of PartDatabase, as well as functions to save and load this PartDatabase to JSON files. ComponentDataService is referenced elsewhere whenever information about weaponParts is needed. This is most frequent within the Assembly UI Service (The driver for the menus related to assembling a weapon) as well as the Weapon Assembly Service (The service which actually assembles a list of parts into a functional weapon).

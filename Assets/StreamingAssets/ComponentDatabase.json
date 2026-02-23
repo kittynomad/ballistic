@@ -1,0 +1,168 @@
+{
+    "_weaponFrames": [
+        {
+            "_itemName": "Revolver",
+            "_id": "00000",
+            "_itemDescription": "basic weapon frame.",
+            "_itemIconPath": "Textures/revolverTestRender",
+            "_energyCost": 0,
+            "_modifiers": [
+                {
+                    "_modType": 0,
+                    "_modOperator": 0,
+                    "_modStrength": 10000.0
+                }
+            ]
+        },
+        {
+            "_itemName": "Revolver 2",
+            "_id": "00001",
+            "_itemDescription": "Even Better tm",
+            "_itemIconPath": "Textures/revolverTestRender",
+            "_energyCost": 0,
+            "_modifiers": [
+                {
+                    "_modType": 1,
+                    "_modOperator": 0,
+                    "_modStrength": 10000.0
+                }
+            ]
+        },
+        {
+            "_itemName": "Revolver 3",
+            "_id": "00002",
+            "_itemDescription": "Even Best tm",
+            "_itemIconPath": "Textures/revolverTestRender",
+            "_energyCost": 0,
+            "_modifiers": [
+                {
+                    "_modType": 2,
+                    "_modOperator": 0,
+                    "_modStrength": 10000.0
+                }
+            ]
+        },
+        {
+            "_itemName": "Revolver 4",
+            "_id": "00003",
+            "_itemDescription": "Even Bestest tm",
+            "_itemIconPath": "Textures/revolverTestRender",
+            "_energyCost": 0,
+            "_modifiers": [
+                {
+                    "_modType": 4,
+                    "_modOperator": 0,
+                    "_modStrength": 10000.0
+                },
+                {
+                    "_modType": 2,
+                    "_modOperator": 0,
+                    "_modStrength": 10000.0
+                }
+            ]
+        }
+    ],
+    "_weaponBatteries": [
+        {
+            "_itemName": "Battery",
+            "_id": "10000",
+            "_itemDescription": "normal battery okay",
+            "_itemIconPath": "Textures/renderPunchAnim",
+            "_energyCost": 0,
+            "_modifiers": [],
+            "_capacity": 10.0,
+            "_rechargeRate": 999.0
+        }
+    ],
+    "_weaponMagazines": [
+        {
+            "_itemName": "Revolver Mag",
+            "_id": "20000",
+            "_itemDescription": "6 shots, normal.",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 0,
+            "_modifiers": [],
+            "_magSize": 6,
+            "_reloadTime": 1.0,
+            "_automaticFire": false
+        },
+        {
+            "_itemName": "Extended Mag",
+            "_id": "20001",
+            "_itemDescription": "More bullets, auto fire built in.",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 0,
+            "_modifiers": [],
+            "_magSize": 25,
+            "_reloadTime": 2.0,
+            "_automaticFire": true
+        }
+    ],
+    "_weaponMuzzles": [
+        {
+            "_itemName": "Standard Muzzle",
+            "_id": "30000",
+            "_itemDescription": "normalss",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 0,
+            "_modifiers": []
+        },
+        {
+            "_itemName": "Trumpet",
+            "_id": "30001",
+            "_itemDescription": "Shoots multiple in a wide spread ",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 0,
+            "_modifiers": [
+                {
+                    "_modType": 2,
+                    "_modOperator": 2,
+                    "_modStrength": 4.0
+                },
+                {
+                    "_modType": 3,
+                    "_modOperator": 2,
+                    "_modStrength": 2.0
+                }
+            ]
+        },
+        {
+            "_itemName": "Silencer",
+            "_id": "30002",
+            "_itemDescription": "Ah! So Quiet!",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 0,
+            "_modifiers": []
+        }
+    ],
+    "_weaponAddons": [
+        {
+            "_itemName": "Zappy",
+            "_id": "40000",
+            "_itemDescription": "makes it snappy",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 0,
+            "_modifiers": [
+                {
+                    "_modType": 1,
+                    "_modOperator": 0,
+                    "_modStrength": 1000.0
+                }
+            ]
+        },
+        {
+            "_itemName": "Fire thing",
+            "_id": "40001",
+            "_itemDescription": "owww it burnsss",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 0,
+            "_modifiers": [
+                {
+                    "_modType": 0,
+                    "_modOperator": 0,
+                    "_modStrength": 1000.0
+                }
+            ]
+        }
+    ]
+}

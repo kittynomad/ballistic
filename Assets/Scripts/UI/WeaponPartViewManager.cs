@@ -20,7 +20,7 @@ public class WeaponPartViewManager : MonoBehaviour
     public void InitializePartDisplay(WeaponPart p)
     {
         _partNameUI.text = p.ItemName;
-        _partDescriptionUI.text = p.ItemDescription;
+        _partDescriptionUI.text = p.ItemDescription + "\n" + p.GetType();
         var icon = Resources.Load(p.ItemIconPath) as Texture2D;
         _partIconUI.sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f));
         //_partIconUI.SetNativeSize();
