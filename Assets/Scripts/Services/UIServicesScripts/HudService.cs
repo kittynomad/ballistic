@@ -10,5 +10,13 @@ using UnityEngine;
 
 public class HudService : Service
 {
+    private GameObject hudUI;
 
+    public override async Awaitable Initialize()
+    {
+        GameObject temp = Resources.Load("UI/MainHUD") as GameObject;
+        hudUI = Instantiate(temp);
+        //await hudUI.GetComponent<PartListDisplayController>().Initialize();
+        await base.Initialize();
+    }
 }
