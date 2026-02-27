@@ -15,4 +15,39 @@ public class PartDatabase
     public List<WeaponMagazine> WeaponMagazines { get => _weaponMagazines; set => _weaponMagazines = value; }
     public List<WeaponMuzzle> WeaponMuzzles { get => _weaponMuzzles; set => _weaponMuzzles = value; }
     public List<WeaponAddon> WeaponAddons { get => _weaponAddons; set => _weaponAddons = value; }
+
+    public WeaponPart GetPartByID(string ID)
+    {
+        //i'm so sorry
+        switch(ID[0])
+        {
+            case '0':
+                return GetPartByID<WeaponFrame>(ID, _weaponFrames);
+            case '1':
+                return GetPartByID<WeaponBattery>(ID, _weaponBatteries);
+            case '2':
+                return GetPartByID<WeaponMagazine>(ID, _weaponMagazines);
+            case '3':
+                return GetPartByID<WeaponMuzzle>(ID, _weaponMuzzles);
+            case '4':
+                return GetPartByID<WeaponAddon>(ID, _weaponAddons);
+            default:
+                return null;
+        }
+    }
+
+    public WeaponPart GetPartByID<T>(string ID, List<T> l)
+    {
+        foreach(T p in l)
+        {
+            if(p is WeaponPart)
+            {
+                WeaponPart temp = p as WeaponPart;
+                if (temp.Id == ID)
+                    return temp;
+            }
+        }
+        Debug.LogError("Unable to find weaponPart of id " + ID + "!");
+        return null;
+    }
 }
