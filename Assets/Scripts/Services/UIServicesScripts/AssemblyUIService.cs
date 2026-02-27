@@ -16,6 +16,7 @@ public class AssemblyUIService : Service
         GameObject temp = Resources.Load("UI/AssemblyScreen") as GameObject;
         assemblyUI = Instantiate(temp);
         await assemblyUI.GetComponent<PartListDisplayController>().Initialize();
+        assemblyUI.SetActive(false);
         await base.Initialize();
     }
 }
