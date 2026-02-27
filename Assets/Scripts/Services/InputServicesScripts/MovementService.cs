@@ -26,7 +26,8 @@ public class MovementService : Service
 
     private void FixedUpdate()
     {
-        rb.AddForce(new Vector3(movementVector.x, 0f, movementVector.y) * _movespeed);
+        Vector3 direction = (movementVector.x * rb.transform.right + movementVector.y * rb.transform.forward).normalized;
+        rb.AddForce(direction * _movespeed);
     }
 
 }

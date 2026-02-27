@@ -13,12 +13,20 @@ public class AimService : Service
 
     private Vector2 lookVector = Vector2.zero;
     private float pitch = 0f;
+    private Rigidbody rb;
 
     public Vector2 LookVector { get => lookVector; set => lookVector = value; }
+
+    public override async Awaitable Initialize()
+    {
+        rb = FindAnyObjectByType<PlayerBehaviors>().gameObject.GetComponent<Rigidbody>();
+        await base.Initialize();
+    }
 
     private void FixedUpdate()
     {
         Camera.main.transform.Rotate(Vector3.up, lookVector.x);
+        rb.transform.Rotate(Vector3.up, lookVector.x);
         pitch -= lookVector.y;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
         Camera.main.transform.localEulerAngles = new Vector3(pitch, Camera.main.transform.localEulerAngles.y, 0f);
