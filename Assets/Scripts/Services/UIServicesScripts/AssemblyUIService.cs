@@ -11,6 +11,7 @@ using UnityEngine;
 public class AssemblyUIService : Service
 {
     private GameObject assemblyUI;
+    private WeaponConfig currentConfig;
     public override async Awaitable Initialize()
     {
         GameObject temp = Resources.Load("UI/AssemblyScreen") as GameObject;
@@ -18,5 +19,15 @@ public class AssemblyUIService : Service
         await assemblyUI.GetComponent<PartListDisplayController>().Initialize();
         assemblyUI.SetActive(false);
         await base.Initialize();
+    }
+
+    public void UpdateConfigData(WeaponPart part)
+    {
+        currentConfig.ReplacePart(part);
+    }
+
+    public void SetCurrentConfig(WeaponConfig w)
+    {
+        currentConfig = w;
     }
 }
