@@ -22,4 +22,9 @@ public abstract class WeaponPart
 
     public int EnergyCost { get => _energyCost; set => _energyCost = value; }
     public string ItemModelPath { get => _itemModelPath; set => _itemModelPath = value; }
+
+    public GameObject GetPartModel()
+    {
+        return Resources.Load(_itemModelPath) as GameObject;
+    }
 }

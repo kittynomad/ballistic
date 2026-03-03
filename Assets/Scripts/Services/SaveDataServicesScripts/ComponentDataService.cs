@@ -29,15 +29,12 @@ public class ComponentDataService : Service
         await base.Initialize();
     }
 
-    [Button]
-    public void SavePartDatabaseInternally() { SavePartDatabase(Application.streamingAssetsPath); }
-    [Button]
-    public void SavePartDatabaseExternally() { SavePartDatabase(Application.persistentDataPath); }
-    [Button]
-    public void LoadPartDatabaseInternally() { LoadPartDatabase(Application.streamingAssetsPath); }
-    [Button]
-    public void LoadPartDatabaseExternally() { LoadPartDatabase(Application.persistentDataPath); }
+    public WeaponPart GetPartByID(string ID)
+    {
+        return _parts.GetPartByID(ID);
+    }
 
+    #region savingFunctions
     public void SavePartDatabase(string path)
     {
         string s = JsonUtility.ToJson(_parts, true);
@@ -62,4 +59,15 @@ public class ComponentDataService : Service
         string r = File.ReadAllText(path + "/ComponentDatabase.json");
         _parts = JsonUtility.FromJson<PartDatabase>(r);
     }
+
+    [Button]
+    public void SavePartDatabaseInternally() { SavePartDatabase(Application.streamingAssetsPath); }
+    [Button]
+    public void SavePartDatabaseExternally() { SavePartDatabase(Application.persistentDataPath); }
+    [Button]
+    public void LoadPartDatabaseInternally() { LoadPartDatabase(Application.streamingAssetsPath); }
+    [Button]
+    public void LoadPartDatabaseExternally() { LoadPartDatabase(Application.persistentDataPath); }
+
+    #endregion
 }

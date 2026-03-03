@@ -19,6 +19,7 @@ public class AssemblyUIService : Service
         assemblyUI = Instantiate(temp);
         await assemblyUI.GetComponent<PartListDisplayController>().Initialize();
         assemblyUI.SetActive(false);
+        UpdateWeaponViewModel();
         await base.Initialize();
     }
 
@@ -38,6 +39,15 @@ public class AssemblyUIService : Service
             currentConfig.Addons = null;
         }
         await Awaitable.NextFrameAsync();
+    }
+
+    public void UpdateWeaponViewModel()
+    {
+        FrameModelController f = Instantiate(currentConfig.Frame.GetPartModel()).GetComponent<FrameModelController>();
+        f.ConnectPart(currentConfig.Battery.GetPartModel(), f.BatteryConnectionPoint);
+        f.ConnectPart(currentConfig.Magazine.GetPartModel(), f.MagazineConnectionPoint);
+        f.ConnectPart(currentConfig.Muzzle.GetPartModel(), f.MuzzleConnectionPoint);
+
     }
 
     public void UpdateConfigData(WeaponPart part)

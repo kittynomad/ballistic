@@ -12,6 +12,12 @@ public class FrameModelController : MonoBehaviour
 
     private List<PartModelController> attachedParts = new List<PartModelController>();
 
+    public GameObject BatteryConnectionPoint { get => _batteryConnectionPoint; set => _batteryConnectionPoint = value; }
+    public GameObject MagazineConnectionPoint { get => _magazineConnectionPoint; set => _magazineConnectionPoint = value; }
+    public GameObject MuzzleConnectionPoint { get => _muzzleConnectionPoint; set => _muzzleConnectionPoint = value; }
+    public GameObject BackConnectionPoint { get => _backConnectionPoint; set => _backConnectionPoint = value; }
+    public GameObject[] ModifierConnectionPoints { get => _modifierConnectionPoints; set => _modifierConnectionPoints = value; }
+
     public void ConnectPart(PartModelController part, Vector3 connectionPoint)
     {
         part.transform.position = connectionPoint + part.PartConnectionPoint.transform.localPosition;
@@ -22,6 +28,12 @@ public class FrameModelController : MonoBehaviour
     public void ConnectPart(PartModelController part, GameObject connectionPoint)
     {
         ConnectPart(part, connectionPoint.transform.position);
+    }
+
+    public void ConnectPart(GameObject prefab, GameObject connectionPoint)
+    {
+        GameObject temp = Instantiate(prefab);
+        ConnectPart(temp.GetComponent<PartModelController>(), connectionPoint);
     }
 
     public void RemovePart(PartModelController part, bool destroyPart = true)

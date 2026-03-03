@@ -96,7 +96,7 @@ MonoBehaviour:
       _itemIconPath: Textures/renderPunchAnim
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: 
+      _itemModelPath: Prefabs/muzzleNormal
       _capacity: 10
       _rechargeRate: 999
     _weaponMagazines:
@@ -106,7 +106,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: 
+      _itemModelPath: Prefabs/magazineExtended
       _magSize: 6
       _reloadTime: 1
       _automaticFire: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: 
+      _itemModelPath: Prefabs/magazineExtended
       _magSize: 25
       _reloadTime: 2
       _automaticFire: 1
@@ -127,7 +127,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: 
+      _itemModelPath: Prefabs/muzzleNormal
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
@@ -140,14 +140,14 @@ MonoBehaviour:
       - _modType: 3
         _modOperator: 2
         _modStrength: 2
-      _itemModelPath: 
+      _itemModelPath: Prefabs/muzzleNormal
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Ah! So Quiet!
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: 
+      _itemModelPath: Prefabs/muzzleNormal
     _weaponAddons:
     - _itemName: Zappy
       _id: 40000
