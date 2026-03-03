@@ -23,6 +23,7 @@ public class AssemblyUIService : Service
         await base.Initialize();
     }
 
+    //give currentConfig values to avoid nulling out
     private async Awaitable InitiateConfig()
     {
         if(false)
@@ -41,6 +42,7 @@ public class AssemblyUIService : Service
         await Awaitable.NextFrameAsync();
     }
 
+    //create model of weapon and add correct part models
     public void UpdateWeaponViewModel()
     {
         FrameModelController f = Instantiate(currentConfig.Frame.GetPartModel()).GetComponent<FrameModelController>();
