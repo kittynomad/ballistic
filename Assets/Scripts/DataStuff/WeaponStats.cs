@@ -15,16 +15,16 @@ public struct WeaponStats
 
     delegate float modifierDelegate(float modifiedVar, float modValue);
 
-    public WeaponStats(WeaponFrame f)
+    public WeaponStats(string name)
     {
-        baseDamage = 0f;
+        baseDamage = 0;
         spread = 0f;
         multishot = 0f;
         reloadTime = 0f;
-        energyCost = f.EnergyCost;
+        energyCost = 0;
         magSize = 0;
-        startVelocity = f.FireVelocity;
-        effects = f.Modifiers;
+        startVelocity = 1;
+        effects = null;
     }
 
     public List<WeaponModifier> ApplyPrefireModifiers(List<WeaponModifier> wm)
@@ -67,6 +67,20 @@ public struct WeaponStats
             default:
                 return null;
         }
+    }
+
+    public override string ToString()
+    {
+        string output = "\n";
+        output += "\ndamage: " + baseDamage;
+        output += "\nspread: " + spread;
+        output += "\nmultishot: " + multishot;
+        output += "\nreloadTime: " + reloadTime;
+        output += "\nenergyCost: " + energyCost;
+        output += "\nmagSize: " + magSize;
+        output += "\nstartVelocity: " + startVelocity;
+        effects = null;
+        return output;
     }
 
     //basic math for delegate
