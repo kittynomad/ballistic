@@ -23,6 +23,16 @@ public struct WeaponConfig
         _addons = addons;
     }
 
+    /*public WeaponConfig()
+    {
+        _frame = ComponentDataService.Instance.Parts.GetPartByID("00000") as WeaponFrame;
+        _battery = ComponentDataService.Instance.Parts.GetPartByID("10000") as WeaponBattery;
+        _magazine = ComponentDataService.Instance.Parts.GetPartByID("20000") as WeaponMagazine;
+        _muzzle = ComponentDataService.Instance.Parts.GetPartByID("30000") as WeaponMuzzle;
+        _addons = null;
+
+    }*/
+
     public void ReplacePart(WeaponPart part)
     {
         switch (part.GetType().Name)
