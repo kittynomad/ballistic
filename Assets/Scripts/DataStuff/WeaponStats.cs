@@ -32,13 +32,17 @@ public struct WeaponStats
         List<WeaponModifier> output = new List<WeaponModifier>();
         foreach(WeaponModifier w in wm)
         {
+            modifierDelegate m = OperationFromEnum(w.ModOperator);
             switch(w.ModType)
             {
                 case Enums.Modifiers.multishot:
+                    multishot = m(multishot, w.ModStrength);
                     continue;
                 case Enums.Modifiers.spread:
+                    spread = m(spread, w.ModStrength);
                     continue;
                 case Enums.Modifiers.damage:
+                    baseDamage = m(baseDamage, w.ModStrength);
                     continue;
                 default:
                     output.Add(w);
@@ -47,4 +51,27 @@ public struct WeaponStats
         }
         return output;
     }
+
+    private modifierDelegate OperationFromEnum(Enums.Operators op)
+    {
+        switch(op)
+        {
+            case Enums.Operators.add:
+                return Add;
+            case Enums.Operators.subtract:
+                return Subtract;
+            case Enums.Operators.multiply:
+                return Multiply;
+            case Enums.Operators.divide:
+                return Divide;
+            default:
+                return null;
+        }
+    }
+
+    //basic math for delegate
+    private float Add(float fOne, float fTwo) { return fOne + fTwo; }
+    private float Subtract(float fOne, float fTwo) { return fOne - fTwo; }
+    private float Multiply(float fOne, float fTwo) { return fOne * fTwo; }
+    private float Divide(float fOne, float fTwo) { return fOne / fTwo; }
 }
