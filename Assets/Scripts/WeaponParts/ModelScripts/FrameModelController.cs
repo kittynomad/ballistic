@@ -12,7 +12,6 @@ public class FrameModelController : MonoBehaviour
 
     private List<PartModelController> attachedParts = new List<PartModelController>();
 
-    [SerializeField] private PartModelController _testMuzzle;
     public void ConnectPart(PartModelController part, Vector3 connectionPoint)
     {
         part.transform.position = connectionPoint + part.PartConnectionPoint.transform.localPosition;
@@ -33,17 +32,5 @@ public class FrameModelController : MonoBehaviour
             part.transform.parent = null;
             if (destroyPart) Destroy(part.gameObject);
         }
-    }
-
-    [Button]
-    public void TestRemovePart()
-    {
-        RemovePart(_testMuzzle, true);
-    }
-
-    [Button]
-    public void TestAssembly()
-    {
-        ConnectPart(_testMuzzle, _muzzleConnectionPoint.transform.position);
     }
 }
