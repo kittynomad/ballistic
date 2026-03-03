@@ -13,6 +13,8 @@ public struct WeaponStats
 
     private List<WeaponModifier> effects;
 
+    delegate float modifierDelegate(float modifiedVar, float modValue);
+
     public WeaponStats(WeaponFrame f)
     {
         baseDamage = 0f;
@@ -27,6 +29,22 @@ public struct WeaponStats
 
     public List<WeaponModifier> ApplyPrefireModifiers(List<WeaponModifier> wm)
     {
-        return wm;
+        List<WeaponModifier> output = new List<WeaponModifier>();
+        foreach(WeaponModifier w in wm)
+        {
+            switch(w.ModType)
+            {
+                case Enums.Modifiers.multishot:
+                    continue;
+                case Enums.Modifiers.spread:
+                    continue;
+                case Enums.Modifiers.damage:
+                    continue;
+                default:
+                    output.Add(w);
+                    continue;
+            }
+        }
+        return output;
     }
 }
