@@ -55,6 +55,7 @@ MonoBehaviour:
       - _modType: 0
         _modOperator: 0
         _modStrength: 10000
+      _itemModelPath: Prefabs/modularRevolver_frame
     - _itemName: Revolver 2
       _id: 00001
       _itemDescription: Even Better tm
@@ -64,6 +65,7 @@ MonoBehaviour:
       - _modType: 1
         _modOperator: 0
         _modStrength: 10000
+      _itemModelPath: 
     - _itemName: Revolver 3
       _id: 00002
       _itemDescription: Even Best tm
@@ -73,6 +75,7 @@ MonoBehaviour:
       - _modType: 2
         _modOperator: 0
         _modStrength: 10000
+      _itemModelPath: 
     - _itemName: Revolver 4
       _id: 00003
       _itemDescription: Even Bestest tm
@@ -85,6 +88,7 @@ MonoBehaviour:
       - _modType: 2
         _modOperator: 0
         _modStrength: 10000
+      _itemModelPath: 
     _weaponBatteries:
     - _itemName: Battery
       _id: 10000
@@ -92,6 +96,7 @@ MonoBehaviour:
       _itemIconPath: Textures/renderPunchAnim
       _energyCost: 0
       _modifiers: []
+      _itemModelPath: 
       _capacity: 10
       _rechargeRate: 999
     _weaponMagazines:
@@ -101,6 +106,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
+      _itemModelPath: 
       _magSize: 6
       _reloadTime: 1
       _automaticFire: 0
@@ -110,6 +116,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
+      _itemModelPath: 
       _magSize: 25
       _reloadTime: 2
       _automaticFire: 1
@@ -120,6 +127,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
+      _itemModelPath: 
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
@@ -132,12 +140,14 @@ MonoBehaviour:
       - _modType: 3
         _modOperator: 2
         _modStrength: 2
+      _itemModelPath: 
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Ah! So Quiet!
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
+      _itemModelPath: 
     _weaponAddons:
     - _itemName: Zappy
       _id: 40000
@@ -148,6 +158,7 @@ MonoBehaviour:
       - _modType: 1
         _modOperator: 0
         _modStrength: 1000
+      _itemModelPath: 
     - _itemName: Fire thing
       _id: 40001
       _itemDescription: owww it burnsss
@@ -157,3 +168,4 @@ MonoBehaviour:
       - _modType: 0
         _modOperator: 0
         _modStrength: 1000
+      _itemModelPath: 

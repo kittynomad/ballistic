@@ -12,6 +12,7 @@ public abstract class WeaponPart
     [SerializeField] private int _energyCost;
 
     [SerializeField] private List<WeaponModifier> _modifiers;
+    [SerializeField] private string _itemModelPath;
 
     public string ItemName { get => _itemName; set => _itemName = value; }
     public string ItemDescription { get => _itemDescription; set => _itemDescription = value; }
@@ -20,4 +21,5 @@ public abstract class WeaponPart
     public List<WeaponModifier> Modifiers { get => _modifiers; set => _modifiers = value; }
 
     public int EnergyCost { get => _energyCost; set => _energyCost = value; }
+    public string ItemModelPath { get => _itemModelPath; set => _itemModelPath = value; }
 }
