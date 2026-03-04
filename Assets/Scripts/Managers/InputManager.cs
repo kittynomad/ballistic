@@ -18,6 +18,7 @@ public class InputManager : Manager
         await base.Initialize();
         ms = FindAnyObjectByType<MovementService>();
         aims = FindAnyObjectByType<AimService>();
+        await Awaitable.EndOfFrameAsync();
     }
 
     public void OnMove(InputValue iVal)
