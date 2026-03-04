@@ -26,8 +26,19 @@ public class MovementService : Service
 
     private void FixedUpdate()
     {
-        Vector3 direction = (movementVector.x * rb.transform.right + movementVector.y * rb.transform.forward).normalized;
-        rb.AddForce(direction * _movespeed);
+        MovePlayer();
+    }
+
+    private void MovePlayer()
+    {
+        Vector3 moveDirection = new Vector3(movementVector.x, 0f, movementVector.y);
+        Vector3 cameraForward = Camera.main.transform.forward;
+        Vector3 flattened = Vector3.ProjectOnPlane(cameraForward, Vector3.up);
+        Quaternion cameraOrientation = Quaternion.LookRotation(flattened);
+
+        moveDirection = cameraOrientation * moveDirection;
+        //Vector3 direction = (movementVector.x * rb.transform.right + movementVector.y * rb.transform.forward).normalized;
+        rb.AddForce(moveDirection * _movespeed);
     }
 
 }
