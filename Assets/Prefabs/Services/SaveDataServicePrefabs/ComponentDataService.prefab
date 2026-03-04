@@ -148,7 +148,7 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 2
       _itemModelPath: Prefabs/muzzleNormal
-      _spread: 0
+      _spread: 2
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Ah! So Quiet!
@@ -156,7 +156,7 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
-      _spread: 0
+      _spread: 0.25
     _weaponAddons:
     - _itemName: Zappy
       _id: 40000
