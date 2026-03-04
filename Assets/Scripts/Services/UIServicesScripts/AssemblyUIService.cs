@@ -57,4 +57,9 @@ public class AssemblyUIService : Service
     {
         currentConfig = w;
     }
+
+    public void ConfirmLoadout()
+    {
+        FindAnyObjectByType<WeaponAssemblyService>().AssembleWeapon(currentConfig);
+    }
 }

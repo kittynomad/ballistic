@@ -79,4 +79,9 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
             await Awaitable.NextFrameAsync();
         }
     }
+
+    public void ConfirmLoadout()
+    {
+        FindAnyObjectByType<AssemblyUIService>().ConfirmLoadout();
+    }
 }
