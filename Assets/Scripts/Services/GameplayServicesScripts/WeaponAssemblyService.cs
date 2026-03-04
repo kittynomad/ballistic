@@ -10,5 +10,13 @@ using UnityEngine;
 
 public class WeaponAssemblyService : Service
 {
-    
+    public void AssembleWeapon(WeaponConfig parts)
+    {
+        Weapon w = new Weapon();
+        w.Config = parts;
+
+        WeaponStats stats = new WeaponStats();
+
+        stats.ApplyNonModifiers(parts);
+    }
 }

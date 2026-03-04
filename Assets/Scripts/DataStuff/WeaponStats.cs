@@ -15,6 +15,14 @@ public struct WeaponStats
 
     delegate float modifierDelegate(float modifiedVar, float modValue);
 
+    public float BaseDamage { get => baseDamage; set => baseDamage = value; }
+    public float Spread { get => spread; set => spread = value; }
+    public float Multishot { get => multishot; set => multishot = value; }
+    public float ReloadTime { get => reloadTime; set => reloadTime = value; }
+    public float EnergyCost { get => energyCost; set => energyCost = value; }
+    public int MagSize { get => magSize; set => magSize = value; }
+    public float StartVelocity { get => startVelocity; set => startVelocity = value; }
+
     public WeaponStats(string name)
     {
         baseDamage = 0;
@@ -25,6 +33,18 @@ public struct WeaponStats
         magSize = 0;
         startVelocity = 1;
         effects = null;
+    }
+
+    public void ApplyNonModifiers(WeaponConfig w)
+    {
+        baseDamage = w.Magazine.Damage;
+        spread = w.Muzzle.Spread;
+        //multishot = 0f;
+        reloadTime = w.Magazine.ReloadTime;
+        magSize = w.Magazine.MagSize;
+        startVelocity = w.Frame.FireVelocity;
+        energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost;
+        
     }
 
     public List<WeaponModifier> ApplyPrefireModifiers(List<WeaponModifier> wm)
