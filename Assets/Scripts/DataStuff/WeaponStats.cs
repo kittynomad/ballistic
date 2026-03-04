@@ -32,7 +32,7 @@ public struct WeaponStats
         energyCost = 0;
         magSize = 0;
         startVelocity = 1;
-        effects = null;
+        effects = new List<WeaponModifier>();
     }
 
     public void ApplyNonModifiers(WeaponConfig w)
@@ -45,6 +45,25 @@ public struct WeaponStats
         startVelocity = w.Frame.FireVelocity;
         energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost;
         
+    }
+
+    public void ApplyModifiers(WeaponConfig w)
+    {
+        if (effects == null)
+            effects = new List<WeaponModifier>();
+
+        effects.AddRange(w.Frame.Modifiers);
+        effects.AddRange(w.Battery.Modifiers);
+        effects.AddRange(w.Magazine.Modifiers);
+        effects.AddRange(w.Muzzle.Modifiers);
+
+        foreach(WeaponAddon addon in w.Addons)
+        {
+            effects.AddRange(addon.Modifiers);
+            energyCost += addon.EnergyCost;
+        }
+
+        effects = ApplyPrefireModifiers(effects);
     }
 
     public List<WeaponModifier> ApplyPrefireModifiers(List<WeaponModifier> wm)
@@ -99,7 +118,11 @@ public struct WeaponStats
         output += "\nenergyCost: " + energyCost;
         output += "\nmagSize: " + magSize;
         output += "\nstartVelocity: " + startVelocity;
-        effects = null;
+        foreach(WeaponModifier wm in effects)
+        {
+            output += "\n" + wm.ModType + " " + wm.ModOperator + " " + wm.ModStrength;
+        }
+        
         return output;
     }
 

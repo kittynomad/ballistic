@@ -18,5 +18,8 @@ public class WeaponAssemblyService : Service
         WeaponStats stats = new WeaponStats();
 
         stats.ApplyNonModifiers(parts);
+        stats.ApplyModifiers(parts);
+
+        w.Stats = stats;
     }
 }
