@@ -110,7 +110,7 @@ public struct WeaponStats
 
     public override string ToString()
     {
-        string output = "\n";
+        string output = "\nWEAPON STATS\n-----------";
         output += "\ndamage: " + baseDamage;
         output += "\nspread: " + spread;
         output += "\nmultishot: " + multishot;
@@ -118,7 +118,8 @@ public struct WeaponStats
         output += "\nenergyCost: " + energyCost;
         output += "\nmagSize: " + magSize;
         output += "\nstartVelocity: " + startVelocity;
-        foreach(WeaponModifier wm in effects)
+        output += "\n-----------\nMODIFIERS\n-----------";
+        foreach (WeaponModifier wm in effects)
         {
             output += "\n" + wm.ModType + " " + wm.ModOperator + " " + wm.ModStrength;
         }

@@ -34,6 +34,17 @@ public class ComponentDataService : Service
         return _parts.GetPartByID(ID);
     }
 
+    public WeaponConfig DefaultWeaponConfig()
+    {
+        WeaponConfig currentConfig = new WeaponConfig();
+        currentConfig.Frame = ComponentDataService.Instance.Parts.GetPartByID("00000") as WeaponFrame;
+        currentConfig.Battery = ComponentDataService.Instance.Parts.GetPartByID("10000") as WeaponBattery;
+        currentConfig.Magazine = ComponentDataService.Instance.Parts.GetPartByID("20000") as WeaponMagazine;
+        currentConfig.Muzzle = ComponentDataService.Instance.Parts.GetPartByID("30000") as WeaponMuzzle;
+        currentConfig.Addons = new WeaponAddon[] { ComponentDataService.Instance.Parts.GetPartByID("40000") as WeaponAddon };
+        return currentConfig;
+    }
+
     #region savingFunctions
     public void SavePartDatabase(string path)
     {

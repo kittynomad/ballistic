@@ -7,4 +7,9 @@ public class Weapon : MonoBehaviour
 
     public WeaponConfig Config { get => _config; set => _config = value; }
     public WeaponStats Stats { get => stats; set => stats = value; }
+
+    public override string ToString()
+    {
+        return stats.ToString();
+    }
 }

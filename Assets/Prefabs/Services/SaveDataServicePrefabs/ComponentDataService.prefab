@@ -56,6 +56,7 @@ MonoBehaviour:
         _modOperator: 0
         _modStrength: 10000
       _itemModelPath: Prefabs/modularRevolver_frame
+      _fireVelocity: 1
     - _itemName: Revolver 2
       _id: 00001
       _itemDescription: Even Better tm
@@ -66,6 +67,7 @@ MonoBehaviour:
         _modOperator: 0
         _modStrength: 10000
       _itemModelPath: 
+      _fireVelocity: 1
     - _itemName: Revolver 3
       _id: 00002
       _itemDescription: Even Best tm
@@ -76,6 +78,7 @@ MonoBehaviour:
         _modOperator: 0
         _modStrength: 10000
       _itemModelPath: 
+      _fireVelocity: 1
     - _itemName: Revolver 4
       _id: 00003
       _itemDescription: Even Bestest tm
@@ -89,6 +92,7 @@ MonoBehaviour:
         _modOperator: 0
         _modStrength: 10000
       _itemModelPath: 
+      _fireVelocity: 1
     _weaponBatteries:
     - _itemName: Battery
       _id: 10000
@@ -107,6 +111,7 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/magazineExtended
+      _damage: 5
       _magSize: 6
       _reloadTime: 1
       _automaticFire: 0
@@ -114,9 +119,10 @@ MonoBehaviour:
       _id: 20001
       _itemDescription: More bullets, auto fire built in.
       _itemIconPath: Textures/particleCat
-      _energyCost: 0
+      _energyCost: 1
       _modifiers: []
       _itemModelPath: Prefabs/magazineExtended
+      _damage: 5
       _magSize: 25
       _reloadTime: 2
       _automaticFire: 1
@@ -128,6 +134,7 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
+      _spread: 0.25
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
@@ -141,6 +148,7 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 2
       _itemModelPath: Prefabs/muzzleNormal
+      _spread: 0
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Ah! So Quiet!
@@ -148,12 +156,13 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
+      _spread: 0
     _weaponAddons:
     - _itemName: Zappy
       _id: 40000
       _itemDescription: makes it snappy
       _itemIconPath: Textures/particleCat
-      _energyCost: 0
+      _energyCost: 5
       _modifiers:
       - _modType: 1
         _modOperator: 0
@@ -163,7 +172,7 @@ MonoBehaviour:
       _id: 40001
       _itemDescription: owww it burnsss
       _itemIconPath: Textures/particleCat
-      _energyCost: 0
+      _energyCost: 5
       _modifiers:
       - _modType: 0
         _modOperator: 0

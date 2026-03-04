@@ -7,12 +7,19 @@
 // into a single, functional weapon.
 *****************************************************************************/
 using UnityEngine;
+using NaughtyAttributes;
 
 public class WeaponAssemblyService : Service
 {
-    public void AssembleWeapon(WeaponConfig parts)
+    [Button]
+    public Weapon AssembleWeapon()
     {
-        Weapon w = new Weapon();
+        Weapon output = AssembleWeapon(ComponentDataService.Instance.DefaultWeaponConfig());
+        return output;
+    }
+    public Weapon AssembleWeapon(WeaponConfig parts)
+    {
+        Weapon w = gameObject.AddComponent(typeof(Weapon)) as Weapon;
         w.Config = parts;
 
         WeaponStats stats = new WeaponStats();
@@ -21,5 +28,7 @@ public class WeaponAssemblyService : Service
         stats.ApplyModifiers(parts);
 
         w.Stats = stats;
+        print(w);
+        return w;
     }
 }

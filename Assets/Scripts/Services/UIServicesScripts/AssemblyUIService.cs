@@ -32,12 +32,7 @@ public class AssemblyUIService : Service
         }
         else
         {
-            currentConfig = new WeaponConfig();
-            currentConfig.Frame = ComponentDataService.Instance.Parts.GetPartByID("00000") as WeaponFrame;
-            currentConfig.Battery = ComponentDataService.Instance.Parts.GetPartByID("10000") as WeaponBattery;
-            currentConfig.Magazine = ComponentDataService.Instance.Parts.GetPartByID("20000") as WeaponMagazine;
-            currentConfig.Muzzle = ComponentDataService.Instance.Parts.GetPartByID("30000") as WeaponMuzzle;
-            currentConfig.Addons = null;
+            currentConfig = ComponentDataService.Instance.DefaultWeaponConfig();
         }
         await Awaitable.NextFrameAsync();
     }
