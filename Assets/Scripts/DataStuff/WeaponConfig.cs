@@ -1,3 +1,12 @@
+/*****************************************************************************
+// File Name : WeaponConfig.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 3, 2026
+//
+// Brief Description : WeaponConfig is a simple data type for storing a 
+// "complete" weapon, specifically each used component. For combined stats,
+// see WeaponStats.
+*****************************************************************************/
 using UnityEngine;
 
 public struct WeaponConfig

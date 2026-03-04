@@ -1,3 +1,14 @@
+/*****************************************************************************
+// File Name : FrameModelController.cs
+// Author : Pierce Nunnelley
+// Creation Date : February 28, 2026
+//
+// Brief Description : This script controls the model for a weapon's frame's
+// 3D model. It includes functions for attaching models for other weapon parts,
+// using "connection points" on both models to ensure models of differing
+// sizes fit properly onto the frame.
+*****************************************************************************/
+
 using UnityEngine;
 using System.Collections.Generic;
 using NaughtyAttributes;

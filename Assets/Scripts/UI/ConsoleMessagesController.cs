@@ -1,3 +1,10 @@
+/*****************************************************************************
+// File Name : ConsoleMessagesController.cs
+// Author : Pierce Nunnelley
+// Creation Date : February 26, 2026
+//
+// Brief Description : This is a script for a basic console-esque text interface.
+*****************************************************************************/
 using UnityEngine;
 using TMPro;
 using NaughtyAttributes;
@@ -7,6 +14,7 @@ public class ConsoleMessagesController : MonoBehaviour, IInitializable
     public async Awaitable Initialize()
     {
         messagePrefab = Resources.Load("UI/ConsoleMessage") as GameObject;
+        await Awaitable.EndOfFrameAsync();
     }
 
     [Button]
@@ -22,11 +30,6 @@ public class ConsoleMessagesController : MonoBehaviour, IInitializable
         g.GetComponent<FadingTextElement>().Initialize();
     }
     
-
-    void Start()
-    {
-        Initialize();
-    }
 
     public void DeInitialize()
     {

@@ -1,3 +1,13 @@
+/*****************************************************************************
+// File Name : WeaponStats.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 3, 2026
+//
+// Brief Description : WeaponStats is a data type made with the purpose of
+// storing the "final" stats of a constructed weapon, AKA the data used when
+// actually firing. For the parts used in a constructed weapon, see 
+// WeaponConfig.
+*****************************************************************************/
 using UnityEngine;
 using System.Collections.Generic;
 
