@@ -18,7 +18,7 @@ public class AssemblyUIService : Service
         GameObject temp = Resources.Load("UI/AssemblyScreen") as GameObject;
         assemblyUI = Instantiate(temp);
         await assemblyUI.GetComponent<PartListDisplayController>().Initialize();
-        assemblyUI.SetActive(false);
+        //assemblyUI.SetActive(false);
         UpdateWeaponViewModel();
         await base.Initialize();
     }
@@ -50,6 +50,7 @@ public class AssemblyUIService : Service
     public void UpdateConfigData(WeaponPart part)
     {
         currentConfig.ReplacePart(part);
+        Debug.Log(currentConfig);
     }
 
     public void SetCurrentConfig(WeaponConfig w)

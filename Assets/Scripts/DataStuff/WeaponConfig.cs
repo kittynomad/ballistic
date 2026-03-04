@@ -64,4 +64,14 @@ public struct WeaponConfig
 
         }
     }
+
+    public override string ToString()
+    {
+        string output = "CONFIG\n----------";
+        output += "\nFrame: " + _frame.ItemName;
+        output += "\nBattery: " + _battery.ItemName;
+        output += "\nMagazine: " + _magazine.ItemName;
+        output += "\nMuzzle: " + _muzzle.ItemName;
+        return output;
+    }
 }
