@@ -20,6 +20,7 @@ public struct WeaponStats
     private float energyCost;
     private int magSize;
     private float startVelocity;
+    private bool autoFire;
 
     private List<WeaponModifier> effects;
 
@@ -32,6 +33,7 @@ public struct WeaponStats
     public float EnergyCost { get => energyCost; set => energyCost = value; }
     public int MagSize { get => magSize; set => magSize = value; }
     public float StartVelocity { get => startVelocity; set => startVelocity = value; }
+    public bool AutoFire { get => autoFire; set => autoFire = value; }
 
     public WeaponStats(string name)
     {
@@ -42,6 +44,7 @@ public struct WeaponStats
         energyCost = 0;
         magSize = 0;
         startVelocity = 1;
+        autoFire = false;
         effects = new List<WeaponModifier>();
     }
 
@@ -54,6 +57,7 @@ public struct WeaponStats
         magSize = w.Magazine.MagSize;
         startVelocity = w.Frame.FireVelocity;
         energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost;
+        autoFire = w.Magazine.AutomaticFire;
         
     }
 
@@ -131,6 +135,7 @@ public struct WeaponStats
         output += "\nenergyCost: " + energyCost;
         output += "\nmagSize: " + magSize;
         output += "\nstartVelocity: " + startVelocity;
+        output += "\nauto fires: " + autoFire;
         output += "\n-----------\nMODIFIERS\n-----------";
         foreach (WeaponModifier wm in effects)
         {
