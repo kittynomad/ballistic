@@ -106,13 +106,13 @@ public struct WeaponStats
         switch(op)
         {
             case Enums.Operators.add:
-                return Add;
+                return HelperFunctions.Add;
             case Enums.Operators.subtract:
-                return Subtract;
+                return HelperFunctions.Subtract;
             case Enums.Operators.multiply:
-                return Multiply;
+                return HelperFunctions.Multiply;
             case Enums.Operators.divide:
-                return Divide;
+                return HelperFunctions.Divide;
             default:
                 return null;
         }
@@ -136,10 +136,4 @@ public struct WeaponStats
         
         return output;
     }
-
-    //basic math for delegate
-    private float Add(float fOne, float fTwo) { return fOne + fTwo; }
-    private float Subtract(float fOne, float fTwo) { return fOne - fTwo; }
-    private float Multiply(float fOne, float fTwo) { return fOne * fTwo; }
-    private float Divide(float fOne, float fTwo) { return fOne / fTwo; }
 }
