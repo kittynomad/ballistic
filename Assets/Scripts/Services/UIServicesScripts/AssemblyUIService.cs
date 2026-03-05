@@ -47,9 +47,9 @@ public class AssemblyUIService : Service
 
     }
 
-    public void UpdateConfigData(WeaponPart part)
+    public async void UpdateConfigData(WeaponPart part)
     {
-        currentConfig.ReplacePart(part);
+        await currentConfig.ReplacePart(part);
         Debug.Log(currentConfig);
     }
 

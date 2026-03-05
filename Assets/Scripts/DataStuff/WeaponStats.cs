@@ -69,8 +69,11 @@ public struct WeaponStats
 
         foreach(WeaponAddon addon in w.Addons)
         {
-            effects.AddRange(addon.Modifiers);
-            energyCost += addon.EnergyCost;
+            if(addon != null)
+            {
+                effects.AddRange(addon.Modifiers);
+                energyCost += addon.EnergyCost;
+            }
         }
 
         effects = ApplyPrefireModifiers(effects);

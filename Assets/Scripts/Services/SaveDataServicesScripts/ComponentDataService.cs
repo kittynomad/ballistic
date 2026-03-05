@@ -41,7 +41,7 @@ public class ComponentDataService : Service
         currentConfig.Battery = ComponentDataService.Instance.Parts.GetPartByID("10000") as WeaponBattery;
         currentConfig.Magazine = ComponentDataService.Instance.Parts.GetPartByID("20000") as WeaponMagazine;
         currentConfig.Muzzle = ComponentDataService.Instance.Parts.GetPartByID("30000") as WeaponMuzzle;
-        currentConfig.Addons = new WeaponAddon[] { ComponentDataService.Instance.Parts.GetPartByID("40000") as WeaponAddon };
+        currentConfig.Addons = new WeaponAddon[currentConfig.Frame.AddonCapacity];
         return currentConfig;
     }
 

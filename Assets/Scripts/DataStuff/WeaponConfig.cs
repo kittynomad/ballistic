@@ -50,7 +50,7 @@ public struct WeaponConfig
 
     }*/
 
-    public void ReplacePart(WeaponPart part)
+    public async Awaitable ReplacePart(WeaponPart part)
     {
         switch (part.GetType().Name)
         {
@@ -68,14 +68,20 @@ public struct WeaponConfig
                 _muzzle = part as WeaponMuzzle;
                 return;
             case "WeaponAddon":
-                Debug.LogError("Replacing addons in WeaponConfig not yet implemented");
+                EquipAddon(part as WeaponAddon);
                 return;
 
         }
+        await Awaitable.EndOfFrameAsync();
     }
 
     private bool EquipAddon(WeaponAddon addon)
     {
+        if(_addons == null)
+        {
+            _addons = new WeaponAddon[_frame.AddonCapacity];
+        }
+
         for(int i = 0; i < _addons.Length; i++)
         {
             if(_addons[i] == null)
@@ -100,6 +106,11 @@ public struct WeaponConfig
         output += "\nBattery: " + _battery.ItemName;
         output += "\nMagazine: " + _magazine.ItemName;
         output += "\nMuzzle: " + _muzzle.ItemName;
+        foreach(WeaponAddon addon in _addons)
+        {
+            if(addon != null)
+            output += "\nAddon: " + addon.ItemName;
+        }
         return output;
     }
 }
