@@ -57,6 +57,7 @@ MonoBehaviour:
         _modStrength: 10000
       _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
+      _addonCapacity: 3
     - _itemName: Revolver 2
       _id: 00001
       _itemDescription: Even Better tm
@@ -68,6 +69,7 @@ MonoBehaviour:
         _modStrength: 10000
       _itemModelPath: 
       _fireVelocity: 1
+      _addonCapacity: 3
     - _itemName: Revolver 3
       _id: 00002
       _itemDescription: Even Best tm
@@ -79,6 +81,7 @@ MonoBehaviour:
         _modStrength: 10000
       _itemModelPath: 
       _fireVelocity: 1
+      _addonCapacity: 3
     - _itemName: Revolver 4
       _id: 00003
       _itemDescription: Even Bestest tm
@@ -93,6 +96,7 @@ MonoBehaviour:
         _modStrength: 10000
       _itemModelPath: 
       _fireVelocity: 1
+      _addonCapacity: 3
     _weaponBatteries:
     - _itemName: Battery
       _id: 10000
@@ -100,7 +104,7 @@ MonoBehaviour:
       _itemIconPath: Textures/renderPunchAnim
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: Prefabs/muzzleNormal
+      _itemModelPath: Prefabs/batteryNormal
       _capacity: 10
       _rechargeRate: 999
     _weaponMagazines:
@@ -147,7 +151,7 @@ MonoBehaviour:
       - _modType: 3
         _modOperator: 2
         _modStrength: 2
-      _itemModelPath: Prefabs/muzzleNormal
+      _itemModelPath: Prefabs/muzzleTrumpet
       _spread: 2
     - _itemName: Silencer
       _id: 30002
