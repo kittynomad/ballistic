@@ -9,5 +9,15 @@ using UnityEngine;
 
 public class AttackService : Service
 {
-
+    private GameObject bulletPrefab;
+    public override async Awaitable Initialize()
+    {
+        bulletPrefab = Resources.Load("Prefabs/Bullet") as GameObject;
+        await base.Initialize();
+    }
+    public void OnAttack()
+    {
+        Debug.Log("attack");
+        Instantiate(bulletPrefab, Camera.main.transform.position, Quaternion.identity);
+    }
 }

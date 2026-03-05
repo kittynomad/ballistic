@@ -13,11 +13,13 @@ public class InputManager : Manager
 {
     private MovementService ms;
     private AimService aims;
+    private AttackService att;
     public override async Awaitable Initialize()
     {
         await base.Initialize();
         ms = FindAnyObjectByType<MovementService>();
         aims = FindAnyObjectByType<AimService>();
+        att = FindAnyObjectByType<AttackService>();
         await Awaitable.EndOfFrameAsync();
     }
 
@@ -29,5 +31,10 @@ public class InputManager : Manager
     public void OnLook(InputValue iVal)
     {
         aims.LookVector = iVal.Get<Vector2>();
+    }
+
+    public void OnAttack()
+    {
+        att.OnAttack();
     }
 }
