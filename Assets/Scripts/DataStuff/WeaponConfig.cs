@@ -31,6 +31,14 @@ public struct WeaponConfig
         _muzzle = muzzle;
         _addons = addons;
     }
+    public WeaponConfig(WeaponFrame f, WeaponBattery b, WeaponMagazine mag, WeaponMuzzle muzzle)
+    {
+        _frame = f;
+        _battery = b;
+        _magazine = mag;
+        _muzzle = muzzle;
+        _addons = new WeaponAddon[_frame.AddonCapacity];
+    }
 
     /*public WeaponConfig()
     {
@@ -48,6 +56,7 @@ public struct WeaponConfig
         {
             case "WeaponFrame":
                 _frame = part as WeaponFrame;
+                _addons = new WeaponAddon[_frame.AddonCapacity];
                 return;
             case "WeaponBattery":
                 _battery = part as WeaponBattery;
@@ -63,6 +72,20 @@ public struct WeaponConfig
                 return;
 
         }
+    }
+
+    private bool EquipAddon(WeaponAddon addon)
+    {
+        for(int i = 0; i < _addons.Length; i++)
+        {
+            if(_addons[i] == null)
+            {
+                _addons[i] = addon;
+                return true;
+            }
+        }
+        Debug.LogWarning("Could not equip addon-- not enough room");
+        return false;
     }
 
     public override string ToString()
