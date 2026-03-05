@@ -47,6 +47,19 @@ public class FrameModelController : MonoBehaviour
         ConnectPart(temp.GetComponent<PartModelController>(), connectionPoint);
     }
 
+    public void DestroyModel()
+    {
+        /*while(attachedParts.Count > 0)
+        {
+            RemovePart(attachedParts[0], true);
+        }*/
+        foreach (Transform child in gameObject.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        Destroy(gameObject);
+    }
+
     public void RemovePart(PartModelController part, bool destroyPart = true)
     {
         if(attachedParts.Contains(part))
