@@ -50,7 +50,7 @@ public struct WeaponConfig
 
     }*/
 
-    public async Awaitable ReplacePart(WeaponPart part)
+    public void ReplacePart(WeaponPart part)
     {
         switch (part.GetType().Name)
         {
@@ -72,7 +72,6 @@ public struct WeaponConfig
                 return;
 
         }
-        await Awaitable.EndOfFrameAsync();
     }
 
     private bool EquipAddon(WeaponAddon addon)
