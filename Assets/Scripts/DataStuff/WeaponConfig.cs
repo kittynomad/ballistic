@@ -88,6 +88,11 @@ public struct WeaponConfig
         return false;
     }
 
+    private void RemoveAddon(int index)
+    {
+        _addons = HelperFunctions.RemoveElementFromArray<WeaponAddon>(_addons, index);
+    }
+
     public override string ToString()
     {
         string output = "CONFIG\n----------";
