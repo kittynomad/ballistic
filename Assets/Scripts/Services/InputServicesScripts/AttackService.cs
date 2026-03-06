@@ -10,9 +10,11 @@ using UnityEngine;
 public class AttackService : Service
 {
     private GameObject bulletPrefab;
+    private PlayerBehaviors pb;
     public override async Awaitable Initialize()
     {
         bulletPrefab = Resources.Load("Prefabs/Bullet") as GameObject;
+        pb = FindAnyObjectByType<PlayerBehaviors>();
         await base.Initialize();
     }
     public void OnAttack()
