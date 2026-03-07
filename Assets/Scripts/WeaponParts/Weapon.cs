@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour, IInitializable
             temp.transform.Rotate(Random.Range(-stats.Spread, stats.Spread) * Vector3.one);
             temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
             temp.GetComponent<BulletController>().Initialize();
+            temp.GetComponent<BulletController>().Stats = stats;
         }
         while (shots > 0f);
 
