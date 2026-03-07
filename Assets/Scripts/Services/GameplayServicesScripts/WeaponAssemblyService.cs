@@ -19,7 +19,7 @@ public class WeaponAssemblyService : Service
     }
     public Weapon AssembleWeapon(WeaponConfig parts)
     {
-        Weapon w = gameObject.AddComponent(typeof(Weapon)) as Weapon;
+        Weapon w = FindAnyObjectByType<PlayerBehaviors>().gameObject.AddComponent(typeof(Weapon)) as Weapon;
         w.Initialize();
         w.Config = parts;
 

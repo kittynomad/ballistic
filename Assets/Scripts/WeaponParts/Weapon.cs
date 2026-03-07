@@ -16,6 +16,14 @@ public class Weapon : MonoBehaviour, IInitializable
 
     public void FireWeapon()
     {
+        float shots = stats.Multishot;
+        do
+        {
+            shots--;
+            GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position, Camera.main.transform.rotation);
+            temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
+        }
+        while (shots >= 0f);
 
     }
 

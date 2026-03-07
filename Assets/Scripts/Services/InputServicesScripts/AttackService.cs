@@ -20,6 +20,10 @@ public class AttackService : Service
     public void OnAttack()
     {
         Debug.Log("attack");
-        Instantiate(bulletPrefab, Camera.main.transform.position, Quaternion.identity);
+        //get weapon indirectly since it may be reinstantiated
+        if(pb.gameObject.TryGetComponent(out Weapon w))
+        {
+            w.FireWeapon();
+        }
     }
 }
