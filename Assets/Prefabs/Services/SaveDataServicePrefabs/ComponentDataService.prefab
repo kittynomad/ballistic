@@ -182,3 +182,13 @@ MonoBehaviour:
         _modOperator: 0
         _modStrength: 1000
       _itemModelPath: 
+    - _itemName: duplicator
+      _id: 40002
+      _itemDescription: doubles projectile count
+      _itemIconPath: Textures/particleCat
+      _energyCost: 5
+      _modifiers:
+      - _modType: 2
+        _modOperator: 2
+        _modStrength: 2
+      _itemModelPath: 

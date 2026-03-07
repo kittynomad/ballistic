@@ -21,9 +21,10 @@ public class Weapon : MonoBehaviour, IInitializable
         {
             shots--;
             GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position, Camera.main.transform.rotation);
+            temp.transform.Rotate(Random.Range(-stats.Spread, stats.Spread) * Vector3.one);
             temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
         }
-        while (shots >= 0f);
+        while (shots > 0f);
 
     }
 
