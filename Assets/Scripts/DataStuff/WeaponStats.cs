@@ -52,7 +52,7 @@ public struct WeaponStats
     {
         baseDamage = w.Magazine.Damage;
         spread = w.Muzzle.Spread;
-        //multishot = 0f;
+        multishot = 1f;
         reloadTime = w.Magazine.ReloadTime;
         magSize = w.Magazine.MagSize;
         startVelocity = w.Frame.FireVelocity;
