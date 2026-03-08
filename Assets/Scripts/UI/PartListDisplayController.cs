@@ -1,12 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using TMPro;
 
 public class PartListDisplayController : MonoBehaviour, IInitializable
 {
     [SerializeField] private GameObject _listParent;
+    [SerializeField] private TextMeshProUGUI _description;
     private GameObject itemDisplayer;
     private List<GameObject> currentDisplayedParts = new List<GameObject>();
+
+    public TextMeshProUGUI Description { get => _description; set => _description = value; }
 
     public async Awaitable Initialize()
     {

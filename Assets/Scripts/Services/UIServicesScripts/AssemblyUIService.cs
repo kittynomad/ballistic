@@ -49,6 +49,8 @@ public class AssemblyUIService : Service
         f.ConnectPart(currentConfig.Muzzle.GetPartModel(), f.MuzzleConnectionPoint);
         viewModel = f;
 
+        assemblyUI.GetComponent<PartListDisplayController>().Description.text = currentConfig.ToString();
+
     }
 
     public void UpdateConfigData(WeaponPart part)
