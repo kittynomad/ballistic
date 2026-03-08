@@ -151,8 +151,11 @@ MonoBehaviour:
       - _modType: 3
         _modOperator: 2
         _modStrength: 2
+      - _modType: 5
+        _modOperator: 2
+        _modStrength: 0.3
       _itemModelPath: Prefabs/muzzleTrumpet
-      _spread: 2
+      _spread: 50
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Ah! So Quiet!
@@ -191,4 +194,7 @@ MonoBehaviour:
       - _modType: 2
         _modOperator: 2
         _modStrength: 2
+      - _modType: 5
+        _modOperator: 2
+        _modStrength: 0.75
       _itemModelPath: 
