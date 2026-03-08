@@ -14,7 +14,7 @@ public class TestDummyController : MonoBehaviour, IInitializable, IShootable
 
     public void OnAttacked(BulletController projectile)
     {
-        FindAnyObjectByType<ConsoleMessagesController>().PushMessage(
+        HudService.Instance.PushConsoleMessage(
             "Enemy hit for " + projectile.Stats.BaseDamage);
     }
 }

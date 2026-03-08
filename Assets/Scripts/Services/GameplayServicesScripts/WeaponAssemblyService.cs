@@ -30,6 +30,7 @@ public class WeaponAssemblyService : Service
 
         w.Stats = stats;
         print(w);
+        HudService.Instance.PushConsoleMessage(w.ToString());
         return w;
     }
 }
