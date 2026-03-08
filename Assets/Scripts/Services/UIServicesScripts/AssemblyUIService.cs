@@ -13,12 +13,15 @@ public class AssemblyUIService : Service
     private GameObject assemblyUI;
     private WeaponConfig currentConfig;
     private FrameModelController viewModel;
+
+    public GameObject AssemblyUI { get => assemblyUI; set => assemblyUI = value; }
+
     public override async Awaitable Initialize()
     {
         await InitiateConfig();
         GameObject temp = Resources.Load("UI/AssemblyScreen") as GameObject;
-        assemblyUI = Instantiate(temp);
-        await assemblyUI.GetComponent<PartListDisplayController>().Initialize();
+        AssemblyUI = Instantiate(temp);
+        await AssemblyUI.GetComponent<PartListDisplayController>().Initialize();
         //assemblyUI.SetActive(false);
         UpdateWeaponViewModel();
         await base.Initialize();
@@ -49,7 +52,7 @@ public class AssemblyUIService : Service
         f.ConnectPart(currentConfig.Muzzle.GetPartModel(), f.MuzzleConnectionPoint);
         viewModel = f;
 
-        assemblyUI.GetComponent<PartListDisplayController>().Description.text = currentConfig.ToString();
+        AssemblyUI.GetComponent<PartListDisplayController>().Description.text = currentConfig.ToString();
 
     }
 

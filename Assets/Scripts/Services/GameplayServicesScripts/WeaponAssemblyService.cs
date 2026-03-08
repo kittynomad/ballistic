@@ -19,6 +19,10 @@ public class WeaponAssemblyService : Service
     }
     public Weapon AssembleWeapon(WeaponConfig parts)
     {
+        if(FindAnyObjectByType<PlayerBehaviors>().gameObject.TryGetComponent(out Weapon ow))
+        {
+            Destroy(ow);
+        }
         Weapon w = FindAnyObjectByType<PlayerBehaviors>().gameObject.AddComponent(typeof(Weapon)) as Weapon;
         w.Initialize();
         w.Config = parts;

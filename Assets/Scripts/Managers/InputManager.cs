@@ -37,4 +37,9 @@ public class InputManager : Manager
     {
         att.OnAttack();
     }
+
+    public void OnMenu()
+    {
+        FindAnyObjectByType<AssemblyUIService>().AssemblyUI.SetActive(true);
+    }
 }
