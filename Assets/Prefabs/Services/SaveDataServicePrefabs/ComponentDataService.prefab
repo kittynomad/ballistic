@@ -155,7 +155,7 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 0.3
       _itemModelPath: Prefabs/muzzleTrumpet
-      _spread: 50
+      _spread: 10
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Ah! So Quiet!
@@ -197,4 +197,24 @@ MonoBehaviour:
       - _modType: 5
         _modOperator: 2
         _modStrength: 0.75
+      _itemModelPath: 
+    - _itemName: fast speedy
+      _id: 40003
+      _itemDescription: makes projectiles faster
+      _itemIconPath: Textures/particleCat
+      _energyCost: 5
+      _modifiers:
+      - _modType: 6
+        _modOperator: 2
+        _modStrength: 5
+      _itemModelPath: 
+    - _itemName: dampener
+      _id: 40004
+      _itemDescription: makes projectiles slower
+      _itemIconPath: Textures/particleCat
+      _energyCost: 5
+      _modifiers:
+      - _modType: 6
+        _modOperator: 3
+        _modStrength: 5
       _itemModelPath: 

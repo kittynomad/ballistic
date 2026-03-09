@@ -100,6 +100,9 @@ public struct WeaponStats
                 case Enums.Modifiers.damage:
                     baseDamage = m(baseDamage, w.ModStrength);
                     continue;
+                case Enums.Modifiers.velocity:
+                    startVelocity = m(startVelocity, w.ModStrength);
+                    continue;
                 default:
                     output.Add(w);
                     continue;
