@@ -21,9 +21,9 @@ public class AttackService : Service
     {
         Debug.Log("attack");
         //get weapon indirectly since it may be reinstantiated
-        if(started && pb.gameObject.TryGetComponent(out Weapon w))
+        if(pb.gameObject.TryGetComponent(out Weapon w))
         {
-            w.FireWeapon();
+            w.FireWeapon(started);
         }
     }
 }

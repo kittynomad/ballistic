@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Weapon : MonoBehaviour, IInitializable
 {
@@ -6,12 +7,23 @@ public class Weapon : MonoBehaviour, IInitializable
     private WeaponStats stats;
     private GameObject bulletPrefab;
 
+    private bool onCooldown = false;
+
     public WeaponConfig Config { get => _config; set => _config = value; }
     public WeaponStats Stats { get => stats; set => stats = value; }
 
     public override string ToString()
     {
         return _config.ToString() + "\n" + stats.ToString();
+    }
+
+    public void FireWeapon(bool started)
+    {
+        if(started && !onCooldown)
+        {
+            FireWeapon();
+            StartCoroutine(WeaponCooldown());
+        }
     }
 
     public void FireWeapon()
@@ -41,5 +53,12 @@ public class Weapon : MonoBehaviour, IInitializable
     public void DeInitialize()
     {
         throw new System.NotImplementedException();
+    }
+
+    public IEnumerator WeaponCooldown()
+    {
+        onCooldown = true;
+        yield return new WaitForSeconds(stats.TimeBetweenShots);
+        onCooldown = false;
     }
 }

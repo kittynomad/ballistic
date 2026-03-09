@@ -48,7 +48,7 @@ public struct WeaponStats
         startVelocity = 1;
         autoFire = false;
         effects = new List<WeaponModifier>();
-        timeBetweenShots = 0.25f;
+        timeBetweenShots = 0.5f;
     }
 
     public void ApplyNonModifiers(WeaponConfig w)
