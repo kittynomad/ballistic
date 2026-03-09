@@ -17,11 +17,11 @@ public class AttackService : Service
         pb = FindAnyObjectByType<PlayerBehaviors>();
         await base.Initialize();
     }
-    public void OnAttack()
+    public void OnAttack(bool started)
     {
         Debug.Log("attack");
         //get weapon indirectly since it may be reinstantiated
-        if(pb.gameObject.TryGetComponent(out Weapon w))
+        if(started && pb.gameObject.TryGetComponent(out Weapon w))
         {
             w.FireWeapon();
         }

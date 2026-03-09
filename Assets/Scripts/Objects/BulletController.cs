@@ -23,5 +23,13 @@ public class BulletController : LimitedLifespanEntity, IInitializable
         {
             shot.OnAttacked(this);
         }
+        HitBehavior(collision);
+
+    }
+
+    public void HitBehavior(Collision c)
+    {
+        HudService.Instance.PushConsoleMessage(
+            "Hit " + c.gameObject.name);
     }
 }

@@ -20,6 +20,7 @@ public struct WeaponStats
     private float energyCost;
     private int magSize;
     private float startVelocity;
+    private float timeBetweenShots;
     private bool autoFire;
 
     private List<WeaponModifier> effects;
@@ -34,6 +35,7 @@ public struct WeaponStats
     public int MagSize { get => magSize; set => magSize = value; }
     public float StartVelocity { get => startVelocity; set => startVelocity = value; }
     public bool AutoFire { get => autoFire; set => autoFire = value; }
+    public float TimeBetweenShots { get => timeBetweenShots; set => timeBetweenShots = value; }
 
     public WeaponStats(string name)
     {
@@ -46,6 +48,7 @@ public struct WeaponStats
         startVelocity = 1;
         autoFire = false;
         effects = new List<WeaponModifier>();
+        timeBetweenShots = 0.25f;
     }
 
     public void ApplyNonModifiers(WeaponConfig w)

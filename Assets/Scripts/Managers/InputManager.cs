@@ -33,9 +33,10 @@ public class InputManager : Manager
         aims.LookVector = iVal.Get<Vector2>();
     }
 
-    public void OnAttack()
+    public void OnAttack(InputValue iVal)
     {
-        att.OnAttack();
+        Debug.Log(iVal.Get<float>());
+        att.OnAttack(iVal.Get<float>() > 0);
     }
 
     public void OnMenu()
