@@ -61,6 +61,7 @@ public struct WeaponStats
         startVelocity = w.Frame.FireVelocity;
         energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost;
         autoFire = w.Magazine.AutomaticFire;
+        timeBetweenShots = w.Magazine.TimeBetweenShots;
         
     }
 
@@ -141,6 +142,7 @@ public struct WeaponStats
         output += "\nenergyCost: " + energyCost;
         output += "\nmagSize: " + magSize;
         output += "\nstartVelocity: " + startVelocity;
+        output += "\nTime between shots: " + timeBetweenShots;
         output += "\nauto fires: " + autoFire;
         output += "\n-----------\nMODIFIERS\n-----------";
         foreach (WeaponModifier wm in effects)

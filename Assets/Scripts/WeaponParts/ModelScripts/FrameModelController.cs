@@ -31,14 +31,15 @@ public class FrameModelController : MonoBehaviour
 
     public void ConnectPart(PartModelController part, Vector3 connectionPoint)
     {
-        part.transform.position = connectionPoint + part.PartConnectionPoint.transform.localPosition;
         part.transform.parent = transform;
+        part.transform.localPosition = connectionPoint + part.PartConnectionPoint.transform.localPosition;
+        
         attachedParts.Add(part);
     }
 
     public void ConnectPart(PartModelController part, GameObject connectionPoint)
     {
-        ConnectPart(part, connectionPoint.transform.position);
+        ConnectPart(part, connectionPoint.transform.localPosition);
     }
 
     public void ConnectPart(GameObject prefab, GameObject connectionPoint)

@@ -6,10 +6,12 @@ public class WeaponMagazine : WeaponPart
     [SerializeField] private float _damage;
     [SerializeField] private int _magSize;
     [SerializeField] private float _reloadTime;
+    [SerializeField] private float _timeBetweenShots = 1f;
     [SerializeField] private bool _automaticFire = false;
 
     public int MagSize { get => _magSize; set => _magSize = value; }
     public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
     public bool AutomaticFire { get => _automaticFire; set => _automaticFire = value; }
     public float Damage { get => _damage; set => _damage = value; }
+    public float TimeBetweenShots { get => _timeBetweenShots; set => _timeBetweenShots = value; }
 }
