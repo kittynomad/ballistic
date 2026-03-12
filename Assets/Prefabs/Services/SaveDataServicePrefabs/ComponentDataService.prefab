@@ -185,7 +185,7 @@ MonoBehaviour:
       - _modType: 1
         _modOperator: 0
         _modStrength: 1000
-      _itemModelPath: 
+      _itemModelPath: Prefabs/mw_modifier
     - _itemName: Fire thing
       _id: 40001
       _itemDescription: owww it burnsss
@@ -195,7 +195,7 @@ MonoBehaviour:
       - _modType: 0
         _modOperator: 0
         _modStrength: 1000
-      _itemModelPath: 
+      _itemModelPath: Prefabs/mw_modifier
     - _itemName: duplicator
       _id: 40002
       _itemDescription: doubles projectile count
@@ -211,7 +211,7 @@ MonoBehaviour:
       - _modType: 3
         _modOperator: 2
         _modStrength: 1.5
-      _itemModelPath: 
+      _itemModelPath: Prefabs/mw_modifier
     - _itemName: fast speedy
       _id: 40003
       _itemDescription: makes projectiles faster
@@ -221,7 +221,7 @@ MonoBehaviour:
       - _modType: 6
         _modOperator: 2
         _modStrength: 5
-      _itemModelPath: 
+      _itemModelPath: Prefabs/mw_modifier
     - _itemName: dampener
       _id: 40004
       _itemDescription: makes projectiles slower
@@ -231,4 +231,4 @@ MonoBehaviour:
       - _modType: 6
         _modOperator: 3
         _modStrength: 5
-      _itemModelPath: 
+      _itemModelPath: Prefabs/mw_modifier
