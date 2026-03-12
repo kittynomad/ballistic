@@ -70,4 +70,25 @@ public class FrameModelController : MonoBehaviour
             if (destroyPart) Destroy(part.gameObject);
         }
     }
+
+    public void ConnectModifierParts(GameObject[] parts)
+    {
+        for(int i = 0; i < parts.Length; i++)
+        {
+            if(parts[i] != null)
+                ConnectPart(parts[i], _modifierConnectionPoints[i]);
+        }
+    }
+
+    public void ConnectModifierParts(WeaponAddon[] addons)
+    {
+        GameObject[] modParts = new GameObject[addons.Length];
+        for (int i = 0; i < modParts.Length; i++)
+        {
+            if (addons[i] == null)
+                continue;
+            modParts[i] = addons[i].GetPartModel();
+        }
+        ConnectModifierParts(modParts);
+    }
 }

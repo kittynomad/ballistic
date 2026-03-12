@@ -52,6 +52,7 @@ public class AssemblyUIService : Service
         f.ConnectPart(currentConfig.Battery.GetPartModel(), f.BatteryConnectionPoint);
         f.ConnectPart(currentConfig.Magazine.GetPartModel(), f.MagazineConnectionPoint);
         f.ConnectPart(currentConfig.Muzzle.GetPartModel(), f.MuzzleConnectionPoint);
+        f.ConnectModifierParts(currentConfig.Addons);
         viewModel = f;
 
         AssemblyUI.GetComponent<PartListDisplayController>().Description.text = currentConfig.ToString();
