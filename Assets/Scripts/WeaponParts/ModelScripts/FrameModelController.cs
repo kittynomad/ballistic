@@ -32,7 +32,7 @@ public class FrameModelController : MonoBehaviour
     public void ConnectPart(PartModelController part, Vector3 connectionPoint)
     {
         part.transform.parent = transform;
-        part.transform.localPosition = connectionPoint + part.PartConnectionPoint.transform.localPosition;
+        part.transform.localPosition = connectionPoint - part.PartConnectionPoint.transform.localPosition;
         
         attachedParts.Add(part);
     }
