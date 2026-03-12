@@ -21,8 +21,21 @@ public class Weapon : MonoBehaviour, IInitializable
     {
         if(started && !onCooldown)
         {
-            FireWeapon();
-            onCooldown = true;
+            if(stats.AutoFire)
+            {
+                StartCoroutine(AutoFire());
+            }
+            else
+            {
+                FireWeapon();
+                onCooldown = true;
+                StopAllCoroutines();
+                StartCoroutine(WeaponCooldown());
+            }
+            
+        }
+        if(!started && stats.AutoFire)
+        {
             StopAllCoroutines();
             StartCoroutine(WeaponCooldown());
         }
@@ -55,6 +68,23 @@ public class Weapon : MonoBehaviour, IInitializable
     public void DeInitialize()
     {
         throw new System.NotImplementedException();
+    }
+
+    public IEnumerator AutoFire()
+    {
+        while(true)
+        {
+            FireWeapon();
+            onCooldown = true;
+            float progress = stats.TimeBetweenShots;
+            while (progress > 0f)
+            {
+                progress -= Time.deltaTime;
+                yield return new WaitForFixedUpdate();
+            }
+            onCooldown = false;
+        }
+        
     }
 
     public IEnumerator WeaponCooldown()

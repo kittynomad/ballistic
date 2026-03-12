@@ -133,13 +133,13 @@ MonoBehaviour:
       _id: 20001
       _itemDescription: More bullets, auto fire built in.
       _itemIconPath: Textures/particleCat
-      _energyCost: 1
+      _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/magazineExtended
       _damage: 5
       _magSize: 25
       _reloadTime: 2
-      _timeBetweenShots: 1
+      _timeBetweenShots: 0.2
       _automaticFire: 1
     _weaponMuzzles:
     - _itemName: Standard Muzzle
