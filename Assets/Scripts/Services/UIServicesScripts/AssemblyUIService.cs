@@ -14,6 +14,8 @@ public class AssemblyUIService : Service
     private WeaponConfig currentConfig;
     private FrameModelController viewModel;
 
+    public static Vector3 VIEWMODEL_POSITION = new Vector3(-200, -200, -200);
+
     public GameObject AssemblyUI { get => assemblyUI; set => assemblyUI = value; }
 
     public override async Awaitable Initialize()
@@ -46,7 +48,7 @@ public class AssemblyUIService : Service
     {
         if (viewModel != null) viewModel.DestroyModel();
 
-        FrameModelController f = Instantiate(currentConfig.Frame.GetPartModel()).GetComponent<FrameModelController>();
+        FrameModelController f = Instantiate(currentConfig.Frame.GetPartModel(), VIEWMODEL_POSITION, currentConfig.Frame.GetPartModel().transform.rotation).GetComponent<FrameModelController>();
         f.ConnectPart(currentConfig.Battery.GetPartModel(), f.BatteryConnectionPoint);
         f.ConnectPart(currentConfig.Magazine.GetPartModel(), f.MagazineConnectionPoint);
         f.ConnectPart(currentConfig.Muzzle.GetPartModel(), f.MuzzleConnectionPoint);

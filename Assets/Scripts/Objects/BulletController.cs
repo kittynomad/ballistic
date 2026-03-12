@@ -29,7 +29,7 @@ public class BulletController : LimitedLifespanEntity, IInitializable
 
     public void HitBehavior(Collision c)
     {
-        HudService.Instance.PushConsoleMessage(
-            "Hit " + c.gameObject.name);
+        /*HudService.Instance.PushConsoleMessage(
+            "Hit " + c.gameObject.name);*/
     }
 }
