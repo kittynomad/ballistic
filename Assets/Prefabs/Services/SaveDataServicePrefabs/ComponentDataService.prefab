@@ -67,7 +67,7 @@ MonoBehaviour:
       - _modType: 1
         _modOperator: 0
         _modStrength: 10000
-      _itemModelPath: 
+      _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
     - _itemName: Revolver 3
@@ -79,7 +79,7 @@ MonoBehaviour:
       - _modType: 2
         _modOperator: 0
         _modStrength: 10000
-      _itemModelPath: 
+      _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
     - _itemName: Revolver 4
@@ -94,9 +94,18 @@ MonoBehaviour:
       - _modType: 2
         _modOperator: 0
         _modStrength: 10000
-      _itemModelPath: 
+      _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
+    - _itemName: Big Iron
+      _id: 00004
+      _itemDescription: Like revolver, but with more mod capacity.
+      _itemIconPath: Textures/revolverTestRender
+      _energyCost: 0
+      _modifiers: []
+      _itemModelPath: Prefabs/modularRevolver_frame
+      _fireVelocity: 1
+      _addonCapacity: 6
     _weaponBatteries:
     - _itemName: Battery
       _id: 10000
@@ -118,6 +127,7 @@ MonoBehaviour:
       _damage: 5
       _magSize: 6
       _reloadTime: 1
+      _timeBetweenShots: 1
       _automaticFire: 0
     - _itemName: Extended Mag
       _id: 20001
@@ -129,6 +139,7 @@ MonoBehaviour:
       _damage: 5
       _magSize: 25
       _reloadTime: 2
+      _timeBetweenShots: 1
       _automaticFire: 1
     _weaponMuzzles:
     - _itemName: Standard Muzzle
@@ -138,7 +149,7 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
-      _spread: 0.25
+      _spread: 5
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
@@ -197,6 +208,9 @@ MonoBehaviour:
       - _modType: 5
         _modOperator: 2
         _modStrength: 0.75
+      - _modType: 3
+        _modOperator: 2
+        _modStrength: 1.5
       _itemModelPath: 
     - _itemName: fast speedy
       _id: 40003
