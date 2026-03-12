@@ -123,7 +123,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: Prefabs/magazineExtended
+      _itemModelPath: Prefabs/revolverMag
       _damage: 5
       _magSize: 6
       _reloadTime: 1
