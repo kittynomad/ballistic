@@ -46,3 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraManager
   ServiceReferences: []
   ServiceInstances: []
+  assemblyCameraTransformVars:
+  - {x: 6, y: 0, z: 0}
+  - {x: 0, y: -90, z: 0}
+  assembledCameraTransformVars:
+  - {x: 1.46, y: 0.73, z: 3.84}
+  - {x: 0, y: -175, z: 0}
