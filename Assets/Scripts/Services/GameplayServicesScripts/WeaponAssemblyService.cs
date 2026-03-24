@@ -24,7 +24,7 @@ public class WeaponAssemblyService : Service
             Destroy(ow);
         }
         Weapon w = FindAnyObjectByType<PlayerBehaviors>().gameObject.AddComponent(typeof(Weapon)) as Weapon;
-        w.Initialize();
+        
         w.Config = parts;
 
         WeaponStats stats = new WeaponStats();
@@ -35,6 +35,7 @@ public class WeaponAssemblyService : Service
         w.Stats = stats;
         print(w);
         HudService.Instance.PushConsoleMessage(w.ToString());
+        w.Initialize();
         return w;
     }
 }

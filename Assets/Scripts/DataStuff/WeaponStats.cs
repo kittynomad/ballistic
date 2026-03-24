@@ -21,6 +21,8 @@ public struct WeaponStats
     private int magSize;
     private float startVelocity;
     private float timeBetweenShots;
+    private float batteryCapacity;
+    private float batteryChargeRate;
     private bool autoFire;
 
     private List<WeaponModifier> effects;
@@ -36,6 +38,8 @@ public struct WeaponStats
     public float StartVelocity { get => startVelocity; set => startVelocity = value; }
     public bool AutoFire { get => autoFire; set => autoFire = value; }
     public float TimeBetweenShots { get => timeBetweenShots; set => timeBetweenShots = value; }
+    public float BatteryCapacity { get => batteryCapacity; set => batteryCapacity = value; }
+    public float BatteryChargeRate { get => batteryChargeRate; set => batteryChargeRate = value; }
 
     public WeaponStats(string name)
     {
@@ -49,6 +53,8 @@ public struct WeaponStats
         autoFire = false;
         effects = new List<WeaponModifier>();
         timeBetweenShots = 0.5f;
+        batteryCapacity = 1f;
+        batteryChargeRate = 1f;
     }
 
     public void ApplyNonModifiers(WeaponConfig w)
@@ -62,7 +68,8 @@ public struct WeaponStats
         energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost;
         autoFire = w.Magazine.AutomaticFire;
         timeBetweenShots = w.Magazine.TimeBetweenShots;
-        
+        batteryCapacity = w.Battery.Capacity;
+        batteryChargeRate = w.Battery.RechargeRate;
     }
 
     public void ApplyModifiers(WeaponConfig w)

@@ -114,8 +114,8 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/batteryNormal
-      _capacity: 10
-      _rechargeRate: 999
+      _capacity: 100
+      _rechargeRate: 25
     _weaponMagazines:
     - _itemName: Revolver Mag
       _id: 20000

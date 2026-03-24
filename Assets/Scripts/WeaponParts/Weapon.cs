@@ -8,6 +8,10 @@ public class Weapon : MonoBehaviour, IInitializable
     private GameObject bulletPrefab;
 
     private bool onCooldown = false;
+    private float currentCharge;
+    private float maxCharge;
+
+    private Coroutine rechargeCoroutine;
 
     public WeaponConfig Config { get => _config; set => _config = value; }
     public WeaponStats Stats { get => stats; set => stats = value; }
@@ -19,7 +23,7 @@ public class Weapon : MonoBehaviour, IInitializable
 
     public void FireWeapon(bool started)
     {
-        if(started && !onCooldown)
+        if(started && !onCooldown && currentCharge >= stats.EnergyCost)
         {
             if(stats.AutoFire)
             {
@@ -34,7 +38,7 @@ public class Weapon : MonoBehaviour, IInitializable
             }
             
         }
-        if(!started && stats.AutoFire)
+        if((currentCharge < stats.EnergyCost || !started) && stats.AutoFire)
         {
             StopAllCoroutines();
             StartCoroutine(WeaponCooldown());
@@ -43,24 +47,32 @@ public class Weapon : MonoBehaviour, IInitializable
 
     public void FireWeapon()
     {
-        float shots = stats.Multishot;
-        do
+        if(currentCharge >= stats.EnergyCost)
         {
-            shots--;
-            GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward * 0.5f), Camera.main.transform.rotation);
-            temp.transform.Rotate(new Vector3(Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread)));
-            temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
-            temp.GetComponent<BulletController>().Stats = stats;
-            temp.GetComponent<BulletController>().Initialize();
-            
+            currentCharge -= stats.EnergyCost;
+            HudService.Instance.UpdateBatteryMeter(currentCharge, maxCharge);
+            float shots = stats.Multishot;
+            do
+            {
+                shots--;
+                GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward * 0.5f), Camera.main.transform.rotation);
+                temp.transform.Rotate(new Vector3(Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread)));
+                temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
+                temp.GetComponent<BulletController>().Stats = stats;
+                temp.GetComponent<BulletController>().Initialize();
+
+            }
+            while (shots > 0f);
         }
-        while (shots > 0f);
+        
 
     }
 
     public async Awaitable Initialize()
     {
         bulletPrefab = Resources.Load("Prefabs/Bullet") as GameObject;
+        maxCharge = stats.BatteryCapacity;
+        currentCharge = maxCharge;
         await Awaitable.EndOfFrameAsync();
         Debug.Log("Weapon initialized");
     }
@@ -89,6 +101,9 @@ public class Weapon : MonoBehaviour, IInitializable
 
     public IEnumerator WeaponCooldown()
     {
+        if(rechargeCoroutine != null)
+            StopCoroutine(rechargeCoroutine);
+
         onCooldown = true;
         float progress = stats.TimeBetweenShots;
         while(progress > 0f)
@@ -97,5 +112,16 @@ public class Weapon : MonoBehaviour, IInitializable
             yield return new WaitForFixedUpdate();
         }
         onCooldown = false;
+        rechargeCoroutine = StartCoroutine(WeaponRecharge());
+    }
+
+    public IEnumerator WeaponRecharge()
+    {
+        while(currentCharge < maxCharge)
+        {
+            currentCharge += Stats.BatteryChargeRate * Time.deltaTime;
+            HudService.Instance.UpdateBatteryMeter(currentCharge, maxCharge);
+            yield return new WaitForFixedUpdate();
+        }
     }
 }

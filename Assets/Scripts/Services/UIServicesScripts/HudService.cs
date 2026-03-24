@@ -7,11 +7,13 @@
 // gameplay hud.
 *****************************************************************************/
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HudService : Service
 {
     public static HudService Instance;
     private GameObject hudUI;
+    private MainHUDReferences hudRefs;
     private ConsoleMessagesController cmc;
 
     public override async Awaitable Initialize()
@@ -21,6 +23,7 @@ public class HudService : Service
         hudUI = Instantiate(temp);
         await FindAnyObjectByType<ConsoleMessagesController>().Initialize();
         cmc = FindAnyObjectByType<ConsoleMessagesController>();
+        hudRefs = FindAnyObjectByType<MainHUDReferences>();
         //await hudUI.GetComponent<PartListDisplayController>().Initialize();
         await base.Initialize();
     }
@@ -28,5 +31,10 @@ public class HudService : Service
     public void PushConsoleMessage(string message)
     {
         cmc.PushMessage(message);
+    }
+
+    public void UpdateBatteryMeter(float curBattery, float maxBattery)
+    {
+        hudRefs.BatteryMeter.value = curBattery / maxBattery;
     }
 }
