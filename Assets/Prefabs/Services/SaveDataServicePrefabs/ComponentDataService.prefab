@@ -141,6 +141,28 @@ MonoBehaviour:
       _reloadTime: 2
       _timeBetweenShots: 0.2
       _automaticFire: 1
+    - _itemName: Cartridge of Junk
+      _id: 20002
+      _itemDescription: Shoots massive amounts of harmless projectiles with absurd
+        knockback to user.
+      _itemIconPath: Textures/particleCat
+      _energyCost: 0
+      _modifiers:
+      - _modType: 2
+        _modOperator: 0
+        _modStrength: 25
+      - _modType: 6
+        _modOperator: 0
+        _modStrength: 1
+      - _modType: 3
+        _modOperator: 0
+        _modStrength: 25
+      _itemModelPath: Prefabs/magazineExtended
+      _damage: 0.01
+      _magSize: 25
+      _reloadTime: 2
+      _timeBetweenShots: 2
+      _automaticFire: 0
     _weaponMuzzles:
     - _itemName: Standard Muzzle
       _id: 30000

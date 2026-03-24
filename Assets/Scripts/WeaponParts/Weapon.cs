@@ -60,6 +60,8 @@ public class Weapon : MonoBehaviour, IInitializable
                 temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
                 temp.GetComponent<BulletController>().Stats = stats;
                 temp.GetComponent<BulletController>().Initialize();
+                //knock back the player slightly
+                gameObject.GetComponent<Rigidbody>().AddForce(temp.transform.forward * -0.25f * stats.StartVelocity, ForceMode.Impulse);
 
             }
             while (shots > 0f);
