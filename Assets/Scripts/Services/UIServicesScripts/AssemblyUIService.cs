@@ -25,6 +25,7 @@ public class AssemblyUIService : Service
         AssemblyUI = Instantiate(temp);
         await AssemblyUI.GetComponent<PartListDisplayController>().Initialize();
         //assemblyUI.SetActive(false);
+        OpenAssemblyUI();
         UpdateWeaponViewModel();
         await base.Initialize();
     }
@@ -59,6 +60,12 @@ public class AssemblyUIService : Service
 
     }
 
+    public void OpenAssemblyUI()
+    {
+        assemblyUI.SetActive(true);
+        FindAnyObjectByType<CameraManager>().SetAssemblyModeCamera();
+    }
+
     public void UpdateConfigData(WeaponPart part)
     {
         currentConfig.ReplacePart(part);
@@ -75,5 +82,6 @@ public class AssemblyUIService : Service
     public void ConfirmLoadout()
     {
         FindAnyObjectByType<WeaponAssemblyService>().AssembleWeapon(currentConfig);
+        FindAnyObjectByType<CameraManager>().SetGameplayModeCamera();
     }
 }

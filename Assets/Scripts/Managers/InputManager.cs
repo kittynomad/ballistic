@@ -41,6 +41,6 @@ public class InputManager : Manager
 
     public void OnMenu()
     {
-        FindAnyObjectByType<AssemblyUIService>().AssemblyUI.SetActive(true);
+        FindAnyObjectByType<AssemblyUIService>().OpenAssemblyUI();
     }
 }
