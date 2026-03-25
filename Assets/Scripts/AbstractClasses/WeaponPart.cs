@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : WeaponPart.cs
+// Author : Pierce Nunnelley
+// Creation Date : February 17, 2026
+//
+// Brief Description : This abstract class acts as the base form for all
+// components used in custom weapons, defining variables all parts require.
+*****************************************************************************/
 using UnityEngine;
 using System.Collections.Generic;
 using NaughtyAttributes;
