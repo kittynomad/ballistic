@@ -4,6 +4,7 @@ using System.Collections;
 public class DamageOverTimeStatusEffect : IStatusEffect
 {
     private GameObject entity;
+    private float duration = 10f;
 
     public void OnStartStatus(GameObject effectedEntity)
     {
@@ -14,7 +15,8 @@ public class DamageOverTimeStatusEffect : IStatusEffect
     public bool UpdateStatus()
     {
         Debug.Log("Status affecting " + entity.name);
-        return false;
+        duration -= Time.deltaTime;
+        return duration <= 0f;
     }
 
     public void OnCompleteStatus()
