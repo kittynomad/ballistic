@@ -51,49 +51,7 @@ MonoBehaviour:
       _itemDescription: basic weapon frame.
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
-      _modifiers:
-      - _modType: 0
-        _modOperator: 0
-        _modStrength: 10000
-      _itemModelPath: Prefabs/modularRevolver_frame
-      _fireVelocity: 1
-      _addonCapacity: 3
-    - _itemName: Revolver 2
-      _id: 00001
-      _itemDescription: Even Better tm
-      _itemIconPath: Textures/revolverTestRender
-      _energyCost: 0
-      _modifiers:
-      - _modType: 1
-        _modOperator: 0
-        _modStrength: 10000
-      _itemModelPath: Prefabs/modularRevolver_frame
-      _fireVelocity: 1
-      _addonCapacity: 3
-    - _itemName: Revolver 3
-      _id: 00002
-      _itemDescription: Even Best tm
-      _itemIconPath: Textures/revolverTestRender
-      _energyCost: 0
-      _modifiers:
-      - _modType: 2
-        _modOperator: 0
-        _modStrength: 10000
-      _itemModelPath: Prefabs/modularRevolver_frame
-      _fireVelocity: 1
-      _addonCapacity: 3
-    - _itemName: Revolver 4
-      _id: 00003
-      _itemDescription: Even Bestest tm
-      _itemIconPath: Textures/revolverTestRender
-      _energyCost: 0
-      _modifiers:
-      - _modType: 4
-        _modOperator: 0
-        _modStrength: 10000
-      - _modType: 2
-        _modOperator: 0
-        _modStrength: 10000
+      _modifiers: []
       _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
@@ -103,9 +61,9 @@ MonoBehaviour:
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
       _modifiers: []
-      _itemModelPath: Prefabs/modularRevolver_frame
+      _itemModelPath: Prefabs/bigIron_frame
       _fireVelocity: 1
-      _addonCapacity: 6
+      _addonCapacity: 5
     _weaponBatteries:
     - _itemName: Battery
       _id: 10000
@@ -157,7 +115,7 @@ MonoBehaviour:
       - _modType: 3
         _modOperator: 0
         _modStrength: 25
-      _itemModelPath: Prefabs/magazineExtended
+      _itemModelPath: Prefabs/junkMag
       _damage: 0.01
       _magSize: 25
       _reloadTime: 2
