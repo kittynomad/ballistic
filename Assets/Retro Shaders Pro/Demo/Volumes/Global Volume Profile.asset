@@ -43,7 +43,7 @@ MonoBehaviour:
     m_Value: {r: 0, g: 0, b: 0, a: 1}
   scaleParameters:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   verticalReferenceResolution:
     m_OverrideState: 1
     m_Value: 1080
@@ -72,7 +72,7 @@ MonoBehaviour:
     m_Value: 8
   pixelSize:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 8
   randomWear:
     m_OverrideState: 1
     m_Value: 0
