@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootable
 {
@@ -51,9 +52,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
             "Enemy hit for " + projectile.Stats.BaseDamage + 
             ", health is " + currentHealth + "/" + _totalHealth);
 
-        IStatusEffect status = new DamageOverTimeStatusEffect();
-        status.OnStartStatus(gameObject);
-        currentStatuses.Add(status);
+        ApplyPostFireModifiers(projectile.Stats.Effects);
 
         if (currentHealth <= 0f)
             DeathBehavior();
@@ -68,5 +67,24 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
         HudService.Instance.PushConsoleMessage(
             "Enemy died!");
+    }
+
+    public void ApplyPostFireModifiers(List<WeaponModifier> modifiers)
+    {
+        foreach(WeaponModifier wm in modifiers)
+        {
+            if(Dictionaries.ModLookup.TryGetValue(wm.ModType, out Func<IStatusEffect> effect))
+            {
+                IStatusEffect status = effect();
+                status.OnStartStatus(gameObject);
+                currentStatuses.Add(status);
+            }
+            else
+            {
+                Debug.Log("modifier " + wm.ModType + " does not have associated postfire effect, ignoring");
+            }
+        }
+        //IStatusEffect status = new DamageOverTimeStatusEffect();
+        
     }
 }

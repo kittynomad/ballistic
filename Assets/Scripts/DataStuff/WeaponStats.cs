@@ -40,6 +40,7 @@ public struct WeaponStats
     public float TimeBetweenShots { get => timeBetweenShots; set => timeBetweenShots = value; }
     public float BatteryCapacity { get => batteryCapacity; set => batteryCapacity = value; }
     public float BatteryChargeRate { get => batteryChargeRate; set => batteryChargeRate = value; }
+    public List<WeaponModifier> Effects { get => effects; set => effects = value; }
 
     public WeaponStats(string name)
     {
@@ -91,7 +92,7 @@ public struct WeaponStats
             }
         }
 
-        effects = ApplyPrefireModifiers(effects);
+        effects = ApplyPrefireModifiers(Effects);
     }
 
     public List<WeaponModifier> ApplyPrefireModifiers(List<WeaponModifier> wm)
@@ -152,7 +153,7 @@ public struct WeaponStats
         output += "\nTime between shots: " + timeBetweenShots;
         output += "\nauto fires: " + autoFire;
         output += "\n-----------\nMODIFIERS\n-----------";
-        foreach (WeaponModifier wm in effects)
+        foreach (WeaponModifier wm in Effects)
         {
             output += "\n" + wm.ModType + " " + wm.ModOperator + " " + wm.ModStrength;
         }
