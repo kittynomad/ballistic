@@ -625,6 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestDummyController
   _totalHealth: 0
+  _displayedInfo: {fileID: 0}
 --- !u!136 &555573540
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -995,9 +996,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1271098793677142420, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271098793677142420, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3207285141246892560, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
       propertyPath: m_Name
       value: testDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354055696123023731, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354055696123023731, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354055696123023731, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354055696123023731, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354055696123023731, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4354055696123023731, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7843775262889202681, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1037,6 +1070,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7843775262889202681, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925897953471398010, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925897953471398010, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925897953471398010, guid: e0a3a945236a1584ab0ad9740751c158, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
