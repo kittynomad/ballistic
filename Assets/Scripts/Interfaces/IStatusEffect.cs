@@ -11,7 +11,7 @@ using UnityEngine;
 public interface IStatusEffect
 {
     public Sprite GetIcon();
-    public void OnStartStatus(ShootableEntity effectedEntity);
+    public void OnStartStatus(ShootableEntity effectedEntity, float strength);
 
     public bool UpdateStatus();
 

@@ -212,3 +212,13 @@ MonoBehaviour:
         _modOperator: 3
         _modStrength: 5
       _itemModelPath: Prefabs/mw_modifier
+    - _itemName: venom coating
+      _id: 40005
+      _itemDescription: paralyzes enemies it hits
+      _itemIconPath: Textures/particleCat
+      _energyCost: 25
+      _modifiers:
+      - _modType: 7
+        _modOperator: 0
+        _modStrength: 5
+      _itemModelPath: Prefabs/mw_modifier

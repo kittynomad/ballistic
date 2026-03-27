@@ -14,6 +14,7 @@ public class Enums
         healing = 4,
         damage = 5,
         velocity = 6,
+        paralysis = 7,
     }
 
     public enum Operators

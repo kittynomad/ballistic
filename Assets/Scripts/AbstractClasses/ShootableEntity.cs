@@ -44,7 +44,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
             {
                 currentStatuses[i].OnCompleteStatus();
                 effectsToRemove.Add(currentStatuses[i]);
-                await OnStatusEnded(i);
+                //await OnStatusEnded(i);
 
             }
         }
@@ -52,6 +52,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
         {
             currentStatuses.Remove(effect);
         }
+        if (effectsToRemove.Count > 0) await OnStatusEnded(-1);
     }
 
     public virtual void OnAttacked(BulletController projectile)
@@ -91,7 +92,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
             if(Dictionaries.ModLookup.TryGetValue(wm.ModType, out Func<IStatusEffect> effect))
             {
                 IStatusEffect status = effect();
-                status.OnStartStatus(this);
+                status.OnStartStatus(this, wm.ModStrength);
                 currentStatuses.Add(status);
             }
             else

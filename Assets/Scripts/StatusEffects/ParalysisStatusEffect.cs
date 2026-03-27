@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections;
 
-public class DamageOverTimeStatusEffect : IStatusEffect
+public class ParalysisStatusEffect : IStatusEffect
 {
     private ShootableEntity entity;
     private float duration = 10f;
@@ -9,19 +8,28 @@ public class DamageOverTimeStatusEffect : IStatusEffect
     public void OnStartStatus(ShootableEntity effectedEntity, float strength)
     {
         entity = effectedEntity;
+        duration = strength;
         Debug.Log("Status added to " + entity.name);
+        if(entity.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt))
+        {
+            rt.EnableRagdoll();
+        }
     }
 
     public bool UpdateStatus()
     {
         Debug.Log("Status affecting " + entity.name);
-        entity.CurrentHealth -= Time.deltaTime;
+        
         duration -= Time.deltaTime;
         return duration <= 0f;
     }
 
     public void OnCompleteStatus()
     {
+        if (entity.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt))
+        {
+            rt.DisableRagdoll();
+        }
         Debug.Log("Status on " + entity.name + " has expired");
     }
 
@@ -31,4 +39,5 @@ public class DamageOverTimeStatusEffect : IStatusEffect
 
         return Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f));
     }
+
 }
