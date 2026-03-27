@@ -219,7 +219,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 6
         _modOperator: 3
-        _modStrength: 5
+        _modStrength: 2
       - _modType: 5
         _modOperator: 2
         _modStrength: 1.1
