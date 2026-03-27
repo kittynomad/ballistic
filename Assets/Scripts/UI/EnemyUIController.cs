@@ -12,15 +12,18 @@ public class EnemyUIController : MonoBehaviour
     public void UpdateEnemyUI(ShootableEntity enemy)
     {
         _healthBar.value = enemy.CurrentHealth / enemy.TotalHealth;
-        
-        while(currentStatusIcons.Count > 0)
+    }
+
+    public void UpdateStatusUI(ShootableEntity enemy)
+    {
+        while (currentStatusIcons.Count > 0)
         {
-            GameObject temp = currentStatusIcons[currentStatusIcons.Count - 1].gameObject ;
+            GameObject temp = currentStatusIcons[currentStatusIcons.Count - 1].gameObject;
             currentStatusIcons.RemoveAt(currentStatusIcons.Count - 1);
             Destroy(temp);
         }
 
-        foreach(IStatusEffect status in enemy.CurrentStatuses)
+        foreach (IStatusEffect status in enemy.CurrentStatuses)
         {
             GameObject statusIcon = Instantiate(_statusPrefab, _statusContainer.transform);
             statusIcon.GetComponent<Image>().sprite = status.GetIcon();

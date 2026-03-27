@@ -34,19 +34,19 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
         UpdateStatusEffects();
     }
 
-    public virtual void UpdateStatusEffects()
+    public virtual async void UpdateStatusEffects()
     {
         List<IStatusEffect> effectsToRemove = new List<IStatusEffect>();
 
-        foreach (IStatusEffect effect in currentStatuses)
+        for (int i = 0; i < currentStatuses.Count; i++)
         {
-            if (effect.UpdateStatus())
+            if (currentStatuses[i].UpdateStatus())
             {
-                effect.OnCompleteStatus();
-                effectsToRemove.Add(effect);
+                currentStatuses[i].OnCompleteStatus();
+                effectsToRemove.Add(currentStatuses[i]);
+                await OnStatusEnded(i);
 
             }
-
         }
         foreach (IStatusEffect effect in effectsToRemove)
         {
@@ -77,6 +77,11 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
         HudService.Instance.PushConsoleMessage(
             "Enemy died!");
+    }
+
+    public virtual async Awaitable OnStatusEnded(int index)
+    {
+        
     }
 
     public void ApplyPostFireModifiers(List<WeaponModifier> modifiers)
