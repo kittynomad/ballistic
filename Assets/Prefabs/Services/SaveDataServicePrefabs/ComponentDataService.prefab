@@ -165,21 +165,11 @@ MonoBehaviour:
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 0.25
     _weaponAddons:
-    - _itemName: Zappy
-      _id: 40000
-      _itemDescription: makes it snappy
-      _itemIconPath: Textures/particleCat
-      _energyCost: 5
-      _modifiers:
-      - _modType: 1
-        _modOperator: 0
-        _modStrength: 1000
-      _itemModelPath: Prefabs/mw_modifier
     - _itemName: Fire thing
       _id: 40001
-      _itemDescription: owww it burnsss
+      _itemDescription: Makes projectiles deal damage over time
       _itemIconPath: Textures/particleCat
-      _energyCost: 5
+      _energyCost: 10
       _modifiers:
       - _modType: 0
         _modOperator: 0
@@ -201,26 +191,6 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
-    - _itemName: fast speedy
-      _id: 40003
-      _itemDescription: makes projectiles faster
-      _itemIconPath: Textures/particleCat
-      _energyCost: 5
-      _modifiers:
-      - _modType: 6
-        _modOperator: 2
-        _modStrength: 5
-      _itemModelPath: Prefabs/mw_modifier
-    - _itemName: dampener
-      _id: 40004
-      _itemDescription: makes projectiles slower
-      _itemIconPath: Textures/particleCat
-      _energyCost: 5
-      _modifiers:
-      - _modType: 6
-        _modOperator: 3
-        _modStrength: 5
-      _itemModelPath: Prefabs/mw_modifier
     - _itemName: venom coating
       _id: 40005
       _itemDescription: paralyzes enemies it hits
@@ -230,4 +200,27 @@ MonoBehaviour:
       - _modType: 7
         _modOperator: 0
         _modStrength: 5
+      _itemModelPath: Prefabs/mw_modifier
+    - _itemName: fast speedy
+      _id: 40003
+      _itemDescription: makes projectiles faster
+      _itemIconPath: Textures/particleCat
+      _energyCost: 5
+      _modifiers:
+      - _modType: 6
+        _modOperator: 2
+        _modStrength: 1.2
+      _itemModelPath: Prefabs/mw_modifier
+    - _itemName: dampener
+      _id: 40004
+      _itemDescription: makes projectiles slower, slightly increases damage
+      _itemIconPath: Textures/particleCat
+      _energyCost: 5
+      _modifiers:
+      - _modType: 6
+        _modOperator: 3
+        _modStrength: 5
+      - _modType: 5
+        _modOperator: 2
+        _modStrength: 1.1
       _itemModelPath: Prefabs/mw_modifier
