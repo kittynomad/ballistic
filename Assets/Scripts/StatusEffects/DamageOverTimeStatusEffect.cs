@@ -30,7 +30,7 @@ public class DamageOverTimeStatusEffect : IStatusEffect
 
     public Sprite GetIcon()
     {
-        var icon = Resources.Load("Textures/particleCat") as Texture2D;
+        var icon = Resources.Load("Textures/fireIcon") as Texture2D;
 
         return Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f));
     }
