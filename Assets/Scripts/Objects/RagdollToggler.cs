@@ -30,10 +30,11 @@ public class RagdollToggler : MonoBehaviour
     {
         gameObject.GetComponent<Animator>().enabled = !enable;
         nonRagdollCollider.enabled = !enable;
-        nonRagdollRigidbody.useGravity = !enable;
+        //nonRagdollRigidbody.useGravity = !enable;
 
         foreach (Rigidbody rb in rigidbodies)
             rb.useGravity = enable;
+            
             
         foreach (Collider coll in colliders)
             coll.enabled = enable;

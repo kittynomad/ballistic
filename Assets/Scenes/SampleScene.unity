@@ -624,6 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eceb4d88a3d9eb7439d2671b9928bd9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TestDummyController
+  _totalHealth: 0
 --- !u!136 &555573540
 CapsuleCollider:
   m_ObjectHideFlags: 0
