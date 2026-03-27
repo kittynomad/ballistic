@@ -10,7 +10,8 @@ using UnityEngine;
 
 public interface IStatusEffect
 {
-    public void OnStartStatus(GameObject effectedEntity);
+    public Sprite GetIcon();
+    public void OnStartStatus(ShootableEntity effectedEntity);
 
     public bool UpdateStatus();
 

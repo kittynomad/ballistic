@@ -9,6 +9,11 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
     private List<IStatusEffect> currentStatuses = new List<IStatusEffect>();
 
+    public float TotalHealth { get => _totalHealth; set => _totalHealth = value; }
+    public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
+    public List<IStatusEffect> CurrentStatuses { get => currentStatuses; set => currentStatuses = value; }
+
+
     private void Start()
     {
         Initialize();
@@ -26,19 +31,24 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
     public void FixedUpdate()
     {
+        UpdateStatusEffects();
+    }
+
+    public virtual void UpdateStatusEffects()
+    {
         List<IStatusEffect> effectsToRemove = new List<IStatusEffect>();
 
-        foreach(IStatusEffect effect in currentStatuses)
+        foreach (IStatusEffect effect in currentStatuses)
         {
-            if(effect.UpdateStatus())
+            if (effect.UpdateStatus())
             {
                 effect.OnCompleteStatus();
                 effectsToRemove.Add(effect);
-                
+
             }
-            
+
         }
-        foreach(IStatusEffect effect in effectsToRemove)
+        foreach (IStatusEffect effect in effectsToRemove)
         {
             currentStatuses.Remove(effect);
         }
@@ -76,7 +86,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
             if(Dictionaries.ModLookup.TryGetValue(wm.ModType, out Func<IStatusEffect> effect))
             {
                 IStatusEffect status = effect();
-                status.OnStartStatus(gameObject);
+                status.OnStartStatus(this);
                 currentStatuses.Add(status);
             }
             else
