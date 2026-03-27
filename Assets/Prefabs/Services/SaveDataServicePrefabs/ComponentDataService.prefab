@@ -224,3 +224,23 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 1.1
       _itemModelPath: Prefabs/mw_modifier
+    - _itemName: spikener
+      _id: 40000
+      _itemDescription: slightly increases damage.
+      _itemIconPath: Textures/particleCat
+      _energyCost: 15
+      _modifiers:
+      - _modType: 5
+        _modOperator: 2
+        _modStrength: 1.5
+      _itemModelPath: Prefabs/mw_modifier
+    - _itemName: Something
+      _id: 40005
+      _itemDescription: reduces time between shots.
+      _itemIconPath: Textures/particleCat
+      _energyCost: 15
+      _modifiers:
+      - _modType: 8
+        _modOperator: 2
+        _modStrength: 2
+      _itemModelPath: Prefabs/mw_modifier

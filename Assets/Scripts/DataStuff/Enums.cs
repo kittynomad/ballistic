@@ -15,6 +15,7 @@ public class Enums
         damage = 5,
         velocity = 6,
         paralysis = 7,
+        cooldown = 8,
     }
 
     public enum Operators
