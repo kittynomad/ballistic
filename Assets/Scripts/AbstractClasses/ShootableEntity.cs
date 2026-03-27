@@ -9,10 +9,12 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
     private List<IStatusEffect> currentStatuses = new List<IStatusEffect>();
 
+    private bool isDead = false;
+
     public float TotalHealth { get => _totalHealth; set => _totalHealth = value; }
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public List<IStatusEffect> CurrentStatuses { get => currentStatuses; set => currentStatuses = value; }
-
+    public bool IsDead { get => isDead; set => isDead = value; }
 
     private void Start()
     {
@@ -71,19 +73,22 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
     public virtual void DeathBehavior()
     {
-        if(TryGetComponent<RagdollToggler>(out RagdollToggler r))
+        if (currentHealth <= 0f && !isDead)
         {
-            r.EnableRagdoll();
+            if (TryGetComponent<RagdollToggler>(out RagdollToggler r))
+            {
+                r.EnableRagdoll();
+            }
+
+            HudService.Instance.PushConsoleMessage(
+                "Enemy died!");
+            isDead = true;
         }
-
-        HudService.Instance.PushConsoleMessage(
-            "Enemy died!");
+            
     }
 
-    public virtual async Awaitable OnStatusEnded(int index)
-    {
-        
-    }
+
+    public virtual async Awaitable OnStatusEnded(int index){ }
 
     public void ApplyPostFireModifiers(List<WeaponModifier> modifiers)
     {

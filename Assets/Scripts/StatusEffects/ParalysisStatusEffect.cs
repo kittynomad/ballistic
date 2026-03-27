@@ -26,7 +26,7 @@ public class ParalysisStatusEffect : IStatusEffect
 
     public void OnCompleteStatus()
     {
-        if (entity.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt))
+        if (entity.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt) && !entity.IsDead)
         {
             rt.DisableRagdoll();
         }

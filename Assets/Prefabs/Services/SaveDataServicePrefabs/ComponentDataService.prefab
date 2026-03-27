@@ -74,6 +74,15 @@ MonoBehaviour:
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 100
       _rechargeRate: 25
+    - _itemName: Super Battery
+      _id: 10001
+      _itemDescription: Incredible capacity and recharge. Basically cheating!
+      _itemIconPath: Textures/renderPunchAnim
+      _energyCost: 0
+      _modifiers: []
+      _itemModelPath: Prefabs/batteryNormal
+      _capacity: 1000
+      _rechargeRate: 2500
     _weaponMagazines:
     - _itemName: Revolver Mag
       _id: 20000
@@ -174,7 +183,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 0
         _modOperator: 0
-        _modStrength: 1000
+        _modStrength: 3
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: duplicator
       _id: 40002

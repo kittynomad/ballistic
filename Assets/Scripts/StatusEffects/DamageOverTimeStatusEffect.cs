@@ -5,17 +5,20 @@ public class DamageOverTimeStatusEffect : IStatusEffect
 {
     private ShootableEntity entity;
     private float duration = 10f;
+    private float statusStrength = 1f;
 
     public void OnStartStatus(ShootableEntity effectedEntity, float strength)
     {
         entity = effectedEntity;
+        statusStrength = strength;
         Debug.Log("Status added to " + entity.name);
     }
 
     public bool UpdateStatus()
     {
         Debug.Log("Status affecting " + entity.name);
-        entity.CurrentHealth -= Time.deltaTime;
+        entity.CurrentHealth -= (Time.deltaTime * statusStrength);
+        entity.DeathBehavior();
         duration -= Time.deltaTime;
         return duration <= 0f;
     }
