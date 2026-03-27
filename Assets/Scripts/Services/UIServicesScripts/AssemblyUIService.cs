@@ -73,6 +73,19 @@ public class AssemblyUIService : Service
         UpdateWeaponViewModel();
     }
 
+    public void RandomizeConfig()
+    {
+        UpdateConfigData(ComponentDataService.Instance.Parts.WeaponFrames[(int)Random.Range(0, ComponentDataService.Instance.Parts.WeaponFrames.Count)]);
+        UpdateConfigData(ComponentDataService.Instance.Parts.WeaponBatteries[(int)Random.Range(0, ComponentDataService.Instance.Parts.WeaponBatteries.Count)]);
+        UpdateConfigData(ComponentDataService.Instance.Parts.WeaponMagazines[(int)Random.Range(0, ComponentDataService.Instance.Parts.WeaponMagazines.Count)]);
+        UpdateConfigData(ComponentDataService.Instance.Parts.WeaponMuzzles[(int)Random.Range(0, ComponentDataService.Instance.Parts.WeaponMuzzles.Count)]);
+        
+        for(int i = 0; i < currentConfig.Frame.AddonCapacity; i++)
+        {
+            UpdateConfigData(ComponentDataService.Instance.Parts.WeaponAddons[(int)Random.Range(0, ComponentDataService.Instance.Parts.WeaponAddons.Count)]);
+        }
+    }
+
     public void SetCurrentConfig(WeaponConfig w)
     {
         currentConfig = w;

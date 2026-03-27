@@ -54,6 +54,11 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
         UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponMuzzles);
     }
 
+    public void RandomizeLoadout()
+    {
+        FindAnyObjectByType<AssemblyUIService>().RandomizeConfig();
+    }
+
     public async Awaitable UpdateListDisplay<T>(List<T> parts)
     {
         await ClearListDisplay();
