@@ -21,15 +21,15 @@ public class PrefabSpawner : MonoBehaviour
         
     }
 
-    private Vector2 GetSpawnLocation()
+    private Vector3 GetSpawnLocation()
     {
         try
         {
-            BoxCollider2D b = gameObject.GetComponent<BoxCollider2D>();
+            BoxCollider b = gameObject.GetComponent<BoxCollider>();
             float x = Random.Range(b.bounds.min.x, b.bounds.max.x);
             float y = Random.Range(b.bounds.min.y, b.bounds.max.y);
-
-            return new Vector2(x, y);
+            float z = Random.Range(b.bounds.min.z, b.bounds.max.z);
+            return new Vector3(x, y, z);
         }
         catch
         {
