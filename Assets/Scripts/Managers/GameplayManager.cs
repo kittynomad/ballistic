@@ -10,5 +10,11 @@ using UnityEngine;
 
 public class GameplayManager : Manager
 {
-    
+    [SerializeField] private GameObject _playerPrefab;
+
+    public override async Awaitable Initialize()
+    {
+        Instantiate(_playerPrefab);
+        await base.Initialize();
+    }
 }
