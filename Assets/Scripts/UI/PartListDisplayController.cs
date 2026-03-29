@@ -7,10 +7,12 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
 {
     [SerializeField] private GameObject _listParent;
     [SerializeField] private TextMeshProUGUI _description;
+    [SerializeField] private TextMeshProUGUI _statsText;
     private GameObject itemDisplayer;
     private List<GameObject> currentDisplayedParts = new List<GameObject>();
 
     public TextMeshProUGUI Description { get => _description; set => _description = value; }
+    public TextMeshProUGUI StatsText { get => _statsText; set => _statsText = value; }
 
     public async Awaitable Initialize()
     {

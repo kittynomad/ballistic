@@ -56,7 +56,12 @@ public class AssemblyUIService : Service
         f.ConnectModifierParts(currentConfig.Addons);
         viewModel = f;
 
+        WeaponStats temp = new WeaponStats();
+        temp.ApplyNonModifiers(currentConfig);
+        temp.ApplyModifiers(currentConfig);
+
         AssemblyUI.GetComponent<PartListDisplayController>().Description.text = currentConfig.ToString();
+        AssemblyUI.GetComponent<PartListDisplayController>().StatsText.text = temp.ToString();
 
     }
 
