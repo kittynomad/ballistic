@@ -116,7 +116,7 @@ public struct WeaponStats
                     startVelocity = m(startVelocity, w.ModStrength);
                     continue;
                 case Enums.Modifiers.cooldown:
-                    timeBetweenShots = m(startVelocity, w.ModStrength);
+                    timeBetweenShots = m(timeBetweenShots, w.ModStrength);
                     continue;
                 default:
                     output.Add(w);

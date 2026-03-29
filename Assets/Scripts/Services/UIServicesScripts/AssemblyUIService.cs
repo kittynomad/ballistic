@@ -96,5 +96,6 @@ public class AssemblyUIService : Service
     {
         FindAnyObjectByType<WeaponAssemblyService>().AssembleWeapon(currentConfig);
         FindAnyObjectByType<CameraManager>().SetGameplayModeCamera();
+        HudService.Instance.PushConsoleMessage("Weapon assembled! Press M to edit");
     }
 }
