@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1657f65371bed4eb16217eafebd97a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapLoaderService
+  _map: {fileID: 8175997915571488605, guid: e0a25d48d77b318439bc5fe5602fe126, type: 3}
