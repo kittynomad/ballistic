@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class TestDummyController : ShootableEntity
 {
@@ -21,5 +23,17 @@ public class TestDummyController : ShootableEntity
     {
         _displayedInfo.UpdateStatusUI(this);
         return base.OnStatusEnded(index);
+    }
+
+    public override void DeathBehavior()
+    {
+        base.DeathBehavior();
+        StartCoroutine(DespawnTimer());
+    }
+
+    public IEnumerator DespawnTimer()
+    {
+        yield return new WaitForSeconds(25f);
+        Destroy(gameObject);
     }
 }

@@ -50,6 +50,7 @@ MonoBehaviour:
   - {fileID: 2053703450324860741, guid: 7dd9a57346ab5d7478fe74b4f5e8cebf, type: 3}
   - {fileID: 6423556683407262468, guid: 6cc3cde1eddcb914082b3a47c1f20b3f, type: 3}
   ServiceInstances: []
+  _eventSystem: {fileID: 3660773623062029716, guid: 2c2800586d815dd4697348b4bb1874b4, type: 3}
 --- !u!114 &7862987244461844540
 MonoBehaviour:
   m_ObjectHideFlags: 0

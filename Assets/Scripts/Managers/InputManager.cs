@@ -11,11 +11,13 @@ using UnityEngine.InputSystem;
 
 public class InputManager : Manager
 {
+    [SerializeField] private GameObject _eventSystem;
     private MovementService ms;
     private AimService aims;
     private AttackService att;
     public override async Awaitable Initialize()
     {
+        Instantiate(_eventSystem);
         await base.Initialize();
         ms = FindAnyObjectByType<MovementService>();
         aims = FindAnyObjectByType<AimService>();
