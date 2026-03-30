@@ -59,13 +59,26 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
     public virtual void OnAttacked(BulletController projectile)
     {
-
-        currentHealth -= projectile.Stats.BaseDamage;
-        HudService.Instance.PushConsoleMessage(
-            "Enemy hit for " + projectile.Stats.BaseDamage + 
-            ", health is " + currentHealth + "/" + _totalHealth);
+        bool criticalHit = UnityEngine.Random.Range(0f, 10f) < 2f;
+        if(criticalHit)
+        {
+            currentHealth -= projectile.Stats.BaseDamage * 2;
+            HudService.Instance.PushConsoleMessage(
+                "Enemy crit hit for " + projectile.Stats.BaseDamage * 2 +
+                ", health is " + currentHealth + "/" + _totalHealth);
+        }
+        else
+        {
+            currentHealth -= projectile.Stats.BaseDamage;
+            HudService.Instance.PushConsoleMessage(
+                "Enemy hit for " + projectile.Stats.BaseDamage +
+                ", health is " + currentHealth + "/" + _totalHealth);
+        }
+        
 
         ApplyPostFireModifiers(projectile.Stats.Effects);
+
+        Destroy(projectile.gameObject);
 
         if (currentHealth <= 0f)
             DeathBehavior();
