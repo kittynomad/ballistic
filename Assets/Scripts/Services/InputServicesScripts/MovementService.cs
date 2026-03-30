@@ -10,6 +10,7 @@ using UnityEngine;
 public class MovementService : Service
 {
     [SerializeField] private float _movespeed;
+    [SerializeField] private float _jumpForce;
     [SerializeField] private float _maxVelocity;
 
     private Vector2 movementVector = Vector2.zero;
@@ -45,6 +46,11 @@ public class MovementService : Service
         //using AddForce *and* MovePosition because that was the only way to get the movement feel i was looking for apparently
 
         rb.MovePosition(rb.transform.position + (_movespeed * moveDirection * Time.deltaTime / 25f));
+    }
+
+    public void JumpPlayer()
+    {
+        rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
     }
 
 }

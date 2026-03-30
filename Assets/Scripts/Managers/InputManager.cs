@@ -35,6 +35,11 @@ public class InputManager : Manager
         aims.LookVector = iVal.Get<Vector2>();
     }
 
+    public void OnJump(InputValue iVal)
+    {
+        ms.JumpPlayer();
+    }
+
     public void OnAttack(InputValue iVal)
     {
         Debug.Log(iVal.Get<float>());

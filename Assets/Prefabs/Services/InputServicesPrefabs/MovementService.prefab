@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementService
   _movespeed: 75
+  _jumpForce: 5
   _maxVelocity: 10
