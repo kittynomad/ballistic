@@ -28,7 +28,9 @@ public class TestDummyController : ShootableEntity
     public override void DeathBehavior()
     {
         base.DeathBehavior();
-        StartCoroutine(DespawnTimer());
+
+        if(IsDead)
+            StartCoroutine(DespawnTimer());
     }
 
     public IEnumerator DespawnTimer()
