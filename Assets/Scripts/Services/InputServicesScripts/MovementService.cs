@@ -10,6 +10,7 @@ using UnityEngine;
 public class MovementService : Service
 {
     [SerializeField] private float _movespeed;
+    [SerializeField] private float _maxVelocity;
 
     private Vector2 movementVector = Vector2.zero;
     private PlayerBehaviors pb;
@@ -37,8 +38,12 @@ public class MovementService : Service
         Quaternion cameraOrientation = Quaternion.LookRotation(flattened);
 
         moveDirection = cameraOrientation * moveDirection;
-        //Vector3 direction = (movementVector.x * rb.transform.right + movementVector.y * rb.transform.forward).normalized;
-        rb.AddForce(moveDirection * _movespeed);
+        
+        if(!(rb.linearVelocity.magnitude > _maxVelocity))
+            rb.AddForce(moveDirection * _movespeed);
+
+        //using AddForce *and* MovePosition because that was the only way to get the movement feel i was looking for apparently
+
         rb.MovePosition(rb.transform.position + (_movespeed * moveDirection * Time.deltaTime / 25f));
     }
 
