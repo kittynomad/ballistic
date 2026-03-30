@@ -39,6 +39,7 @@ public class MovementService : Service
         moveDirection = cameraOrientation * moveDirection;
         //Vector3 direction = (movementVector.x * rb.transform.right + movementVector.y * rb.transform.forward).normalized;
         rb.AddForce(moveDirection * _movespeed);
+        rb.MovePosition(rb.transform.position + (_movespeed * moveDirection * Time.deltaTime / 25f));
     }
 
 }
