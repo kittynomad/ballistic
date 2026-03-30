@@ -61,6 +61,11 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
         FindAnyObjectByType<AssemblyUIService>().RandomizeConfig();
     }
 
+    public void RemoveAddons()
+    {
+        FindAnyObjectByType<AssemblyUIService>().ClearAddons();
+    }
+
     public async Awaitable UpdateListDisplay<T>(List<T> parts)
     {
         await ClearListDisplay();

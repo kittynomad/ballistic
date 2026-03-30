@@ -6,60 +6,21 @@
             "_itemDescription": "basic weapon frame.",
             "_itemIconPath": "Textures/revolverTestRender",
             "_energyCost": 0,
-            "_modifiers": [
-                {
-                    "_modType": 0,
-                    "_modOperator": 0,
-                    "_modStrength": 10000.0
-                }
-            ]
+            "_modifiers": [],
+            "_itemModelPath": "Prefabs/modularRevolver_frame",
+            "_fireVelocity": 1.0,
+            "_addonCapacity": 3
         },
         {
-            "_itemName": "Revolver 2",
-            "_id": "00001",
-            "_itemDescription": "Even Better tm",
+            "_itemName": "Big Iron",
+            "_id": "00004",
+            "_itemDescription": "Like revolver, but with more mod capacity.",
             "_itemIconPath": "Textures/revolverTestRender",
             "_energyCost": 0,
-            "_modifiers": [
-                {
-                    "_modType": 1,
-                    "_modOperator": 0,
-                    "_modStrength": 10000.0
-                }
-            ]
-        },
-        {
-            "_itemName": "Revolver 3",
-            "_id": "00002",
-            "_itemDescription": "Even Best tm",
-            "_itemIconPath": "Textures/revolverTestRender",
-            "_energyCost": 0,
-            "_modifiers": [
-                {
-                    "_modType": 2,
-                    "_modOperator": 0,
-                    "_modStrength": 10000.0
-                }
-            ]
-        },
-        {
-            "_itemName": "Revolver 4",
-            "_id": "00003",
-            "_itemDescription": "Even Bestest tm",
-            "_itemIconPath": "Textures/revolverTestRender",
-            "_energyCost": 0,
-            "_modifiers": [
-                {
-                    "_modType": 4,
-                    "_modOperator": 0,
-                    "_modStrength": 10000.0
-                },
-                {
-                    "_modType": 2,
-                    "_modOperator": 0,
-                    "_modStrength": 10000.0
-                }
-            ]
+            "_modifiers": [],
+            "_itemModelPath": "Prefabs/bigIron_frame",
+            "_fireVelocity": 1.0,
+            "_addonCapacity": 5
         }
     ],
     "_weaponBatteries": [
@@ -67,11 +28,40 @@
             "_itemName": "Battery",
             "_id": "10000",
             "_itemDescription": "normal battery okay",
-            "_itemIconPath": "Textures/renderPunchAnim",
+            "_itemIconPath": "Textures/PartIcons/batteryIcon",
             "_energyCost": 0,
             "_modifiers": [],
-            "_capacity": 10.0,
-            "_rechargeRate": 999.0
+            "_itemModelPath": "Prefabs/batteryNormal",
+            "_capacity": 100.0,
+            "_rechargeRate": 25.0
+        },
+        {
+            "_itemName": "Super Battery",
+            "_id": "10001",
+            "_itemDescription": "Incredible capacity and recharge. Basically cheating!",
+            "_itemIconPath": "Textures/PartIcons/batteryIcon",
+            "_energyCost": 0,
+            "_modifiers": [],
+            "_itemModelPath": "Prefabs/batteryNormal",
+            "_capacity": 1000.0,
+            "_rechargeRate": 2500.0
+        },
+        {
+            "_itemName": "Momentum Absorber",
+            "_id": "10002",
+            "_itemDescription": "Reduces firing cost by reducing projectile speed.",
+            "_itemIconPath": "Textures/PartIcons/batteryIcon",
+            "_energyCost": -5,
+            "_modifiers": [
+                {
+                    "_modType": 6,
+                    "_modOperator": 3,
+                    "_modStrength": 1.2000000476837159
+                }
+            ],
+            "_itemModelPath": "Prefabs/batteryNormal",
+            "_capacity": 100.0,
+            "_rechargeRate": 30.0
         }
     ],
     "_weaponMagazines": [
@@ -82,8 +72,11 @@
             "_itemIconPath": "Textures/particleCat",
             "_energyCost": 0,
             "_modifiers": [],
+            "_itemModelPath": "Prefabs/revolverMag",
+            "_damage": 5.0,
             "_magSize": 6,
             "_reloadTime": 1.0,
+            "_timeBetweenShots": 1.0,
             "_automaticFire": false
         },
         {
@@ -93,8 +86,66 @@
             "_itemIconPath": "Textures/particleCat",
             "_energyCost": 0,
             "_modifiers": [],
+            "_itemModelPath": "Prefabs/magazineExtended",
+            "_damage": 5.0,
             "_magSize": 25,
             "_reloadTime": 2.0,
+            "_timeBetweenShots": 0.20000000298023225,
+            "_automaticFire": true
+        },
+        {
+            "_itemName": "Cartridge of Junk",
+            "_id": "20002",
+            "_itemDescription": "Shoots massive amounts of harmless projectiles with absurd knockback to user.",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 5,
+            "_modifiers": [
+                {
+                    "_modType": 2,
+                    "_modOperator": 0,
+                    "_modStrength": 25.0
+                },
+                {
+                    "_modType": 6,
+                    "_modOperator": 0,
+                    "_modStrength": 1.0
+                },
+                {
+                    "_modType": 3,
+                    "_modOperator": 0,
+                    "_modStrength": 25.0
+                }
+            ],
+            "_itemModelPath": "Prefabs/junkMag",
+            "_damage": 0.009999999776482582,
+            "_magSize": 25,
+            "_reloadTime": 2.0,
+            "_timeBetweenShots": 2.0,
+            "_automaticFire": false
+        },
+        {
+            "_itemName": "Rapid Fire Cartridge",
+            "_id": "20003",
+            "_itemDescription": "Shoots weaker projectiles rapidly.",
+            "_itemIconPath": "Textures/particleCat",
+            "_energyCost": 1,
+            "_modifiers": [
+                {
+                    "_modType": 3,
+                    "_modOperator": 0,
+                    "_modStrength": 5.0
+                },
+                {
+                    "_modType": 6,
+                    "_modOperator": 0,
+                    "_modStrength": 0.5
+                }
+            ],
+            "_itemModelPath": "Prefabs/magazineExtended",
+            "_damage": 0.10000000149011612,
+            "_magSize": 50,
+            "_reloadTime": 1.0,
+            "_timeBetweenShots": 0.05000000074505806,
             "_automaticFire": true
         }
     ],
@@ -105,7 +156,9 @@
             "_itemDescription": "normalss",
             "_itemIconPath": "Textures/particleCat",
             "_energyCost": 0,
-            "_modifiers": []
+            "_modifiers": [],
+            "_itemModelPath": "Prefabs/muzzleNormal",
+            "_spread": 5.0
         },
         {
             "_itemName": "Trumpet",
@@ -123,46 +176,153 @@
                     "_modType": 3,
                     "_modOperator": 2,
                     "_modStrength": 2.0
+                },
+                {
+                    "_modType": 5,
+                    "_modOperator": 2,
+                    "_modStrength": 0.30000001192092898
                 }
-            ]
+            ],
+            "_itemModelPath": "Prefabs/muzzleTrumpet",
+            "_spread": 10.0
         },
         {
             "_itemName": "Silencer",
             "_id": "30002",
-            "_itemDescription": "Ah! So Quiet!",
+            "_itemDescription": "Moderately reduces spread.",
             "_itemIconPath": "Textures/particleCat",
             "_energyCost": 0,
-            "_modifiers": []
+            "_modifiers": [
+                {
+                    "_modType": 3,
+                    "_modOperator": 3,
+                    "_modStrength": 1.25
+                }
+            ],
+            "_itemModelPath": "Prefabs/muzzleNormal",
+            "_spread": 0.25
         }
     ],
     "_weaponAddons": [
         {
-            "_itemName": "Zappy",
-            "_id": "40000",
-            "_itemDescription": "makes it snappy",
-            "_itemIconPath": "Textures/particleCat",
-            "_energyCost": 0,
-            "_modifiers": [
-                {
-                    "_modType": 1,
-                    "_modOperator": 0,
-                    "_modStrength": 1000.0
-                }
-            ]
-        },
-        {
             "_itemName": "Fire thing",
             "_id": "40001",
-            "_itemDescription": "owww it burnsss",
-            "_itemIconPath": "Textures/particleCat",
-            "_energyCost": 0,
+            "_itemDescription": "Makes projectiles deal damage over time",
+            "_itemIconPath": "Textures/PartIcons/addonIcon",
+            "_energyCost": 10,
             "_modifiers": [
                 {
                     "_modType": 0,
                     "_modOperator": 0,
-                    "_modStrength": 1000.0
+                    "_modStrength": 3.0
                 }
-            ]
+            ],
+            "_itemModelPath": "Prefabs/mw_modifier"
+        },
+        {
+            "_itemName": "duplicator",
+            "_id": "40002",
+            "_itemDescription": "doubles projectile count",
+            "_itemIconPath": "Textures/PartIcons/addonIcon",
+            "_energyCost": 5,
+            "_modifiers": [
+                {
+                    "_modType": 2,
+                    "_modOperator": 2,
+                    "_modStrength": 2.0
+                },
+                {
+                    "_modType": 5,
+                    "_modOperator": 2,
+                    "_modStrength": 0.75
+                },
+                {
+                    "_modType": 3,
+                    "_modOperator": 2,
+                    "_modStrength": 1.5
+                }
+            ],
+            "_itemModelPath": "Prefabs/mw_modifier"
+        },
+        {
+            "_itemName": "venom coating",
+            "_id": "40005",
+            "_itemDescription": "paralyzes enemies it hits",
+            "_itemIconPath": "Textures/PartIcons/addonIcon",
+            "_energyCost": 25,
+            "_modifiers": [
+                {
+                    "_modType": 7,
+                    "_modOperator": 0,
+                    "_modStrength": 5.0
+                }
+            ],
+            "_itemModelPath": "Prefabs/mw_modifier"
+        },
+        {
+            "_itemName": "fast speedy",
+            "_id": "40003",
+            "_itemDescription": "makes projectiles faster",
+            "_itemIconPath": "Textures/PartIcons/addonIcon",
+            "_energyCost": 5,
+            "_modifiers": [
+                {
+                    "_modType": 6,
+                    "_modOperator": 2,
+                    "_modStrength": 1.2000000476837159
+                }
+            ],
+            "_itemModelPath": "Prefabs/mw_modifier"
+        },
+        {
+            "_itemName": "dampener",
+            "_id": "40004",
+            "_itemDescription": "makes projectiles slower, slightly increases damage",
+            "_itemIconPath": "Textures/PartIcons/addonIcon",
+            "_energyCost": 5,
+            "_modifiers": [
+                {
+                    "_modType": 6,
+                    "_modOperator": 3,
+                    "_modStrength": 2.0
+                },
+                {
+                    "_modType": 5,
+                    "_modOperator": 2,
+                    "_modStrength": 1.100000023841858
+                }
+            ],
+            "_itemModelPath": "Prefabs/mw_modifier"
+        },
+        {
+            "_itemName": "spikener",
+            "_id": "40000",
+            "_itemDescription": "slightly increases damage.",
+            "_itemIconPath": "Textures/PartIcons/addonIcon",
+            "_energyCost": 15,
+            "_modifiers": [
+                {
+                    "_modType": 5,
+                    "_modOperator": 2,
+                    "_modStrength": 1.5
+                }
+            ],
+            "_itemModelPath": "Prefabs/mw_modifier"
+        },
+        {
+            "_itemName": "Something",
+            "_id": "40005",
+            "_itemDescription": "reduces time between shots.",
+            "_itemIconPath": "Textures/PartIcons/addonIcon",
+            "_energyCost": 15,
+            "_modifiers": [
+                {
+                    "_modType": 8,
+                    "_modOperator": 2,
+                    "_modStrength": 0.5
+                }
+            ],
+            "_itemModelPath": "Prefabs/mw_modifier"
         }
     ]
 }

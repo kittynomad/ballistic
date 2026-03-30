@@ -68,7 +68,7 @@ MonoBehaviour:
     - _itemName: Battery
       _id: 10000
       _itemDescription: normal battery okay
-      _itemIconPath: Textures/renderPunchAnim
+      _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/batteryNormal
@@ -77,7 +77,7 @@ MonoBehaviour:
     - _itemName: Super Battery
       _id: 10001
       _itemDescription: Incredible capacity and recharge. Basically cheating!
-      _itemIconPath: Textures/renderPunchAnim
+      _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/batteryNormal
@@ -86,7 +86,7 @@ MonoBehaviour:
     - _itemName: Momentum Absorber
       _id: 10002
       _itemDescription: Reduces firing cost by reducing projectile speed.
-      _itemIconPath: Textures/renderPunchAnim
+      _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: -5
       _modifiers:
       - _modType: 6
@@ -142,6 +142,24 @@ MonoBehaviour:
       _reloadTime: 2
       _timeBetweenShots: 2
       _automaticFire: 0
+    - _itemName: Rapid Fire Cartridge
+      _id: 20003
+      _itemDescription: Shoots weaker projectiles rapidly.
+      _itemIconPath: Textures/particleCat
+      _energyCost: 1
+      _modifiers:
+      - _modType: 3
+        _modOperator: 0
+        _modStrength: 5
+      - _modType: 6
+        _modOperator: 0
+        _modStrength: 0.5
+      _itemModelPath: Prefabs/magazineExtended
+      _damage: 0.1
+      _magSize: 50
+      _reloadTime: 1
+      _timeBetweenShots: 0.05
+      _automaticFire: 1
     _weaponMuzzles:
     - _itemName: Standard Muzzle
       _id: 30000
@@ -170,17 +188,20 @@ MonoBehaviour:
       _spread: 10
     - _itemName: Silencer
       _id: 30002
-      _itemDescription: Ah! So Quiet!
+      _itemDescription: Moderately reduces spread.
       _itemIconPath: Textures/particleCat
       _energyCost: 0
-      _modifiers: []
+      _modifiers:
+      - _modType: 3
+        _modOperator: 3
+        _modStrength: 1.25
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 0.25
     _weaponAddons:
     - _itemName: Fire thing
       _id: 40001
       _itemDescription: Makes projectiles deal damage over time
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 10
       _modifiers:
       - _modType: 0
@@ -190,7 +211,7 @@ MonoBehaviour:
     - _itemName: duplicator
       _id: 40002
       _itemDescription: doubles projectile count
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 5
       _modifiers:
       - _modType: 2
@@ -206,7 +227,7 @@ MonoBehaviour:
     - _itemName: venom coating
       _id: 40005
       _itemDescription: paralyzes enemies it hits
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 25
       _modifiers:
       - _modType: 7
@@ -216,7 +237,7 @@ MonoBehaviour:
     - _itemName: fast speedy
       _id: 40003
       _itemDescription: makes projectiles faster
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 5
       _modifiers:
       - _modType: 6
@@ -226,7 +247,7 @@ MonoBehaviour:
     - _itemName: dampener
       _id: 40004
       _itemDescription: makes projectiles slower, slightly increases damage
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 5
       _modifiers:
       - _modType: 6
@@ -239,7 +260,7 @@ MonoBehaviour:
     - _itemName: spikener
       _id: 40000
       _itemDescription: slightly increases damage.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 15
       _modifiers:
       - _modType: 5
@@ -249,7 +270,7 @@ MonoBehaviour:
     - _itemName: Something
       _id: 40005
       _itemDescription: reduces time between shots.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 15
       _modifiers:
       - _modType: 8

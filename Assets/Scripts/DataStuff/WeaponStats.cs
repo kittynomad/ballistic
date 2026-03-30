@@ -66,11 +66,14 @@ public struct WeaponStats
         reloadTime = w.Magazine.ReloadTime;
         magSize = w.Magazine.MagSize;
         startVelocity = w.Frame.FireVelocity;
-        energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost;
+        energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost + w.Battery.EnergyCost;
         autoFire = w.Magazine.AutomaticFire;
         timeBetweenShots = w.Magazine.TimeBetweenShots;
         batteryCapacity = w.Battery.Capacity;
         batteryChargeRate = w.Battery.RechargeRate;
+
+        if (energyCost < 0)
+            energyCost = 0;
     }
 
     public void ApplyModifiers(WeaponConfig w)

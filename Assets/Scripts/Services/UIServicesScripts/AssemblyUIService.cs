@@ -78,6 +78,11 @@ public class AssemblyUIService : Service
         UpdateWeaponViewModel();
     }
 
+    public void ClearAddons()
+    {
+        UpdateConfigData(currentConfig.Frame);
+    }
+
     public void RandomizeConfig()
     {
         UpdateConfigData(ComponentDataService.Instance.Parts.WeaponFrames[(int)Random.Range(0, ComponentDataService.Instance.Parts.WeaponFrames.Count)]);
