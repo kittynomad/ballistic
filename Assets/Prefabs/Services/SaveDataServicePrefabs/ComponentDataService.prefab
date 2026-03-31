@@ -277,3 +277,23 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 0.5
       _itemModelPath: Prefabs/mw_modifier
+    - _itemName: mini crit mod
+      _id: 40006
+      _itemDescription: slightly increases crit chance.
+      _itemIconPath: Textures/PartIcons/addonIcon
+      _energyCost: 0
+      _modifiers:
+      - _modType: 9
+        _modOperator: 0
+        _modStrength: 25
+      _itemModelPath: Prefabs/mw_modifier
+    - _itemName: mega crit mod
+      _id: 40007
+      _itemDescription: absurdly increases crit chance.
+      _itemIconPath: Textures/PartIcons/addonIcon
+      _energyCost: 0
+      _modifiers:
+      - _modType: 9
+        _modOperator: 0
+        _modStrength: 250
+      _itemModelPath: Prefabs/mw_modifier

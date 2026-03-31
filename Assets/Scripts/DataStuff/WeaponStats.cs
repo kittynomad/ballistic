@@ -24,6 +24,7 @@ public struct WeaponStats
     private float batteryCapacity;
     private float batteryChargeRate;
     private bool autoFire;
+    private float criticalHitChance;
 
     private List<WeaponModifier> effects;
 
@@ -41,6 +42,7 @@ public struct WeaponStats
     public float BatteryCapacity { get => batteryCapacity; set => batteryCapacity = value; }
     public float BatteryChargeRate { get => batteryChargeRate; set => batteryChargeRate = value; }
     public List<WeaponModifier> Effects { get => effects; set => effects = value; }
+    public float CriticalHitChance { get => criticalHitChance; set => criticalHitChance = value; }
 
     public WeaponStats(string name)
     {
@@ -56,6 +58,7 @@ public struct WeaponStats
         timeBetweenShots = 0.5f;
         batteryCapacity = 1f;
         batteryChargeRate = 1f;
+        criticalHitChance = 10f;
     }
 
     public void ApplyNonModifiers(WeaponConfig w)
@@ -71,6 +74,7 @@ public struct WeaponStats
         timeBetweenShots = w.Magazine.TimeBetweenShots;
         batteryCapacity = w.Battery.Capacity;
         batteryChargeRate = w.Battery.RechargeRate;
+        criticalHitChance = 10f;
 
         if (energyCost < 0)
             energyCost = 0;
@@ -121,6 +125,9 @@ public struct WeaponStats
                 case Enums.Modifiers.cooldown:
                     timeBetweenShots = m(timeBetweenShots, w.ModStrength);
                     continue;
+                case Enums.Modifiers.criticalChance:
+                    criticalHitChance = m(criticalHitChance, w.ModStrength);
+                    continue;
                 default:
                     output.Add(w);
                     continue;
@@ -152,9 +159,11 @@ public struct WeaponStats
         output += "\ndamage: " + baseDamage;
         output += "\nspread: " + spread;
         output += "\nmultishot: " + multishot;
-        output += "\nreloadTime: " + reloadTime;
+        //output += "\nreloadTime: " + reloadTime;
+        output += "\nbattery size: " + batteryCapacity;
         output += "\nenergyCost: " + energyCost;
-        output += "\nmagSize: " + magSize;
+        //output += "\nmagSize: " + magSize;
+        output += "\ncrit chance: " + criticalHitChance + "%";
         output += "\nstartVelocity: " + startVelocity;
         output += "\nTime between shots: " + timeBetweenShots;
         output += "\nauto fires: " + autoFire;

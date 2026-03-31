@@ -59,21 +59,12 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
     public virtual void OnAttacked(BulletController projectile)
     {
-        bool criticalHit = UnityEngine.Random.Range(0f, 10f) < 2f;
-        if(criticalHit)
-        {
-            currentHealth -= projectile.Stats.BaseDamage * 2;
-            HudService.Instance.PushConsoleMessage(
-                "Enemy crit hit for " + projectile.Stats.BaseDamage * 2 +
-                ", health is " + currentHealth + "/" + _totalHealth);
-        }
-        else
-        {
-            currentHealth -= projectile.Stats.BaseDamage;
-            HudService.Instance.PushConsoleMessage(
-                "Enemy hit for " + projectile.Stats.BaseDamage +
-                ", health is " + currentHealth + "/" + _totalHealth);
-        }
+        int critHits = CalculateCritAmount(projectile.Stats.CriticalHitChance);
+        float damageToDeal = projectile.Stats.BaseDamage * Mathf.Pow(2, critHits);
+        currentHealth -= damageToDeal;
+        HudService.Instance.PushConsoleMessage(
+            "Enemy hit for " + damageToDeal + " (crit * " + critHits + ")"+
+            ", health is " + currentHealth + "/" + _totalHealth);
         
 
         ApplyPostFireModifiers(projectile.Stats.Effects);
@@ -82,6 +73,24 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
         if (currentHealth <= 0f)
             DeathBehavior();
+    }
+
+    public virtual int CalculateCritAmount(float critChance)
+    {
+        float remainingCritChance = critChance;
+        int critSuccesses = 0;
+        do
+        {
+            if(UnityEngine.Random.Range(0, 100f) < remainingCritChance)
+            {
+                critSuccesses++;
+            }
+
+            remainingCritChance -= 100f;
+        }
+        while (remainingCritChance > 100);
+
+        return critSuccesses;
     }
 
     public virtual void DeathBehavior()
