@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class PlayerBehaviors : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public bool IsGrounded()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1f))
+        {
+            return true;
+        }
+        return false;
     }
 }

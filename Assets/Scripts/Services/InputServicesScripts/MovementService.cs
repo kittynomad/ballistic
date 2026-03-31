@@ -50,7 +50,8 @@ public class MovementService : Service
 
     public void JumpPlayer()
     {
-        rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        if(pb.IsGrounded())
+            rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
     }
 
 }
