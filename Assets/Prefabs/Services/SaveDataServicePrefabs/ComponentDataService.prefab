@@ -55,6 +55,17 @@ MonoBehaviour:
       _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
+      _baseCritChance: 10
+    - _itemName: Lucky Shooter
+      _id: 00001
+      _itemDescription: Exchanges a mod slot for high built-in crit chance.
+      _itemIconPath: Textures/revolverTestRender
+      _energyCost: 0
+      _modifiers: []
+      _itemModelPath: Prefabs/modularRevolver_frame
+      _fireVelocity: 1
+      _addonCapacity: 2
+      _baseCritChance: 50
     - _itemName: Big Iron
       _id: 00004
       _itemDescription: Like revolver, but with more mod capacity.
@@ -64,6 +75,7 @@ MonoBehaviour:
       _itemModelPath: Prefabs/bigIron_frame
       _fireVelocity: 1
       _addonCapacity: 5
+      _baseCritChance: 7
     _weaponBatteries:
     - _itemName: Battery
       _id: 10000
@@ -277,23 +289,13 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 0.5
       _itemModelPath: Prefabs/mw_modifier
-    - _itemName: mini crit mod
+    - _itemName: Micro-slots
       _id: 40006
-      _itemDescription: slightly increases crit chance.
+      _itemDescription: increases crit chance.
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 0
       _modifiers:
       - _modType: 9
-        _modOperator: 0
-        _modStrength: 25
-      _itemModelPath: Prefabs/mw_modifier
-    - _itemName: mega crit mod
-      _id: 40007
-      _itemDescription: absurdly increases crit chance.
-      _itemIconPath: Textures/PartIcons/addonIcon
-      _energyCost: 0
-      _modifiers:
-      - _modType: 9
-        _modOperator: 0
-        _modStrength: 250
+        _modOperator: 2
+        _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier

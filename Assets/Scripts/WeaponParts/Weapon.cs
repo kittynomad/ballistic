@@ -56,14 +56,20 @@ public class Weapon : MonoBehaviour, IInitializable
             {
                 shots--;
                 GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward * 0.5f), Camera.main.transform.rotation);
+
+                //initial velocity is applied to the bullet's "forward" direction, thus randomizing the bullet's rotation causes spread
                 temp.transform.Rotate(new Vector3(Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread)));
                 temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
+
+                //pass stats down to bullet so hit entities can use them for postfire effects
                 temp.GetComponent<BulletController>().Stats = stats;
                 temp.GetComponent<BulletController>().Initialize();
+
                 //knock back the player slightly
                 gameObject.GetComponent<Rigidbody>().AddForce(temp.transform.forward * -0.25f * stats.StartVelocity, ForceMode.Impulse);
 
             }
+            //for every whole number of Multishot, another projectile is fired 
             while (shots > 0f);
         }
         

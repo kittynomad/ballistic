@@ -59,7 +59,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
     public virtual void OnAttacked(BulletController projectile)
     {
-        int critHits = CalculateCritAmount(projectile.Stats.CriticalHitChance);
+        int critHits = projectile.Stats.CalculateCritAmount();
         float damageToDeal = projectile.Stats.BaseDamage * Mathf.Pow(2, critHits);
         currentHealth -= damageToDeal;
         HudService.Instance.PushConsoleMessage(
@@ -73,24 +73,6 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
         if (currentHealth <= 0f)
             DeathBehavior();
-    }
-
-    public virtual int CalculateCritAmount(float critChance)
-    {
-        float remainingCritChance = critChance;
-        int critSuccesses = 0;
-        do
-        {
-            if(UnityEngine.Random.Range(0, 100f) < remainingCritChance)
-            {
-                critSuccesses++;
-            }
-
-            remainingCritChance -= 100f;
-        }
-        while (remainingCritChance > 100);
-
-        return critSuccesses;
     }
 
     public virtual void DeathBehavior()

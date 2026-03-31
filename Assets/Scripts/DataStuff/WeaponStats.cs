@@ -74,7 +74,7 @@ public struct WeaponStats
         timeBetweenShots = w.Magazine.TimeBetweenShots;
         batteryCapacity = w.Battery.Capacity;
         batteryChargeRate = w.Battery.RechargeRate;
-        criticalHitChance = 10f;
+        criticalHitChance = w.Frame.BaseCritChance;
 
         if (energyCost < 0)
             energyCost = 0;
@@ -174,5 +174,23 @@ public struct WeaponStats
         }
         
         return output;
+    }
+
+    public int CalculateCritAmount()
+    {
+        float remainingCritChance = criticalHitChance;
+        int critSuccesses = 0;
+        do
+        {
+            if (Random.Range(0, 100f) < remainingCritChance)
+            {
+                critSuccesses++;
+            }
+
+            remainingCritChance -= 100f;
+        }
+        while (remainingCritChance > 100);
+
+        return critSuccesses;
     }
 }
