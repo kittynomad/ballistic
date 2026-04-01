@@ -31,11 +31,10 @@ public class AbstractSerializerDrawer : PropertyDrawer
             className = "??";
         }
         
-
+        //set the dimensions of the dropdown
         Rect dropdownBounds = position;
         dropdownBounds.x += EditorGUIUtility.labelWidth + boundsSpace;
         dropdownBounds.width -= EditorGUIUtility.labelWidth + boundsSpace;
-
         dropdownBounds.height = EditorGUIUtility.singleLineHeight;
 
         if(EditorGUI.DropdownButton(dropdownBounds, new(className), FocusType.Keyboard))
@@ -50,6 +49,7 @@ public class AbstractSerializerDrawer : PropertyDrawer
             }
             );
 
+            //add dropdown option for each valid script
             foreach(Type c in GetAllNonAbstractInheritingClasses(t))
             {
                 ASMenu.AddItem(new GUIContent(c.Name), className == c.Name, () =>
@@ -73,6 +73,7 @@ public class AbstractSerializerDrawer : PropertyDrawer
         
         for(int i = 0; i < allClasses.Length; i++)
         {
+            //only add class if inheriting from target class AND not abstract (naturally)
             if(rootClass.IsAssignableFrom(allClasses[i]) && allClasses[i].IsClass && !allClasses[i].IsAbstract)
             {
                 output.Add(allClasses[i]);
