@@ -21,7 +21,16 @@ public class AbstractSerializerDrawer : PropertyDrawer
         //base.OnGUI(position, property, label);
         Type t = fieldInfo.FieldType;
 
-        string className = property.managedReferenceValue.GetType().Name == null ? "noname" : property.managedReferenceValue.GetType().Name;
+        string className;
+        try
+        {
+            className = property.managedReferenceValue.GetType().Name == null ? "noname" : property.managedReferenceValue.GetType().Name;
+        }
+        catch
+        {
+            className = "??";
+        }
+        
 
         Rect dropdownBounds = position;
         dropdownBounds.x += EditorGUIUtility.labelWidth + boundsSpace;
@@ -64,7 +73,7 @@ public class AbstractSerializerDrawer : PropertyDrawer
         
         for(int i = 0; i < allClasses.Length; i++)
         {
-            if(!allClasses[i].IsAbstract)
+            if(rootClass.IsAssignableFrom(allClasses[i]) && allClasses[i].IsClass && !allClasses[i].IsAbstract)
             {
                 output.Add(allClasses[i]);
             }
