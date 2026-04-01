@@ -54,7 +54,7 @@ public class AbstractSerializerDrawer : PropertyDrawer
             {
                 ASMenu.AddItem(new GUIContent(c.Name), className == c.Name, () =>
                 {
-                    property.managedReferenceValue = c.GetConstructor(Type.EmptyTypes);
+                    property.managedReferenceValue = c.GetConstructor(Type.EmptyTypes).Invoke(null);
                     property.serializedObject.ApplyModifiedProperties();
                 }
                 );

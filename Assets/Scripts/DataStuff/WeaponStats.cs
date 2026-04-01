@@ -107,6 +107,11 @@ public struct WeaponStats
         List<WeaponModifier> output = new List<WeaponModifier>();
         foreach(WeaponModifier w in wm)
         {
+            if (w.Mod.GetType().IsSubclassOf(typeof(PrefireModifierDef)))
+            {
+                PrefireModifierDef q = (PrefireModifierDef)w.Mod;
+                q.ApplyModifier(w.ModStrength, this);
+            }
             modifierDelegate m = OperationFromEnum(w.ModOperator);
             switch(w.ModType)
             {

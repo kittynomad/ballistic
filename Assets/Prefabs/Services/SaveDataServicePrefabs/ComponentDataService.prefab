@@ -102,6 +102,8 @@ MonoBehaviour:
       _energyCost: -5
       _modifiers:
       - _modType: 6
+        mod:
+          rid: -2
         _modOperator: 3
         _modStrength: 1.2
       _itemModelPath: Prefabs/batteryNormal
@@ -140,12 +142,18 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - _modType: 2
+        mod:
+          rid: -2
         _modOperator: 0
         _modStrength: 25
       - _modType: 6
+        mod:
+          rid: -2
         _modOperator: 0
         _modStrength: 1
       - _modType: 3
+        mod:
+          rid: -2
         _modOperator: 0
         _modStrength: 25
       _itemModelPath: Prefabs/junkMag
@@ -161,9 +169,13 @@ MonoBehaviour:
       _energyCost: 1
       _modifiers:
       - _modType: 3
+        mod:
+          rid: -2
         _modOperator: 0
         _modStrength: 5
       - _modType: 6
+        mod:
+          rid: -2
         _modOperator: 0
         _modStrength: 0.5
       _itemModelPath: Prefabs/magazineExtended
@@ -178,11 +190,16 @@ MonoBehaviour:
       _itemDescription: normalss
       _itemIconPath: Textures/particleCat
       _energyCost: 0
-      _modifiers: []
+      _modifiers:
+      - _modType: 0
+        mod:
+          rid: 3714070736247455872
+        _modOperator: 0
+        _modStrength: 0
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 5
-      _def:
-        rid: 3714070736247455849
+      mod:
+        rid: -2
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
@@ -190,17 +207,23 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - _modType: 2
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 4
       - _modType: 3
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 2
       - _modType: 5
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 0.3
       _itemModelPath: Prefabs/muzzleTrumpet
       _spread: 10
-      _def:
+      mod:
         rid: -2
     - _itemName: Silencer
       _id: 30002
@@ -209,11 +232,13 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - _modType: 3
+        mod:
+          rid: -2
         _modOperator: 3
         _modStrength: 1.25
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 0.25
-      _def:
+      mod:
         rid: -2
     _weaponAddons:
     - _itemName: Fire thing
@@ -223,6 +248,8 @@ MonoBehaviour:
       _energyCost: 10
       _modifiers:
       - _modType: 0
+        mod:
+          rid: -2
         _modOperator: 0
         _modStrength: 3
       _itemModelPath: Prefabs/mw_modifier
@@ -233,12 +260,18 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - _modType: 2
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 2
       - _modType: 5
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 0.75
       - _modType: 3
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
@@ -249,6 +282,8 @@ MonoBehaviour:
       _energyCost: 25
       _modifiers:
       - _modType: 7
+        mod:
+          rid: -2
         _modOperator: 0
         _modStrength: 5
       _itemModelPath: Prefabs/mw_modifier
@@ -259,6 +294,8 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - _modType: 6
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 1.2
       _itemModelPath: Prefabs/mw_modifier
@@ -269,9 +306,13 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - _modType: 6
+        mod:
+          rid: -2
         _modOperator: 3
         _modStrength: 2
       - _modType: 5
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 1.1
       _itemModelPath: Prefabs/mw_modifier
@@ -282,6 +323,8 @@ MonoBehaviour:
       _energyCost: 15
       _modifiers:
       - _modType: 5
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
@@ -292,6 +335,8 @@ MonoBehaviour:
       _energyCost: 15
       _modifiers:
       - _modType: 8
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 0.5
       _itemModelPath: Prefabs/mw_modifier
@@ -302,6 +347,8 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - _modType: 9
+        mod:
+          rid: -2
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
@@ -310,6 +357,6 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3714070736247455849
+    - rid: 3714070736247455872
       type: {class: TestPrefireModifier, ns: , asm: Assembly-CSharp}
       data: 
