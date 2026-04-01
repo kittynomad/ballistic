@@ -110,9 +110,13 @@ public struct WeaponStats
             if (w.Mod.GetType().IsSubclassOf(typeof(PrefireModifierDef)))
             {
                 PrefireModifierDef q = (PrefireModifierDef)w.Mod;
-                q.ApplyModifier(w.ModStrength, this);
+                q.ApplyModifier(w.ModStrength, w.ModOperator, this);
             }
-            modifierDelegate m = OperationFromEnum(w.ModOperator);
+            else
+            {
+                output.Add(w);
+            }
+            /*modifierDelegate m = OperationFromEnum(w.ModOperator);
             switch(w.ModType)
             {
                 case Enums.Modifiers.multishot:
@@ -136,7 +140,7 @@ public struct WeaponStats
                 default:
                     output.Add(w);
                     continue;
-            }
+            }*/
         }
         return output;
     }

@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class PrefireModifierDef : ModifierDef
 {
-    public abstract void ApplyModifier(float strength, WeaponStats stats);
+    public abstract void ApplyModifier(float strength, Enums.Operators op, WeaponStats stats);
 }
