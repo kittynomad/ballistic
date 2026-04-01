@@ -181,6 +181,8 @@ MonoBehaviour:
       _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 5
+      _def:
+        rid: 3714070736247455849
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
@@ -198,6 +200,8 @@ MonoBehaviour:
         _modStrength: 0.3
       _itemModelPath: Prefabs/muzzleTrumpet
       _spread: 10
+      _def:
+        rid: -2
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Moderately reduces spread.
@@ -209,6 +213,8 @@ MonoBehaviour:
         _modStrength: 1.25
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 0.25
+      _def:
+        rid: -2
     _weaponAddons:
     - _itemName: Fire thing
       _id: 40001
@@ -299,3 +305,11 @@ MonoBehaviour:
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 3714070736247455849
+      type: {class: TestPrefireModifier, ns: , asm: Assembly-CSharp}
+      data: 
