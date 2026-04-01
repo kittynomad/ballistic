@@ -107,10 +107,10 @@ public struct WeaponStats
         List<WeaponModifier> output = new List<WeaponModifier>();
         foreach(WeaponModifier w in wm)
         {
-            if (w.Mod.GetType().IsSubclassOf(typeof(PrefireModifierDef)))
+            if (w.Mod != null && w.Mod.GetType().IsSubclassOf(typeof(PrefireModifierDef)))
             {
                 PrefireModifierDef q = (PrefireModifierDef)w.Mod;
-                q.ApplyModifier(w.ModStrength, w.ModOperator, this);
+                q.ApplyModifier(w.ModStrength, w.ModOperator, ref this);
             }
             else
             {

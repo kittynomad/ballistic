@@ -193,9 +193,9 @@ MonoBehaviour:
       _modifiers:
       - _modType: 0
         mod:
-          rid: 3714070736247455872
+          rid: 3714070736247455885
         _modOperator: 0
-        _modStrength: 0
+        _modStrength: 1000
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 5
       mod:
@@ -357,6 +357,6 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3714070736247455872
-      type: {class: TestPrefireModifier, ns: , asm: Assembly-CSharp}
+    - rid: 3714070736247455885
+      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
       data: 

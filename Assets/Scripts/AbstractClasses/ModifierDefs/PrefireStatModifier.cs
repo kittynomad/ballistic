@@ -4,36 +4,31 @@ public abstract class PrefireStatModifier : PrefireModifierDef
 {
     delegate float modifierDelegate(float modifiedVar, float modValue);
 
-    public override void ApplyModifier(float strength, Enums.Operators op, WeaponStats stats)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public virtual void ModifyWeaponStat(float strength, Enums.Operators op, Enums.ModifyableWeaponStats statNum, WeaponStats stats)
+    public virtual float ModifyWeaponStat(float strength, Enums.Operators op, Enums.ModifyableWeaponStats statNum, ref WeaponStats stats)
     {
         modifierDelegate m = OperationFromEnum(op);
         switch (statNum)
         {
             case Enums.ModifyableWeaponStats.multishot:
                 stats.Multishot = m(stats.Multishot, strength);
-                return;
+                return m(stats.Multishot, strength);
             case Enums.ModifyableWeaponStats.spread:
                 stats.Spread = m(stats.Spread, strength);
-                return;
+                return m(stats.Spread, strength);
             case Enums.ModifyableWeaponStats.damage:
                 stats.BaseDamage = m(stats.BaseDamage, strength);
-                return;
+                return m(stats.BaseDamage, strength);
             case Enums.ModifyableWeaponStats.velocity:
                 stats.StartVelocity = m(stats.StartVelocity, strength);
-                return;
+                return m(stats.StartVelocity, strength);
             case Enums.ModifyableWeaponStats.cooldown:
                 stats.TimeBetweenShots = m(stats.TimeBetweenShots, strength);
-                return;
+                return m(stats.TimeBetweenShots, strength);
             case Enums.ModifyableWeaponStats.criticalChance:
                 stats.CriticalHitChance = m(stats.CriticalHitChance, strength);
-                return;
+                return m(stats.CriticalHitChance, strength);
             default:
-                return;
+                return -1f;
         }
         
     }
