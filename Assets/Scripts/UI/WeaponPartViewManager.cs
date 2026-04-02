@@ -71,8 +71,9 @@ public class WeaponPartViewManager : MonoBehaviour
         {
             WeaponMagazine temp = p as WeaponMagazine;
             statsText += "mag size: " + temp.MagSize + "\n";
+            statsText += "reloat time: " + temp.ReloadTime + "\n";
             statsText += "damage: " + temp.Damage + "\n";
-            statsText += "fire rate: " + (1f / temp.TimeBetweenShots) + "\n";
+            statsText += "fire rate: " + (1f / temp.TimeBetweenShots) + "/s\n";
             statsText += "auto fire: " + temp.AutomaticFire + "\n";
         }
         if(p is WeaponMuzzle)
