@@ -1,39 +1,37 @@
 using UnityEngine;
 
-public class ParalysisStatusEffect : IStatusEffect
+public class ParalysisStatusEffect : StackableStatusEffect
 {
-    private ShootableEntity entity;
-    private float duration = 10f;
+    //private ShootableEntity entity;
+    //private float duration = 10f;
 
-    public void OnStartStatus(ShootableEntity effectedEntity, float strength)
+    public override void OnStartStatus(ShootableEntity effectedEntity, float strength)
     {
-        entity = effectedEntity;
-        duration = strength;
-        Debug.Log("Status added to " + entity.name);
-        if(entity.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt))
+        base.OnStartStatus(effectedEntity, strength);
+        Debug.Log("Status added to " + Target.name);
+        if(Target.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt))
         {
             rt.EnableRagdoll();
         }
     }
 
-    public bool UpdateStatus()
+    public override bool UpdateStatus()
     {
-        Debug.Log("Status affecting " + entity.name);
-        
-        duration -= Time.deltaTime;
-        return duration <= 0f;
+        Debug.Log("Status affecting " + Target.name);
+
+        return base.UpdateStatus();
     }
 
-    public void OnCompleteStatus()
+    public override void OnCompleteStatus()
     {
-        if (entity.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt) && !entity.IsDead)
+        if (Target.gameObject.TryGetComponent<RagdollToggler>(out RagdollToggler rt) && !Target.IsDead)
         {
             rt.DisableRagdoll();
         }
-        Debug.Log("Status on " + entity.name + " has expired");
+        Debug.Log("Status on " + Target.name + " has expired");
     }
 
-    public Sprite GetIcon()
+    public override Sprite GetIcon()
     {
         var icon = Resources.Load("Textures/paralysisIcon") as Texture2D;
 

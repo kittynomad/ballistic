@@ -28,7 +28,7 @@ public class AbstractSerializerDrawer : PropertyDrawer
         }
         catch
         {
-            className = "??";
+            className = "None";
         }
         
         //set the dimensions of the dropdown
