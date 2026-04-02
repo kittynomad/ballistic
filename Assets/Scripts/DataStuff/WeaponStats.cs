@@ -176,10 +176,10 @@ public struct WeaponStats
         output += "\nstartVelocity: " + startVelocity;
         output += "\nTime between shots: " + timeBetweenShots;
         output += "\nauto fires: " + autoFire;
-        output += "\n-----------\nMODIFIERS\n-----------";
+        output += "\n-----------\nPROJECTILE EFFECTS\n-----------";
         foreach (WeaponModifier wm in Effects)
         {
-            output += "\n" + wm.Mod + " " + wm.ModOperator + " " + wm.ModStrength;
+            output += "\n" + wm.Mod.DisplayName + " " + wm.ModOperator + " " + wm.ModStrength;
         }
         
         return output;
