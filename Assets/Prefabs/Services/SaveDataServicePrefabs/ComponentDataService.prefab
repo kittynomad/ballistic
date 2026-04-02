@@ -154,7 +154,7 @@ MonoBehaviour:
         _modStrength: 25
       _itemModelPath: Prefabs/junkMag
       _damage: 0.01
-      _magSize: 25
+      _magSize: 1
       _reloadTime: 2
       _timeBetweenShots: 2
       _automaticFire: 0
@@ -187,8 +187,6 @@ MonoBehaviour:
       _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 5
-      mod:
-        rid: -2
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
@@ -209,8 +207,6 @@ MonoBehaviour:
         _modStrength: 0.3
       _itemModelPath: Prefabs/muzzleTrumpet
       _spread: 10
-      mod:
-        rid: -2
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Moderately reduces spread.
@@ -223,8 +219,6 @@ MonoBehaviour:
         _modStrength: 1.25
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 0.25
-      mod:
-        rid: -2
     _weaponAddons:
     - _itemName: Fire thing
       _id: 40001
@@ -329,8 +323,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 7932402494648614985
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 

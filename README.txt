@@ -34,6 +34,7 @@ ALL PARTS
 FRAMES
 * fireVelocity - The speed at which projectiles exit the weapon. 1 is considered "default".
 * addonCapacity - the total amount of addons that can be attached to this frame.
+* baseCritChance - the chance of a critical hit, out of 100.
 
 BATTERIES
 * capacity - the maximum "charge" that this battery can hold.
