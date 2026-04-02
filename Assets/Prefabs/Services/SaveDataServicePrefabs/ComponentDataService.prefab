@@ -101,8 +101,7 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: -5
       _modifiers:
-      - _modType: 6
-        mod:
+      - mod:
           rid: 7932402494648614985
         _modOperator: 3
         _modStrength: 1.2
@@ -141,18 +140,15 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 5
       _modifiers:
-      - _modType: 2
-        mod:
+      - mod:
           rid: 7932402494648614986
         _modOperator: 0
         _modStrength: 25
-      - _modType: 6
-        mod:
+      - mod:
           rid: 7932402494648614989
         _modOperator: 0
         _modStrength: 1
-      - _modType: 3
-        mod:
+      - mod:
           rid: 7932402494648614990
         _modOperator: 0
         _modStrength: 25
@@ -168,13 +164,11 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 1
       _modifiers:
-      - _modType: 3
-        mod:
+      - mod:
           rid: 7932402494648614991
         _modOperator: 0
         _modStrength: 5
-      - _modType: 6
-        mod:
+      - mod:
           rid: 7932402494648614992
         _modOperator: 0
         _modStrength: 0.5
@@ -201,18 +195,15 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers:
-      - _modType: 2
-        mod:
+      - mod:
           rid: 7932402494648614995
         _modOperator: 2
         _modStrength: 4
-      - _modType: 3
-        mod:
+      - mod:
           rid: 7932402494648614994
         _modOperator: 2
         _modStrength: 2
-      - _modType: 5
-        mod:
+      - mod:
           rid: 7932402494648614993
         _modOperator: 2
         _modStrength: 0.3
@@ -226,8 +217,7 @@ MonoBehaviour:
       _itemIconPath: Textures/particleCat
       _energyCost: 0
       _modifiers:
-      - _modType: 3
-        mod:
+      - mod:
           rid: 7932402494648614996
         _modOperator: 3
         _modStrength: 1.25
@@ -242,8 +232,7 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 10
       _modifiers:
-      - _modType: 0
-        mod:
+      - mod:
           rid: 7932402494648615007
         _modOperator: 0
         _modStrength: 3
@@ -254,18 +243,15 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 5
       _modifiers:
-      - _modType: 2
-        mod:
+      - mod:
           rid: 7932402494648615008
         _modOperator: 2
         _modStrength: 2
-      - _modType: 5
-        mod:
+      - mod:
           rid: 7932402494648615009
         _modOperator: 2
         _modStrength: 0.75
-      - _modType: 3
-        mod:
+      - mod:
           rid: 7932402494648615010
         _modOperator: 2
         _modStrength: 1.5
@@ -276,8 +262,7 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 25
       _modifiers:
-      - _modType: 7
-        mod:
+      - mod:
           rid: 7932402494648615011
         _modOperator: 0
         _modStrength: 5
@@ -288,8 +273,7 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 5
       _modifiers:
-      - _modType: 6
-        mod:
+      - mod:
           rid: 7932402494648615012
         _modOperator: 2
         _modStrength: 1.2
@@ -300,13 +284,11 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 5
       _modifiers:
-      - _modType: 6
-        mod:
+      - mod:
           rid: 7932402494648615013
         _modOperator: 3
         _modStrength: 2
-      - _modType: 5
-        mod:
+      - mod:
           rid: 7932402494648615014
         _modOperator: 2
         _modStrength: 1.1
@@ -317,8 +299,7 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 15
       _modifiers:
-      - _modType: 5
-        mod:
+      - mod:
           rid: 7932402494648615015
         _modOperator: 2
         _modStrength: 1.5
@@ -329,8 +310,7 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 15
       _modifiers:
-      - _modType: 8
-        mod:
+      - mod:
           rid: 7932402494648615016
         _modOperator: 2
         _modStrength: 0.5
@@ -341,8 +321,7 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/addonIcon
       _energyCost: 0
       _modifiers:
-      - _modType: 9
-        mod:
+      - mod:
           rid: 7932402494648615017
         _modOperator: 2
         _modStrength: 1.5
