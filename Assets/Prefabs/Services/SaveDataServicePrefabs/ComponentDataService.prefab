@@ -103,7 +103,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 6
         mod:
-          rid: -2
+          rid: 7932402494648614985
         _modOperator: 3
         _modStrength: 1.2
       _itemModelPath: Prefabs/batteryNormal
@@ -143,17 +143,17 @@ MonoBehaviour:
       _modifiers:
       - _modType: 2
         mod:
-          rid: -2
+          rid: 7932402494648614986
         _modOperator: 0
         _modStrength: 25
       - _modType: 6
         mod:
-          rid: -2
+          rid: 7932402494648614989
         _modOperator: 0
         _modStrength: 1
       - _modType: 3
         mod:
-          rid: -2
+          rid: 7932402494648614990
         _modOperator: 0
         _modStrength: 25
       _itemModelPath: Prefabs/junkMag
@@ -170,12 +170,12 @@ MonoBehaviour:
       _modifiers:
       - _modType: 3
         mod:
-          rid: -2
+          rid: 7932402494648614991
         _modOperator: 0
         _modStrength: 5
       - _modType: 6
         mod:
-          rid: -2
+          rid: 7932402494648614992
         _modOperator: 0
         _modStrength: 0.5
       _itemModelPath: Prefabs/magazineExtended
@@ -190,12 +190,7 @@ MonoBehaviour:
       _itemDescription: normalss
       _itemIconPath: Textures/particleCat
       _energyCost: 0
-      _modifiers:
-      - _modType: 0
-        mod:
-          rid: 3714070736247455872
-        _modOperator: 0
-        _modStrength: 0
+      _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 5
       mod:
@@ -208,17 +203,17 @@ MonoBehaviour:
       _modifiers:
       - _modType: 2
         mod:
-          rid: -2
+          rid: 7932402494648614995
         _modOperator: 2
         _modStrength: 4
       - _modType: 3
         mod:
-          rid: -2
+          rid: 7932402494648614994
         _modOperator: 2
         _modStrength: 2
       - _modType: 5
         mod:
-          rid: -2
+          rid: 7932402494648614993
         _modOperator: 2
         _modStrength: 0.3
       _itemModelPath: Prefabs/muzzleTrumpet
@@ -233,7 +228,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 3
         mod:
-          rid: -2
+          rid: 7932402494648614996
         _modOperator: 3
         _modStrength: 1.25
       _itemModelPath: Prefabs/muzzleNormal
@@ -249,7 +244,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 0
         mod:
-          rid: -2
+          rid: 7932402494648615007
         _modOperator: 0
         _modStrength: 3
       _itemModelPath: Prefabs/mw_modifier
@@ -261,17 +256,17 @@ MonoBehaviour:
       _modifiers:
       - _modType: 2
         mod:
-          rid: -2
+          rid: 7932402494648615008
         _modOperator: 2
         _modStrength: 2
       - _modType: 5
         mod:
-          rid: -2
+          rid: 7932402494648615009
         _modOperator: 2
         _modStrength: 0.75
       - _modType: 3
         mod:
-          rid: -2
+          rid: 7932402494648615010
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
@@ -283,7 +278,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 7
         mod:
-          rid: -2
+          rid: 7932402494648615011
         _modOperator: 0
         _modStrength: 5
       _itemModelPath: Prefabs/mw_modifier
@@ -295,7 +290,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 6
         mod:
-          rid: -2
+          rid: 7932402494648615012
         _modOperator: 2
         _modStrength: 1.2
       _itemModelPath: Prefabs/mw_modifier
@@ -307,12 +302,12 @@ MonoBehaviour:
       _modifiers:
       - _modType: 6
         mod:
-          rid: -2
+          rid: 7932402494648615013
         _modOperator: 3
         _modStrength: 2
       - _modType: 5
         mod:
-          rid: -2
+          rid: 7932402494648615014
         _modOperator: 2
         _modStrength: 1.1
       _itemModelPath: Prefabs/mw_modifier
@@ -324,11 +319,11 @@ MonoBehaviour:
       _modifiers:
       - _modType: 5
         mod:
-          rid: -2
+          rid: 7932402494648615015
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
-    - _itemName: Something
+    - _itemName: Time Warper
       _id: 40005
       _itemDescription: reduces time between shots.
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -336,7 +331,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 8
         mod:
-          rid: -2
+          rid: 7932402494648615016
         _modOperator: 2
         _modStrength: 0.5
       _itemModelPath: Prefabs/mw_modifier
@@ -348,7 +343,7 @@ MonoBehaviour:
       _modifiers:
       - _modType: 9
         mod:
-          rid: -2
+          rid: 7932402494648615017
         _modOperator: 2
         _modStrength: 1.5
       _itemModelPath: Prefabs/mw_modifier
@@ -357,6 +352,66 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 3714070736247455872
-      type: {class: TestPrefireModifier, ns: , asm: Assembly-CSharp}
+    - rid: 7932402494648614985
+      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614986
+      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614989
+      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614990
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614991
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614992
+      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614993
+      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614994
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614995
+      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648614996
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615007
+      type: {class: FireModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615008
+      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615009
+      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615010
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615011
+      type: {class: ParalysisModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615012
+      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615013
+      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615014
+      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615015
+      type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615016
+      type: {class: CooldownModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402494648615017
+      type: {class: CriticalChanceModifier, ns: , asm: Assembly-CSharp}
       data: 

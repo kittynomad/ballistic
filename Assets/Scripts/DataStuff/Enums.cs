@@ -19,6 +19,16 @@ public class Enums
         criticalChance = 9,
     }
 
+    public enum ModifyableWeaponStats
+    {
+        multishot,
+        spread,
+        damage,
+        velocity,
+        cooldown,
+        criticalChance,
+    }
+
     public enum Operators
     {
         add,

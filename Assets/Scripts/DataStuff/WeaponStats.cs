@@ -107,12 +107,16 @@ public struct WeaponStats
         List<WeaponModifier> output = new List<WeaponModifier>();
         foreach(WeaponModifier w in wm)
         {
-            if (w.Mod.GetType().IsSubclassOf(typeof(PrefireModifierDef)))
+            if (w.Mod != null && w.Mod.GetType().IsSubclassOf(typeof(PrefireModifierDef)))
             {
                 PrefireModifierDef q = (PrefireModifierDef)w.Mod;
-                q.ApplyModifier(w.ModStrength, this);
+                q.ApplyModifier(w.ModStrength, w.ModOperator, ref this);
             }
-            modifierDelegate m = OperationFromEnum(w.ModOperator);
+            else
+            {
+                output.Add(w);
+            }
+            /*modifierDelegate m = OperationFromEnum(w.ModOperator);
             switch(w.ModType)
             {
                 case Enums.Modifiers.multishot:
@@ -136,7 +140,7 @@ public struct WeaponStats
                 default:
                     output.Add(w);
                     continue;
-            }
+            }*/
         }
         return output;
     }
@@ -175,7 +179,7 @@ public struct WeaponStats
         output += "\n-----------\nMODIFIERS\n-----------";
         foreach (WeaponModifier wm in Effects)
         {
-            output += "\n" + wm.ModType + " " + wm.ModOperator + " " + wm.ModStrength;
+            output += "\n" + wm.Mod + " " + wm.ModOperator + " " + wm.ModStrength;
         }
         
         return output;

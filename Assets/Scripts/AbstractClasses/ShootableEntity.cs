@@ -98,7 +98,16 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
     {
         foreach(WeaponModifier wm in modifiers)
         {
-            if(Dictionaries.ModLookup.TryGetValue(wm.ModType, out Func<IStatusEffect> effect))
+            if(wm.Mod != null && wm.Mod.GetType().IsSubclassOf(typeof(PostfireModifierDef)))
+            {
+                PostfireModifierDef q = (PostfireModifierDef)wm.Mod;
+                q.ApplyModifier(wm.ModStrength, wm.ModOperator, this);
+            }
+            else
+            {
+                Debug.Log("modifier " + wm.Mod + " does not have associated postfire effect, ignoring");
+            }
+            /*if(Dictionaries.ModLookup.TryGetValue(wm.ModType, out Func<IStatusEffect> effect))
             {
                 IStatusEffect status = effect();
                 status.OnStartStatus(this, wm.ModStrength);
@@ -107,7 +116,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
             else
             {
                 Debug.Log("modifier " + wm.ModType + " does not have associated postfire effect, ignoring");
-            }
+            }*/
         }
         //IStatusEffect status = new DamageOverTimeStatusEffect();
         
