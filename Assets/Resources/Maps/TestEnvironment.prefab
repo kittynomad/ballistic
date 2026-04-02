@@ -640,7 +640,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.95317554, b: 0.8254717, a: 1}
+  m_Color: {r: 1, g: 0.9283019, b: 0.7311321, a: 1}
   m_Intensity: 39.5
   m_Range: 52.54
   m_SpotAngle: 30
@@ -1099,7 +1099,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.95317554, b: 0.8254717, a: 1}
+  m_Color: {r: 1, g: 0.9283019, b: 0.7311321, a: 1}
   m_Intensity: 39.5
   m_Range: 52.54
   m_SpotAngle: 30
@@ -1226,7 +1226,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.95317554, b: 0.8254717, a: 1}
+  m_Color: {r: 1, g: 0.9283019, b: 0.7311321, a: 1}
   m_Intensity: 39.5
   m_Range: 52.54
   m_SpotAngle: 30
@@ -1534,7 +1534,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.95317554, b: 0.8254717, a: 1}
+  m_Color: {r: 1, g: 0.9283019, b: 0.7311321, a: 1}
   m_Intensity: 39.5
   m_Range: 52.54
   m_SpotAngle: 30
@@ -1758,13 +1758,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6992796049151063270}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9999341, z: -0, w: 0.011484989}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.25, y: -8.57, z: 9.41}
   m_LocalScale: {x: 4.945, y: 1, z: 2.8838}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7634153354195853232}
-  m_LocalEulerAnglesHint: {x: 0, y: -178.684, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &4417930277329053477
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2051,7 +2051,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.95317554, b: 0.8254717, a: 1}
+  m_Color: {r: 1, g: 0.9283019, b: 0.7311321, a: 1}
   m_Intensity: 39.5
   m_Range: 52.54
   m_SpotAngle: 30
@@ -2324,7 +2324,7 @@ Transform:
   m_GameObject: {fileID: 8537233609799441592}
   serializedVersion: 2
   m_LocalRotation: {x: 0.008121345, y: -0.70706016, z: 0.70706016, w: 0.008121345}
-  m_LocalPosition: {x: -0.99857616, y: -5.27, z: 6.566449}
+  m_LocalPosition: {x: -0.3, y: -6.16, z: 8.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2341,8 +2341,8 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 0.95317554, b: 0.8254717, a: 1}
-  m_Intensity: 39.5
-  m_Range: 10
+  m_Intensity: 32.94
+  m_Range: 12.44
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
@@ -2467,7 +2467,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 1, g: 0.95317554, b: 0.8254717, a: 1}
+  m_Color: {r: 1, g: 0.9283019, b: 0.7311321, a: 1}
   m_Intensity: 39.5
   m_Range: 52.54
   m_SpotAngle: 30
