@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ParalysisModifier : PostfireModifierDef
 {
+    private string modDisplayName = "Paralysis";
+    public override string DisplayName { get => modDisplayName;}
     public override void ApplyModifier(float strength, Enums.Operators op, ShootableEntity effectedEntity)
     {
         if(CheckIfEffectAlreadyApplied(typeof(ParalysisStatusEffect), effectedEntity.CurrentStatuses, out int index))
