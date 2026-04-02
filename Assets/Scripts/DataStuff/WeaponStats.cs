@@ -179,7 +179,7 @@ public struct WeaponStats
         output += "\n-----------\nMODIFIERS\n-----------";
         foreach (WeaponModifier wm in Effects)
         {
-            output += "\n" + wm.ModType + " " + wm.ModOperator + " " + wm.ModStrength;
+            output += "\n" + wm.Mod + " " + wm.ModOperator + " " + wm.ModStrength;
         }
         
         return output;

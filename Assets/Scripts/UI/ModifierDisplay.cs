@@ -7,7 +7,7 @@ public class ModifierDisplay : MonoBehaviour
 
     public void DisplayModifier(WeaponModifier w)
     {
-        string output = w.ModType.ToString() + " " + w.ModOperator.ToString() + " " + w.ModStrength.ToString();
+        string output = w.Mod.ToString() + " " + w.ModOperator.ToString() + " " + w.ModStrength.ToString();
         _modName.text = output;
     }
 }
