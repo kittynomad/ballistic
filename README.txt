@@ -57,7 +57,6 @@ TO-DO
 * Ammunition
 * Wider variety of status effects
 * More legible UI
-* More displayed stats for individual weapon parts
 * Easier addon management (rearrange, remove specific ones)
 
 ----------------------
@@ -74,9 +73,6 @@ Known Issues
 	* This is largely due to the appendages being outside of the typical "bounds" of a humanoid. May remove the abdomen.
 
 * Lighting on NPCs sometimes behaves strangely, especially in ragdoll form.
-
-* Multiple stacks of paralysis do not stack properly.
-	* This is due to status effects being applied as, essentially, isolated C# objects and working based on a passed in reference to the entity it's applying to. I need to either let them communicate with each other or find a way to "merge" them on application.
 
 * Some weapon configs cause significant freezes when fired, specifically those with an absurd multi-shot stat (cartridge of junk magazine + trumpet muzzle + multiple duplicator addons, for example).
 	*Due to many addons applying multiplicatively, focusing hard on one specific stat increases it exponentially and ludicrously. Either a rebalance or hard projectile cap (or both) may be needed.

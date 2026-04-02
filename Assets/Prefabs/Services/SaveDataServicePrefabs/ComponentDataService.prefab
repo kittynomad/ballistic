@@ -112,7 +112,7 @@ MonoBehaviour:
     - _itemName: Revolver Mag
       _id: 20000
       _itemDescription: 6 shots, normal.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/revolverMagIcon
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/revolverMag
@@ -124,7 +124,7 @@ MonoBehaviour:
     - _itemName: Extended Mag
       _id: 20001
       _itemDescription: More bullets, auto fire built in.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/extendedMagIcon
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/magazineExtended
@@ -137,7 +137,7 @@ MonoBehaviour:
       _id: 20002
       _itemDescription: Shoots massive amounts of harmless projectiles with absurd
         knockback to user.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/extendedMagIcon
       _energyCost: 5
       _modifiers:
       - mod:
@@ -161,7 +161,7 @@ MonoBehaviour:
     - _itemName: Rapid Fire Cartridge
       _id: 20003
       _itemDescription: Shoots weaker projectiles rapidly.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/extendedMagIcon
       _energyCost: 1
       _modifiers:
       - mod:
@@ -182,7 +182,7 @@ MonoBehaviour:
     - _itemName: Standard Muzzle
       _id: 30000
       _itemDescription: normalss
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/normalMuzzleIcon
       _energyCost: 0
       _modifiers: []
       _itemModelPath: Prefabs/muzzleNormal
@@ -190,7 +190,7 @@ MonoBehaviour:
     - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/trumpetMuzzleIcon
       _energyCost: 0
       _modifiers:
       - mod:
@@ -210,7 +210,7 @@ MonoBehaviour:
     - _itemName: Silencer
       _id: 30002
       _itemDescription: Moderately reduces spread.
-      _itemIconPath: Textures/particleCat
+      _itemIconPath: Textures/PartIcons/normalMuzzleIcon
       _energyCost: 0
       _modifiers:
       - mod:
