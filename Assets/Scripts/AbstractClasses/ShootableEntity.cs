@@ -69,7 +69,8 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
     {
         int critHits = projectile.Stats.CalculateCritAmount();
         float damageToDeal = projectile.Stats.BaseDamage * Mathf.Pow(2, critHits);
-        currentHealth -= damageToDeal;
+        OnDamageReceived(damageToDeal);
+        //currentHealth -= damageToDeal;
         HudService.Instance.PushConsoleMessage(
             "Enemy hit for " + damageToDeal + " (crit * " + critHits + ")"+
             ", health is " + currentHealth + "/" + _totalHealth);
@@ -79,8 +80,8 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
         Destroy(projectile.gameObject);
 
-        if (currentHealth <= 0f)
-            DeathBehavior();
+        //if (currentHealth <= 0f)
+            //DeathBehavior();
     }
 
     public virtual void DeathBehavior()
@@ -98,6 +99,25 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
             isDead = true;
         }
             
+    }
+
+    public virtual void OnDamageReceived(float damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0f)
+            DeathBehavior();
+    }
+
+    public virtual float OnHealingReceived(float healing)
+    {
+        currentHealth += healing;
+        if(currentHealth > _totalHealth)
+        {
+            float overheal = currentHealth - _totalHealth;
+            currentHealth = _totalHealth;
+            return overheal;
+        }
+        return 0f;
     }
 
 

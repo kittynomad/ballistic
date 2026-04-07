@@ -17,8 +17,9 @@ public class DamageOverTimeStatusEffect : IStatusEffect
     public bool UpdateStatus()
     {
         Debug.Log("Status affecting " + entity.name);
-        entity.CurrentHealth -= (Time.deltaTime * statusStrength);
-        entity.DeathBehavior();
+        entity.OnDamageReceived(Time.deltaTime * statusStrength);
+        //entity.CurrentHealth -= (Time.deltaTime * statusStrength);
+        //entity.DeathBehavior();
         duration -= Time.deltaTime;
         return duration <= 0f;
     }

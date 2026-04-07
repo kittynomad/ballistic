@@ -28,8 +28,9 @@ public class HealOverTimeStatusEffect : IStatusEffect
     public bool UpdateStatus()
     {
         Debug.Log("Status affecting " + entity.name);
-        entity.CurrentHealth += (Time.deltaTime * statusStrength);
-        duration -= Time.deltaTime;
+        entity.OnHealingReceived(Time.deltaTime * statusStrength);
+        //entity.CurrentHealth += (Time.deltaTime * statusStrength);
+        //duration -= Time.deltaTime;
         return duration <= 0f;
     }
 }
