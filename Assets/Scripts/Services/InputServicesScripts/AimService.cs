@@ -14,6 +14,8 @@ public class AimService : Service
     private Vector2 lookVector = Vector2.zero;
     private float pitch = 0f;
     private Rigidbody rb;
+    private float _cameraDistanceFromBody = 0.5f;
+    private float _cameraHeight = 0.5f;
 
     public Vector2 LookVector { get => lookVector; set => lookVector = value; }
 
@@ -29,7 +31,10 @@ public class AimService : Service
         rb.transform.Rotate(Vector3.up, lookVector.x);
         pitch -= lookVector.y;
         pitch = Mathf.Clamp(pitch, -90f, 90f);
+        //Vector3 camFlattenedForward = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up)
         Camera.main.transform.localEulerAngles = new Vector3(pitch, Camera.main.transform.localEulerAngles.y, 0f);
+        Camera.main.transform.localPosition = rb.transform.forward * _cameraDistanceFromBody;
+        Camera.main.transform.localPosition = new Vector3(Camera.main.transform.localPosition.x, _cameraHeight, Camera.main.transform.localPosition.z);
         //Camera.main.transform.Rotate(Vector3.right, lookVector.y);
     }
 }

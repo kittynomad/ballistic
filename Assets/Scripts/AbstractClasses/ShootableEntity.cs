@@ -72,7 +72,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
         OnDamageReceived(damageToDeal);
         //currentHealth -= damageToDeal;
         HudService.Instance.PushConsoleMessage(
-            "Enemy hit for " + damageToDeal + " (crit * " + critHits + ")"+
+            gameObject.name + " hit for " + damageToDeal + " (crit * " + critHits + ")"+
             ", health is " + currentHealth + "/" + _totalHealth);
         
 

@@ -37,4 +37,9 @@ public class HudService : Service
     {
         hudRefs.BatteryMeter.value = curBattery / maxBattery;
     }
+
+    public void UpdateHealthMeter(float curHealth, float maxHealth)
+    {
+        hudRefs.HealthMeter.value = curHealth / maxHealth;
+    }
 }
