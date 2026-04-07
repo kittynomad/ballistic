@@ -13,7 +13,7 @@ public class AssemblyUIService : Service
     private GameObject assemblyUI;
     private WeaponConfig currentConfig;
     private FrameModelController viewModel;
-
+    //VIEWMODEL_POSITION is the location in the scene which the view model will spawn at.
     public static Vector3 VIEWMODEL_POSITION = new Vector3(-200, -200, -200);
 
     public GameObject AssemblyUI { get => assemblyUI; set => assemblyUI = value; }

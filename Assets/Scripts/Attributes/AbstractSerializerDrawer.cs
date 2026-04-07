@@ -1,3 +1,14 @@
+/*****************************************************************************
+// File Name : AbstractSerializerDrawer.cs
+// Author : Pierce Nunnelley
+// Creation Date : April 1, 2026
+//
+// Brief Description : This script defines the unity editor drawer for variables
+// with the AbstractSerializer attribute, allowing for an in-editor dropdown 
+// for all classes inheriting from a given abstract class.
+// Note: Proper use requires variables to also have the SerializeReference
+// attribute.
+*****************************************************************************/
 using System;
 using System.Collections;
 using System.Collections.Generic;

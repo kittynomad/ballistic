@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : ShootableEntity.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 7, 2026
+//
+// Brief Description : An abstract class which is implemented for any entity
+// which can be hit by modularWeapon projectiles, including status effects.
+*****************************************************************************/
 using UnityEngine;
 using System.Collections.Generic;
 using System;
@@ -79,6 +87,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
     {
         if (currentHealth <= 0f && !isDead)
         {
+            //ragdoll entity if possible (death indicator)
             if (TryGetComponent<RagdollToggler>(out RagdollToggler r))
             {
                 r.EnableRagdoll();
@@ -97,7 +106,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
     public void ApplyPostFireModifiers(List<WeaponModifier> modifiers)
     {
         foreach(WeaponModifier wm in modifiers)
-        {
+        {   //apply any postfire modifiers within the list, ignore non-postfire modifiers
             if(wm.Mod != null && wm.Mod.GetType().IsSubclassOf(typeof(PostfireModifierDef)))
             {
                 PostfireModifierDef q = (PostfireModifierDef)wm.Mod;
@@ -107,18 +116,7 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
             {
                 Debug.Log("modifier " + wm.Mod + " does not have associated postfire effect, ignoring");
             }
-            /*if(Dictionaries.ModLookup.TryGetValue(wm.ModType, out Func<IStatusEffect> effect))
-            {
-                IStatusEffect status = effect();
-                status.OnStartStatus(this, wm.ModStrength);
-                currentStatuses.Add(status);
-            }
-            else
-            {
-                Debug.Log("modifier " + wm.ModType + " does not have associated postfire effect, ignoring");
-            }*/
         }
-        //IStatusEffect status = new DamageOverTimeStatusEffect();
         
     }
 }

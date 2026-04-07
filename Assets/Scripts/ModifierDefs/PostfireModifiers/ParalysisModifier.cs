@@ -8,11 +8,13 @@ public class ParalysisModifier : PostfireModifierDef
     public override string DisplayName { get => modDisplayName;}
     public override void ApplyModifier(float strength, Enums.Operators op, ShootableEntity effectedEntity)
     {
+        //add stack to existing paralysis, if it does exist
         if(CheckIfEffectAlreadyApplied(typeof(ParalysisStatusEffect), effectedEntity.CurrentStatuses, out int index))
         {
             StackableStatusEffect t = (StackableStatusEffect)effectedEntity.CurrentStatuses[index];
             t.OnNewStack(strength);
         }
+        //add as standard status if target is not yet paralyzed
         else
         {
             IStatusEffect paralysisEffect = new ParalysisStatusEffect();

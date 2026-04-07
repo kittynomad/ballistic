@@ -1,3 +1,11 @@
+/*****************************************************************************
+// File Name : Weapon.cs
+// Author : Pierce Nunnelley
+// Creation Date : March 5, 2026
+//
+// Brief Description : This component utilizes WeaponConfig and WeaponStats,
+// allowing for the associated data to function as a weapon for gameplay.
+*****************************************************************************/
 using UnityEngine;
 using System.Collections;
 
