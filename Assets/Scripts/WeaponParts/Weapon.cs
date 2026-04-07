@@ -56,10 +56,11 @@ public class Weapon : MonoBehaviour, IInitializable
             {
                 shots--;
                 GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward * 0.5f), Camera.main.transform.rotation);
-
+                //ensure projectile's velocity is relative to source
+                temp.GetComponent<Rigidbody>().linearVelocity = gameObject.GetComponent<Rigidbody>().linearVelocity;
                 //initial velocity is applied to the bullet's "forward" direction, thus randomizing the bullet's rotation causes spread
                 temp.transform.Rotate(new Vector3(Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread), Random.Range(-stats.Spread, stats.Spread)));
-                temp.GetComponent<Rigidbody>().linearVelocity = temp.transform.forward * stats.StartVelocity * 20f;
+                temp.GetComponent<Rigidbody>().linearVelocity += temp.transform.forward * stats.StartVelocity * 20f;
 
                 //pass stats down to bullet so hit entities can use them for postfire effects
                 temp.GetComponent<BulletController>().Stats = stats;
