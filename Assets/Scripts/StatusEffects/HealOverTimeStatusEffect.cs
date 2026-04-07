@@ -8,7 +8,7 @@ public class HealOverTimeStatusEffect : IStatusEffect
 
     public Sprite GetIcon()
     {
-        var icon = Resources.Load("Textures/fireIcon") as Texture2D;
+        var icon = Resources.Load("Textures/healIcon") as Texture2D;
 
         return Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f));
     }
@@ -30,7 +30,7 @@ public class HealOverTimeStatusEffect : IStatusEffect
         Debug.Log("Status affecting " + entity.name);
         entity.OnHealingReceived(Time.deltaTime * statusStrength);
         //entity.CurrentHealth += (Time.deltaTime * statusStrength);
-        //duration -= Time.deltaTime;
+        duration -= Time.deltaTime;
         return duration <= 0f;
     }
 }

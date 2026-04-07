@@ -178,6 +178,22 @@ MonoBehaviour:
       _reloadTime: 1
       _timeBetweenShots: 0.05
       _automaticFire: 1
+    - _itemName: Shots
+      _id: 20004
+      _itemDescription: Fires healing projectiles.
+      _itemIconPath: Textures/PartIcons/revolverMagIcon
+      _energyCost: 1
+      _modifiers:
+      - mod:
+          rid: 7932402624916881505
+        _modOperator: 0
+        _modStrength: 5
+      _itemModelPath: Prefabs/revolverMag
+      _damage: 0
+      _magSize: 3
+      _reloadTime: 1
+      _timeBetweenShots: 1
+      _automaticFire: 0
     _weaponMuzzles:
     - _itemName: Standard Muzzle
       _id: 30000
@@ -385,4 +401,7 @@ MonoBehaviour:
       data: 
     - rid: 7932402494648615017
       type: {class: CriticalChanceModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402624916881505
+      type: {class: HealingModifier, ns: , asm: Assembly-CSharp}
       data: 
