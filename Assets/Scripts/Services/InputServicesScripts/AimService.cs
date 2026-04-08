@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class AimService : Service
 {
-    [SerializeField] private float _sensitivity = 1f;
+    [SerializeField] private float _sensitivity = 0.25f;
 
     private Vector2 lookVector = Vector2.zero;
     private float pitch = 0f;
@@ -27,10 +27,10 @@ public class AimService : Service
 
     private void FixedUpdate()
     {
-        Camera.main.transform.Rotate(Vector3.up, lookVector.x);
-        rb.transform.Rotate(Vector3.up, lookVector.x);
-        pitch -= lookVector.y;
-        pitch = Mathf.Clamp(pitch, -90f, 90f);
+        Camera.main.transform.Rotate(Vector3.up, lookVector.x * _sensitivity);
+        rb.transform.Rotate(Vector3.up, lookVector.x * _sensitivity);
+        pitch -= lookVector.y * _sensitivity;
+        pitch = Mathf.Clamp(pitch, -80f, 80f);
         //Vector3 camFlattenedForward = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up)
         Camera.main.transform.localEulerAngles = new Vector3(pitch, Camera.main.transform.localEulerAngles.y, 0f);
         Camera.main.transform.localPosition = rb.transform.forward * _cameraDistanceFromBody;

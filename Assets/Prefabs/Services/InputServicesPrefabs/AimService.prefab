@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d137defb9a50a6449b90338f478fb934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AimService
+  _sensitivity: 0.5
