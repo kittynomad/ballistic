@@ -28,12 +28,12 @@ public class AimService : Service
     private void FixedUpdate()
     {
         Camera.main.transform.Rotate(Vector3.up, lookVector.x * _sensitivity);
-        rb.transform.Rotate(Vector3.up, lookVector.x * _sensitivity);
+        //rb.transform.Rotate(Vector3.up, lookVector.x * _sensitivity);
         pitch -= lookVector.y * _sensitivity;
         pitch = Mathf.Clamp(pitch, -80f, 80f);
         Vector3 camFlattenedForward = Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up);
         Camera.main.transform.localEulerAngles = new Vector3(pitch, Camera.main.transform.localEulerAngles.y, 0f);
-        Camera.main.transform.localPosition = Vector3.Normalize(rb.transform.forward) * _cameraDistanceFromBody;
+        Camera.main.transform.localPosition = Vector3.Normalize(camFlattenedForward) * _cameraDistanceFromBody;
         Camera.main.transform.localPosition = new Vector3(Camera.main.transform.localPosition.x, _cameraHeight, Camera.main.transform.localPosition.z);
         //Camera.main.transform.Rotate(Vector3.right, lookVector.y);
     }
