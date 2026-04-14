@@ -30,7 +30,7 @@ public class EnemyUIController : MonoBehaviour
             statusIcon.GetComponent<Image>().sprite = status.GetIcon();
             currentStatusIcons.Add(statusIcon.GetComponent<Image>());
             //statusIcon.transform.parent = _statusContainer.transform;
-            await Awaitable.EndOfFrameAsync();
+            //await Awaitable.EndOfFrameAsync();
         }
     }
 }
