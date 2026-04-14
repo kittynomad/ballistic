@@ -49,7 +49,7 @@ public class HelperFunctions
     {
         T[] output = new T[preserveLength ? array.Length : array.Length - 1];
 
-        for(int i = 0; i < array.Length - 1; i++)
+        for(int i = 0; i < array.Length; i++)
         {
             if (i < index)
                 output[i] = array[i];

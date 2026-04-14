@@ -95,7 +95,7 @@ public struct WeaponConfig
 
     public void RemoveAddon(int index)
     {
-        _addons = HelperFunctions.RemoveElementFromArray<WeaponAddon>(_addons, index);
+        _addons = HelperFunctions.GroupNonNullArrayEntries<WeaponAddon>(HelperFunctions.RemoveElementFromArray<WeaponAddon>(_addons, index), _addons.Length);
     }
 
     public override string ToString()

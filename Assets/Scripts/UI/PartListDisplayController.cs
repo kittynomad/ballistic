@@ -74,16 +74,15 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     {
         await ClearEquippedAddonListDisplay();
 
-        foreach(WeaponAddon a in wc.Addons)
+        for(int i = 0; i < wc.Addons.Length; i++)
         {
-            if(a != null)
+            if (wc.Addons[i] != null)
             {
                 GameObject g = Instantiate(addonDisplayer, _addonListParent.transform);
-                g.GetComponent<EquippedAddonViewManager>().InitializeAddonDisplay(a);
+                g.GetComponent<EquippedAddonViewManager>().InitializeAddonDisplay(wc.Addons[i], i);
                 currentEquippedAddons.Add(g);
                 await Awaitable.NextFrameAsync();
             }
-            
         }
     }
 
