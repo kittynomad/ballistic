@@ -19,10 +19,10 @@ public class TestDummyController : ShootableEntity
         _displayedInfo.UpdateEnemyUI(this);
     }
 
-    public override Awaitable OnStatusEnded(int index)
+    public override async Awaitable OnStatusEnded(int index)
     {
-        _displayedInfo.UpdateStatusUI(this);
-        return base.OnStatusEnded(index);
+        await _displayedInfo.UpdateStatusUI(this);
+        await base.OnStatusEnded(index);
     }
 
     public override void DeathBehavior()

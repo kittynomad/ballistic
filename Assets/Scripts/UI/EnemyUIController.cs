@@ -14,13 +14,14 @@ public class EnemyUIController : MonoBehaviour
         _healthBar.value = enemy.CurrentHealth / enemy.TotalHealth;
     }
 
-    public void UpdateStatusUI(ShootableEntity enemy)
+    public async Awaitable UpdateStatusUI(ShootableEntity enemy)
     {
         while (currentStatusIcons.Count > 0)
         {
             GameObject temp = currentStatusIcons[currentStatusIcons.Count - 1].gameObject;
             currentStatusIcons.RemoveAt(currentStatusIcons.Count - 1);
             Destroy(temp);
+            //await Awaitable.EndOfFrameAsync();
         }
 
         foreach (IStatusEffect status in enemy.CurrentStatuses)
@@ -29,6 +30,7 @@ public class EnemyUIController : MonoBehaviour
             statusIcon.GetComponent<Image>().sprite = status.GetIcon();
             currentStatusIcons.Add(statusIcon.GetComponent<Image>());
             //statusIcon.transform.parent = _statusContainer.transform;
+            await Awaitable.EndOfFrameAsync();
         }
     }
 }
