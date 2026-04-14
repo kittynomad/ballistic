@@ -8,8 +8,11 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     [SerializeField] private GameObject _listParent;
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private TextMeshProUGUI _statsText;
+    [SerializeField] private GameObject _addonListParent;
     private GameObject itemDisplayer;
+    private GameObject addonDisplayer;
     private List<GameObject> currentDisplayedParts = new List<GameObject>();
+    private List<GameObject> currentEquippedAddons = new List<GameObject>();
 
     public TextMeshProUGUI Description { get => _description; set => _description = value; }
     public TextMeshProUGUI StatsText { get => _statsText; set => _statsText = value; }
@@ -17,6 +20,7 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     public async Awaitable Initialize()
     {
         itemDisplayer = Resources.Load("UI/PartUIElement") as GameObject;
+        addonDisplayer = Resources.Load("UI/SingleAddonUI") as GameObject;
         await UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponFrames);
         return;
     }
@@ -64,6 +68,38 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     public void RemoveAddons()
     {
         FindAnyObjectByType<AssemblyUIService>().ClearAddons();
+    }
+
+    public async Awaitable UpdateEquippedAddonListDisplay(WeaponConfig wc)
+    {
+        await ClearEquippedAddonListDisplay();
+
+        foreach(WeaponAddon a in wc.Addons)
+        {
+            if(a != null)
+            {
+                GameObject g = Instantiate(addonDisplayer, _addonListParent.transform);
+                g.GetComponent<EquippedAddonViewManager>().InitializeAddonDisplay(a);
+                currentEquippedAddons.Add(g);
+                await Awaitable.NextFrameAsync();
+            }
+            
+        }
+    }
+
+    public async Awaitable ClearEquippedAddonListDisplay()
+    {
+        /*for(int i = _addonListParent.transform.childCount; i > 0; i--)
+        {
+            Destroy(_addonListParent.transform.GetChild(i).gameObject);
+        }*/
+        while (currentEquippedAddons.Count > 0)
+        {
+            GameObject temp = currentEquippedAddons[currentEquippedAddons.Count - 1];
+            currentEquippedAddons.RemoveAt(currentEquippedAddons.Count - 1);
+            Destroy(temp);
+            await Awaitable.NextFrameAsync();
+        }
     }
 
     public async Awaitable UpdateListDisplay<T>(List<T> parts)

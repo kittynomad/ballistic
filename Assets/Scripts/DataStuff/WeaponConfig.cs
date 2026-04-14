@@ -93,7 +93,7 @@ public struct WeaponConfig
         return false;
     }
 
-    private void RemoveAddon(int index)
+    public void RemoveAddon(int index)
     {
         _addons = HelperFunctions.RemoveElementFromArray<WeaponAddon>(_addons, index);
     }

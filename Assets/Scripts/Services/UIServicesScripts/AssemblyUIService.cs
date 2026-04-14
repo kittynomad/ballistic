@@ -62,6 +62,7 @@ public class AssemblyUIService : Service
 
         AssemblyUI.GetComponent<PartListDisplayController>().Description.text = currentConfig.ToString();
         AssemblyUI.GetComponent<PartListDisplayController>().StatsText.text = temp.ToString();
+        AssemblyUI.GetComponent<PartListDisplayController>().UpdateEquippedAddonListDisplay(currentConfig);
 
     }
 
@@ -75,6 +76,12 @@ public class AssemblyUIService : Service
     {
         currentConfig.ReplacePart(part);
         Debug.Log(currentConfig);
+        UpdateWeaponViewModel();
+    }
+
+    public void RemoveAddon(int index)
+    {
+        currentConfig.RemoveAddon(index);
         UpdateWeaponViewModel();
     }
 
