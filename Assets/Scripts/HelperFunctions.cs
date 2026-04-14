@@ -48,7 +48,6 @@ public class HelperFunctions
     public static T[] RemoveElementFromArray<T>(T[] array, int index, bool preserveLength = true)
     {
         T[] output = new T[preserveLength ? array.Length : array.Length - 1];
-
         for(int i = 0; i < array.Length; i++)
         {
             if (i < index)
@@ -61,6 +60,17 @@ public class HelperFunctions
 
         return output;
 
+    }
+
+    public static int GetNonNullArrayCount<T>(T[] array)
+    {
+        int count = 0;
+        foreach(T i in array)
+        {
+            if (i != null)
+                count++;
+        }
+        return count;
     }
 
     public static T[] GroupNonNullArrayEntries<T>(T[] startingArray, int length)

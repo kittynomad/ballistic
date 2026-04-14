@@ -8,6 +8,7 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     [SerializeField] private GameObject _listParent;
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private TextMeshProUGUI _statsText;
+    [SerializeField] private TextMeshProUGUI _addonCapacityText;
     [SerializeField] private GameObject _addonListParent;
     private GameObject itemDisplayer;
     private GameObject addonDisplayer;
@@ -84,6 +85,8 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
                 await Awaitable.NextFrameAsync();
             }
         }
+
+        _addonCapacityText.text = "addons: " + HelperFunctions.GetNonNullArrayCount<WeaponAddon>(wc.Addons) + "/" + wc.Frame.AddonCapacity;
     }
 
     public async Awaitable ClearEquippedAddonListDisplay()
