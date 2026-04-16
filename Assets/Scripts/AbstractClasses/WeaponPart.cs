@@ -13,13 +13,25 @@ using NaughtyAttributes;
 [System.Serializable]
 public abstract class WeaponPart
 {
+    [Tooltip("The display name used by a part on UI. While this doesn't have to be unique, it probably should be to avoid confusion.")]
     public string _itemName;
+
+    [Tooltip("An integer used to identify a specific part. This should be a unique value.")]
     public string _id;
+
+    [Tooltip("A basic description of the part, used in the assembly screen.")]
     [SerializeField] private string _itemDescription;
+
+    [Tooltip("The image used to display the part in 2D menus. Stored as a string of the directory, using Resources as the root folder.")]
     [SerializeField] private string _itemIconPath;
+
+    [Tooltip("The charge required from the weapon's battery to fire once with this component installed. all individual energy costs of all used parts are added for the total cost of firing an assembled weapon.")]
     [SerializeField] private int _energyCost;
 
+    [Tooltip("An array of all special effects this part has. Effects are defined as scripts inheriting from ModifierDef.")]
     [SerializeField] private List<WeaponModifier> _modifiers;
+
+    [Tooltip("The 3D model representing this part, used on the assembled weapon's combined model. Stored as a string of the directory, using Resources as the root folder.")]
     [SerializeField] private string _itemModelPath;
 
     public string ItemName { get => _itemName; set => _itemName = value; }

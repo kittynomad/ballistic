@@ -3,10 +3,19 @@ using UnityEngine;
 [System.Serializable]
 public class WeaponMagazine : WeaponPart
 {
+    [Tooltip("The base damage of projectiles fired by a weapon using this magazine.")]
     [SerializeField] private float _damage;
+
+    [Tooltip("The amount of bullets which can be fired before reloading.")]
     [SerializeField] private int _magSize;
+
+    [Tooltip("The amount of time it takes to reload the weapon.")]
     [SerializeField] private float _reloadTime;
+
+    [Tooltip("The amount of time after firing the weapon until it can be fired again-- i.e. fire rate.")]
     [SerializeField] private float _timeBetweenShots = 1f;
+
+    [Tooltip("If true, the weapon will fire constantly while the trigger is held. if false, trigger must be pulled for each shot.")]
     [SerializeField] private bool _automaticFire = false;
 
     public int MagSize { get => _magSize; set => _magSize = value; }
