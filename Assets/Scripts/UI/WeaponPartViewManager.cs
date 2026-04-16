@@ -82,6 +82,8 @@ public class WeaponPartViewManager : MonoBehaviour
             statsText += "spread: " + m.Spread;
         }
 
+        statsText += "\nenergy cost: " + p.EnergyCost;
+
         return statsText;
     }
 }
