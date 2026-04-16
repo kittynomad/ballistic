@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerBehaviors : ShootableEntity
+public class PlayerBehaviors : MonoBehaviour
 {
     public bool IsGrounded()
     {
