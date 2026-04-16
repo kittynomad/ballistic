@@ -79,7 +79,7 @@ MonoBehaviour:
     - _itemName: Pickle
       _id: 00005
       _itemDescription: Pickle.
-      _itemIconPath: Textures/revolverTestRender
+      _itemIconPath: Textures/pickle
       _energyCost: 1
       _modifiers: []
       _itemModelPath: Prefabs/Pickle
