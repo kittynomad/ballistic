@@ -13,6 +13,8 @@ using NaughtyAttributes;
 [System.Serializable]
 public abstract class WeaponPart
 {
+    [SerializeField] private List<PartTagContainer> _partTags;
+
     [Tooltip("The display name used by a part on UI. While this doesn't have to be unique, it probably should be to avoid confusion.")]
     public string _itemName;
 
