@@ -13,7 +13,7 @@ using NaughtyAttributes;
 [System.Serializable]
 public abstract class WeaponPart
 {
-    [SerializeField] private List<PartTagContainer> _partTags;
+    
 
     [Tooltip("The display name used by a part on UI. While this doesn't have to be unique, it probably should be to avoid confusion.")]
     public string _itemName;
@@ -32,6 +32,8 @@ public abstract class WeaponPart
 
     [Tooltip("An array of all special effects this part has. Effects are defined as scripts inheriting from ModifierDef.")]
     [SerializeField] private List<WeaponModifier> _modifiers;
+
+    [SerializeField] private List<PartTagContainer> _partTags;
 
     [Tooltip("The 3D model representing this part, used on the assembled weapon's combined model. Stored as a string of the directory, using Resources as the root folder.")]
     [SerializeField] private string _itemModelPath;

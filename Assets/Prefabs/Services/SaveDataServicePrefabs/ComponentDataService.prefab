@@ -46,73 +46,72 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComponentDataService
   _parts:
     _weaponFrames:
-    - _partTags: []
-      _itemName: Revolver
+    - _itemName: Revolver
       _id: 00000
       _itemDescription: basic weapon frame.
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
       _baseCritChance: 10
-    - _partTags: []
-      _itemName: Lucky Shooter
+    - _itemName: Lucky Shooter
       _id: 00001
       _itemDescription: Exchanges a mod slot for high built-in crit chance.
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 2
       _baseCritChance: 50
-    - _partTags: []
-      _itemName: Big Iron
+    - _itemName: Big Iron
       _id: 00004
       _itemDescription: Like revolver, but with more mod capacity.
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/bigIron_frame
       _fireVelocity: 1
       _addonCapacity: 5
       _baseCritChance: 7
-    - _partTags: []
-      _itemName: Pickle
+    - _itemName: Pickle
       _id: 00005
       _itemDescription: Pickle.
       _itemIconPath: Textures/pickle
       _energyCost: 1
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/Pickle
       _fireVelocity: 1
       _addonCapacity: 9
       _baseCritChance: 100
     _weaponBatteries:
-    - _partTags: []
-      _itemName: Battery
+    - _itemName: Battery
       _id: 10000
       _itemDescription: normal battery okay
       _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 100
       _rechargeRate: 25
-    - _partTags: []
-      _itemName: Super Battery
+    - _itemName: Super Battery
       _id: 10001
       _itemDescription: Incredible capacity and recharge. Basically cheating!
       _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 1000
       _rechargeRate: 2500
-    - _partTags: []
-      _itemName: Momentum Absorber
+    - _itemName: Momentum Absorber
       _id: 10002
       _itemDescription: Reduces firing cost by reducing projectile speed.
       _itemIconPath: Textures/PartIcons/batteryIcon
@@ -122,38 +121,38 @@ MonoBehaviour:
           rid: 7932402494648614985
         _modOperator: 3
         _modStrength: 1.2
+      _partTags: []
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 100
       _rechargeRate: 30
     _weaponMagazines:
-    - _partTags: []
-      _itemName: Revolver Mag
+    - _itemName: Revolver Mag
       _id: 20000
       _itemDescription: 6 shots, normal.
       _itemIconPath: Textures/PartIcons/revolverMagIcon
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/revolverMag
       _damage: 5
       _magSize: 6
       _reloadTime: 1
       _timeBetweenShots: 1
       _automaticFire: 0
-    - _partTags: []
-      _itemName: Extended Mag
+    - _itemName: Extended Mag
       _id: 20001
       _itemDescription: More bullets, auto fire built in.
       _itemIconPath: Textures/PartIcons/extendedMagIcon
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/magazineExtended
       _damage: 5
       _magSize: 25
       _reloadTime: 2
       _timeBetweenShots: 0.2
       _automaticFire: 1
-    - _partTags: []
-      _itemName: Cartridge of Junk
+    - _itemName: Cartridge of Junk
       _id: 20002
       _itemDescription: Shoots massive amounts of harmless projectiles with absurd
         knockback to user.
@@ -172,14 +171,14 @@ MonoBehaviour:
           rid: 7932402494648614990
         _modOperator: 0
         _modStrength: 25
+      _partTags: []
       _itemModelPath: Prefabs/junkMag
       _damage: 0.01
       _magSize: 1
       _reloadTime: 2
       _timeBetweenShots: 2
       _automaticFire: 0
-    - _partTags: []
-      _itemName: Rapid Fire Cartridge
+    - _itemName: Rapid Fire Cartridge
       _id: 20003
       _itemDescription: Shoots weaker projectiles rapidly.
       _itemIconPath: Textures/PartIcons/extendedMagIcon
@@ -193,14 +192,14 @@ MonoBehaviour:
           rid: 7932402494648614992
         _modOperator: 0
         _modStrength: 0.5
+      _partTags: []
       _itemModelPath: Prefabs/magazineExtended
       _damage: 0.1
       _magSize: 50
       _reloadTime: 1
       _timeBetweenShots: 0.05
       _automaticFire: 1
-    - _partTags: []
-      _itemName: Shots
+    - _itemName: Shots
       _id: 20004
       _itemDescription: Fires healing projectiles.
       _itemIconPath: Textures/PartIcons/revolverMagIcon
@@ -210,6 +209,7 @@ MonoBehaviour:
           rid: 7932402624916881505
         _modOperator: 0
         _modStrength: 5
+      _partTags: []
       _itemModelPath: Prefabs/revolverMag
       _damage: 0
       _magSize: 3
@@ -217,17 +217,16 @@ MonoBehaviour:
       _timeBetweenShots: 1
       _automaticFire: 0
     _weaponMuzzles:
-    - _partTags: []
-      _itemName: Standard Muzzle
+    - _itemName: Standard Muzzle
       _id: 30000
       _itemDescription: normalss
       _itemIconPath: Textures/PartIcons/normalMuzzleIcon
       _energyCost: 0
       _modifiers: []
+      _partTags: []
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 5
-    - _partTags: []
-      _itemName: Trumpet
+    - _itemName: Trumpet
       _id: 30001
       _itemDescription: 'Shoots multiple in a wide spread '
       _itemIconPath: Textures/PartIcons/trumpetMuzzleIcon
@@ -245,10 +244,10 @@ MonoBehaviour:
           rid: 7932402494648614993
         _modOperator: 2
         _modStrength: 0.3
+      _partTags: []
       _itemModelPath: Prefabs/muzzleTrumpet
       _spread: 10
-    - _partTags: []
-      _itemName: Silencer
+    - _itemName: Silencer
       _id: 30002
       _itemDescription: Moderately reduces spread.
       _itemIconPath: Textures/PartIcons/normalMuzzleIcon
@@ -258,11 +257,11 @@ MonoBehaviour:
           rid: 7932402494648614996
         _modOperator: 3
         _modStrength: 1.25
+      _partTags: []
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 0.25
     _weaponAddons:
-    - _partTags: []
-      _itemName: Fire thing
+    - _itemName: Fire thing
       _id: 40001
       _itemDescription: Makes projectiles deal damage over time
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -272,9 +271,9 @@ MonoBehaviour:
           rid: 7932402494648615007
         _modOperator: 0
         _modStrength: 3
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
-    - _partTags: []
-      _itemName: duplicator
+    - _itemName: duplicator
       _id: 40002
       _itemDescription: doubles projectile count
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -292,9 +291,9 @@ MonoBehaviour:
           rid: 7932402494648615010
         _modOperator: 2
         _modStrength: 1.5
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
-    - _partTags: []
-      _itemName: venom coating
+    - _itemName: venom coating
       _id: 40005
       _itemDescription: paralyzes enemies it hits
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -304,9 +303,9 @@ MonoBehaviour:
           rid: 7932402494648615011
         _modOperator: 0
         _modStrength: 5
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
-    - _partTags: []
-      _itemName: fast speedy
+    - _itemName: fast speedy
       _id: 40003
       _itemDescription: makes projectiles faster
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -316,9 +315,9 @@ MonoBehaviour:
           rid: 7932402494648615012
         _modOperator: 2
         _modStrength: 1.2
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
-    - _partTags: []
-      _itemName: dampener
+    - _itemName: dampener
       _id: 40004
       _itemDescription: makes projectiles slower, slightly increases damage
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -332,9 +331,9 @@ MonoBehaviour:
           rid: 7932402494648615014
         _modOperator: 2
         _modStrength: 1.1
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
-    - _partTags: []
-      _itemName: spikener
+    - _itemName: spikener
       _id: 40000
       _itemDescription: slightly increases damage.
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -344,9 +343,9 @@ MonoBehaviour:
           rid: 7932402494648615015
         _modOperator: 2
         _modStrength: 1.5
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
-    - _partTags: []
-      _itemName: Time Warper
+    - _itemName: Time Warper
       _id: 40005
       _itemDescription: reduces time between shots.
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -356,9 +355,9 @@ MonoBehaviour:
           rid: 7932402494648615016
         _modOperator: 2
         _modStrength: 0.5
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
-    - _partTags: []
-      _itemName: Micro-slots
+    - _itemName: Micro-slots
       _id: 40006
       _itemDescription: increases crit chance.
       _itemIconPath: Textures/PartIcons/addonIcon
@@ -368,6 +367,7 @@ MonoBehaviour:
           rid: 7932402494648615017
         _modOperator: 2
         _modStrength: 1.5
+      _partTags: []
       _itemModelPath: Prefabs/mw_modifier
   references:
     version: 2
