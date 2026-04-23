@@ -52,7 +52,11 @@ MonoBehaviour:
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430514
+      - _partCategory:
+          rid: 7932402987427430515
       _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
@@ -63,7 +67,11 @@ MonoBehaviour:
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430516
+      - _partCategory:
+          rid: 7932402987427430517
       _itemModelPath: Prefabs/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 2
@@ -74,7 +82,11 @@ MonoBehaviour:
       _itemIconPath: Textures/revolverTestRender
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430518
+      - _partCategory:
+          rid: 7932402987427430519
       _itemModelPath: Prefabs/bigIron_frame
       _fireVelocity: 1
       _addonCapacity: 5
@@ -85,7 +97,11 @@ MonoBehaviour:
       _itemIconPath: Textures/pickle
       _energyCost: 1
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430520
+      - _partCategory:
+          rid: 7932402987427430521
       _itemModelPath: Prefabs/Pickle
       _fireVelocity: 1
       _addonCapacity: 9
@@ -97,7 +113,9 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430522
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 100
       _rechargeRate: 25
@@ -107,7 +125,9 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/batteryIcon
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 1000
       _rechargeRate: 2500
@@ -118,10 +138,12 @@ MonoBehaviour:
       _energyCost: -5
       _modifiers:
       - mod:
-          rid: 7932402494648614985
+          rid: 7932402987427430524
         _modOperator: 3
         _modStrength: 1.2
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430525
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 100
       _rechargeRate: 30
@@ -132,7 +154,9 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/revolverMagIcon
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/revolverMag
       _damage: 5
       _magSize: 6
@@ -145,7 +169,9 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/extendedMagIcon
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/magazineExtended
       _damage: 5
       _magSize: 25
@@ -160,18 +186,20 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402494648614986
+          rid: 7932402987427430526
         _modOperator: 0
         _modStrength: 25
       - mod:
-          rid: 7932402494648614989
+          rid: 7932402987427430527
         _modOperator: 0
         _modStrength: 1
       - mod:
-          rid: 7932402494648614990
+          rid: 7932402987427430528
         _modOperator: 0
         _modStrength: 25
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/junkMag
       _damage: 0.01
       _magSize: 1
@@ -185,14 +213,16 @@ MonoBehaviour:
       _energyCost: 1
       _modifiers:
       - mod:
-          rid: 7932402494648614991
+          rid: 7932402987427430529
         _modOperator: 0
         _modStrength: 5
       - mod:
-          rid: 7932402494648614992
+          rid: 7932402987427430530
         _modOperator: 0
         _modStrength: 0.5
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/magazineExtended
       _damage: 0.1
       _magSize: 50
@@ -206,10 +236,12 @@ MonoBehaviour:
       _energyCost: 1
       _modifiers:
       - mod:
-          rid: 7932402624916881505
+          rid: 7932402987427430531
         _modOperator: 0
         _modStrength: 5
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/revolverMag
       _damage: 0
       _magSize: 3
@@ -223,7 +255,9 @@ MonoBehaviour:
       _itemIconPath: Textures/PartIcons/normalMuzzleIcon
       _energyCost: 0
       _modifiers: []
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 5
     - _itemName: Trumpet
@@ -233,18 +267,20 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - mod:
-          rid: 7932402494648614995
+          rid: 7932402987427430532
         _modOperator: 2
         _modStrength: 4
       - mod:
-          rid: 7932402494648614994
+          rid: 7932402987427430533
         _modOperator: 2
         _modStrength: 2
       - mod:
-          rid: 7932402494648614993
+          rid: 7932402987427430534
         _modOperator: 2
         _modStrength: 0.3
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/muzzleTrumpet
       _spread: 10
     - _itemName: Silencer
@@ -254,10 +290,12 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - mod:
-          rid: 7932402494648614996
+          rid: 7932402987427430535
         _modOperator: 3
         _modStrength: 1.25
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/muzzleNormal
       _spread: 0.25
     _weaponAddons:
@@ -268,10 +306,12 @@ MonoBehaviour:
       _energyCost: 10
       _modifiers:
       - mod:
-          rid: 7932402494648615007
+          rid: 7932402987427430536
         _modOperator: 0
         _modStrength: 3
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: duplicator
       _id: 40002
@@ -280,18 +320,20 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402494648615008
+          rid: 7932402987427430537
         _modOperator: 2
         _modStrength: 2
       - mod:
-          rid: 7932402494648615009
+          rid: 7932402987427430538
         _modOperator: 2
         _modStrength: 0.75
       - mod:
-          rid: 7932402494648615010
+          rid: 7932402987427430539
         _modOperator: 2
         _modStrength: 1.5
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: venom coating
       _id: 40005
@@ -300,10 +342,12 @@ MonoBehaviour:
       _energyCost: 25
       _modifiers:
       - mod:
-          rid: 7932402494648615011
+          rid: 7932402987427430540
         _modOperator: 0
         _modStrength: 5
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: fast speedy
       _id: 40003
@@ -312,10 +356,12 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402494648615012
+          rid: 7932402987427430541
         _modOperator: 2
         _modStrength: 1.2
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: dampener
       _id: 40004
@@ -324,14 +370,16 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402494648615013
+          rid: 7932402987427430542
         _modOperator: 3
         _modStrength: 2
       - mod:
-          rid: 7932402494648615014
+          rid: 7932402987427430543
         _modOperator: 2
         _modStrength: 1.1
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: spikener
       _id: 40000
@@ -340,10 +388,12 @@ MonoBehaviour:
       _energyCost: 15
       _modifiers:
       - mod:
-          rid: 7932402494648615015
+          rid: 7932402987427430544
         _modOperator: 2
         _modStrength: 1.5
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: Time Warper
       _id: 40005
@@ -352,10 +402,12 @@ MonoBehaviour:
       _energyCost: 15
       _modifiers:
       - mod:
-          rid: 7932402494648615016
+          rid: 7932402987427430545
         _modOperator: 2
         _modStrength: 0.5
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
     - _itemName: Micro-slots
       _id: 40006
@@ -364,77 +416,112 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - mod:
-          rid: 7932402494648615017
+          rid: 7932402987427430546
         _modOperator: 2
         _modStrength: 1.5
-      _partTags: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
   references:
     version: 2
     RefIds:
-    - rid: 7932402494648614985
+    - rid: 7932402987427430514
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430515
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430516
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430517
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430518
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430519
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430520
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430521
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430522
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430523
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430524
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614986
+    - rid: 7932402987427430525
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430526
       type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614989
+    - rid: 7932402987427430527
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614990
+    - rid: 7932402987427430528
       type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614991
+    - rid: 7932402987427430529
       type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614992
+    - rid: 7932402987427430530
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614993
+    - rid: 7932402987427430531
+      type: {class: HealingModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430532
+      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430533
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430534
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614994
+    - rid: 7932402987427430535
       type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648614995
-      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402494648614996
-      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402494648615007
+    - rid: 7932402987427430536
       type: {class: FireModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615008
+    - rid: 7932402987427430537
       type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615009
+    - rid: 7932402987427430538
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615010
+    - rid: 7932402987427430539
       type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615011
+    - rid: 7932402987427430540
       type: {class: ParalysisModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615012
+    - rid: 7932402987427430541
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615013
+    - rid: 7932402987427430542
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615014
+    - rid: 7932402987427430543
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615015
+    - rid: 7932402987427430544
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615016
+    - rid: 7932402987427430545
       type: {class: CooldownModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402494648615017
+    - rid: 7932402987427430546
       type: {class: CriticalChanceModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402624916881505
-      type: {class: HealingModifier, ns: , asm: Assembly-CSharp}
       data: 
