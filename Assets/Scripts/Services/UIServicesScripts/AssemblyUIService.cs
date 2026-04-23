@@ -81,9 +81,11 @@ public class AssemblyUIService : Service
     }
 
     [Button]
-    public void RemoveBattery()
+    public void RemoveParts()
     {
         currentConfig.RemovePart(typeof(WeaponBattery));
+        currentConfig.RemovePart(typeof(WeaponMagazine));
+        currentConfig.RemovePart(typeof(WeaponMuzzle));
         UpdateWeaponViewModel();
     }
 

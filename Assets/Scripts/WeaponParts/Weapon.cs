@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour, IInitializable
 
     public void FireWeapon()
     {
-        if(currentCharge >= stats.EnergyCost)
+        if(Config.Magazine != null && currentCharge >= stats.EnergyCost)
         {
             currentCharge -= stats.EnergyCost;
             HudService.Instance.UpdateBatteryMeter(currentCharge, maxCharge);
