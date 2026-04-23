@@ -99,7 +99,7 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430520
+          rid: 7932402987427430557
       - _partCategory:
           rid: 7932402987427430521
       _itemModelPath: Prefabs/Pickle
@@ -147,6 +147,30 @@ MonoBehaviour:
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 100
       _rechargeRate: 30
+    - _itemName: XL Battery
+      _id: 10003
+      _itemDescription: A heavier battery. Only fits on shotguns.
+      _itemIconPath: Textures/PartIcons/batteryIcon
+      _energyCost: 0
+      _modifiers: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430550
+      _itemModelPath: Prefabs/batteryNormal
+      _capacity: 150
+      _rechargeRate: 45
+    - _itemName: No Battery
+      _id: 19999
+      _itemDescription: no battery is equipped.
+      _itemIconPath: Textures/PartIcons/batteryIcon
+      _energyCost: 0
+      _modifiers: []
+      _partTags:
+      - _partCategory:
+          rid: 7932402987427430554
+      _itemModelPath: Prefabs/batteryNormal
+      _capacity: 0
+      _rechargeRate: 0
     _weaponMagazines:
     - _itemName: Revolver Mag
       _id: 20000
@@ -156,7 +180,7 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
+          rid: 7932402987427430556
       _itemModelPath: Prefabs/revolverMag
       _damage: 5
       _magSize: 6
@@ -199,7 +223,7 @@ MonoBehaviour:
         _modStrength: 25
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
+          rid: 7932402987427430552
       _itemModelPath: Prefabs/junkMag
       _damage: 0.01
       _magSize: 1
@@ -444,9 +468,6 @@ MonoBehaviour:
     - rid: 7932402987427430519
       type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430520
-      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
-      data: 
     - rid: 7932402987427430521
       type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
       data: 
@@ -524,4 +545,19 @@ MonoBehaviour:
       data: 
     - rid: 7932402987427430546
       type: {class: CriticalChanceModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430550
+      type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430552
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430554
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430556
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 7932402987427430557
+      type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
       data: 
