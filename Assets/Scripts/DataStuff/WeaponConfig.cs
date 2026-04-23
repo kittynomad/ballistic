@@ -52,6 +52,11 @@ public struct WeaponConfig
 
     public void ReplacePart(WeaponPart part)
     {
+        if(part.GetType().Name != "WeaponFrame" && !IsPartCompatible(part))
+        {
+            Debug.LogWarning("Part isn't compatible! Aborting.");
+            return;
+        }
         switch (part.GetType().Name)
         {
             case "WeaponFrame":
@@ -72,6 +77,27 @@ public struct WeaponConfig
                 return;
 
         }
+    }
+
+    private bool IsPartCompatible(WeaponPart part)
+    {
+        foreach(PartTagContainer i in part.PartTags)
+        {
+            PartCategoryTag partTag = i.PartCategory;
+
+            foreach(PartTagContainer j in _frame.PartTags)
+            {
+                PartCategoryTag frameTag = j.PartCategory;
+
+                if(partTag.GetType().Name == frameTag.GetType().Name)
+                {
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
     }
 
     private bool EquipAddon(WeaponAddon addon)

@@ -46,6 +46,7 @@ public abstract class WeaponPart
 
     public int EnergyCost { get => _energyCost; set => _energyCost = value; }
     public string ItemModelPath { get => _itemModelPath; set => _itemModelPath = value; }
+    public List<PartTagContainer> PartTags { get => _partTags; set => _partTags = value; }
 
     public GameObject GetPartModel()
     {
