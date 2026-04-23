@@ -79,6 +79,29 @@ public struct WeaponConfig
         }
     }
 
+    public void RemovePart(System.Type partType)
+    {
+        switch (partType.Name)
+        {
+            case "WeaponFrame":
+                Debug.LogError("Cannot remove frame. Use ReplacePart for different frame");
+                return;
+            case "WeaponBattery":
+                _battery = null;
+                return;
+            case "WeaponMagazine":
+                _magazine = null;
+                return;
+            case "WeaponMuzzle":
+                _muzzle = null;
+                return;
+            case "WeaponAddon":
+                Debug.LogError("Cannot remove addon with RemovePart! Use RemoveAddon instead.");
+                return;
+
+        }
+    }
+
     private bool IsPartCompatible(WeaponPart part)
     {
         foreach(PartTagContainer i in part.PartTags)
