@@ -7,6 +7,7 @@
 // assembly interface.
 *****************************************************************************/
 using UnityEngine;
+using NaughtyAttributes;
 
 public class AssemblyUIService : Service
 {
@@ -50,9 +51,9 @@ public class AssemblyUIService : Service
         if (viewModel != null) viewModel.DestroyModel();
 
         FrameModelController f = Instantiate(currentConfig.Frame.GetPartModel(), VIEWMODEL_POSITION, currentConfig.Frame.GetPartModel().transform.rotation).GetComponent<FrameModelController>();
-        f.ConnectPart(currentConfig.Battery.GetPartModel(), f.BatteryConnectionPoint);
-        f.ConnectPart(currentConfig.Magazine.GetPartModel(), f.MagazineConnectionPoint);
-        f.ConnectPart(currentConfig.Muzzle.GetPartModel(), f.MuzzleConnectionPoint);
+        if(currentConfig.Battery != null) f.ConnectPart(currentConfig.Battery.GetPartModel(), f.BatteryConnectionPoint);
+        if (currentConfig.Magazine != null) f.ConnectPart(currentConfig.Magazine.GetPartModel(), f.MagazineConnectionPoint);
+        if (currentConfig.Muzzle != null) f.ConnectPart(currentConfig.Muzzle.GetPartModel(), f.MuzzleConnectionPoint);
         f.ConnectModifierParts(currentConfig.Addons);
         viewModel = f;
 
@@ -76,6 +77,13 @@ public class AssemblyUIService : Service
     {
         currentConfig.ReplacePart(part);
         Debug.Log(currentConfig);
+        UpdateWeaponViewModel();
+    }
+
+    [Button]
+    public void RemoveBattery()
+    {
+        currentConfig.RemovePart(typeof(WeaponBattery));
         UpdateWeaponViewModel();
     }
 

@@ -8,6 +8,7 @@
 // see WeaponStats.
 *****************************************************************************/
 using UnityEngine;
+using NaughtyAttributes;
 
 public struct WeaponConfig
 {
@@ -151,9 +152,9 @@ public struct WeaponConfig
     {
         string output = "CONFIG\n----------";
         output += "\nFrame: " + _frame.ItemName;
-        output += "\nBattery: " + _battery.ItemName;
-        output += "\nMagazine: " + _magazine.ItemName;
-        output += "\nMuzzle: " + _muzzle.ItemName;
+        output += "\nBattery: " + (_battery == null ? "!!NONE!!" : _battery.ItemName);
+        output += "\nMagazine: " + (_magazine == null ? "!!NONE!!" : _magazine.ItemName);
+        output += "\nMuzzle: " + (_muzzle == null ? "!!NONE!!" : _muzzle.ItemName);
         foreach(WeaponAddon addon in _addons)
         {
             if(addon != null)

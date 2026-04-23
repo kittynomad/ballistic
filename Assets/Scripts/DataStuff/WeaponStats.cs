@@ -63,18 +63,56 @@ public struct WeaponStats
 
     public void ApplyNonModifiers(WeaponConfig w)
     {
-        baseDamage = w.Magazine.Damage;
-        spread = w.Muzzle.Spread;
+        energyCost = 0f;
+        if(w.Magazine != null)
+        {
+            baseDamage = w.Magazine.Damage;
+            reloadTime = w.Magazine.ReloadTime;
+            autoFire = w.Magazine.AutomaticFire;
+            timeBetweenShots = w.Magazine.TimeBetweenShots;
+            magSize = w.Magazine.MagSize;
+            energyCost += w.Magazine.EnergyCost;
+
+        }
+        else
+        {
+            baseDamage = 0f;
+            reloadTime = 2500f;
+            autoFire = false;
+            timeBetweenShots = 2500f;
+            magSize = 0;
+        }
+
+        if(w.Muzzle != null)
+        {
+            spread = w.Muzzle.Spread;
+            energyCost += w.Muzzle.EnergyCost;
+        }
+
+        if(w.Battery != null)
+        {
+            batteryCapacity = w.Battery.Capacity;
+            batteryChargeRate = w.Battery.RechargeRate;
+            energyCost += w.Battery.EnergyCost;
+        }
+        else
+        {
+            batteryCapacity = 0f;
+            batteryChargeRate = 0f;
+        }
+        
+        
         multishot = 1f;
-        reloadTime = w.Magazine.ReloadTime;
-        magSize = w.Magazine.MagSize;
-        startVelocity = w.Frame.FireVelocity;
-        energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost + w.Battery.EnergyCost;
-        autoFire = w.Magazine.AutomaticFire;
-        timeBetweenShots = w.Magazine.TimeBetweenShots;
-        batteryCapacity = w.Battery.Capacity;
-        batteryChargeRate = w.Battery.RechargeRate;
         criticalHitChance = w.Frame.BaseCritChance;
+        startVelocity = w.Frame.FireVelocity;
+        energyCost += w.Frame.EnergyCost;
+
+
+        //energyCost = w.Frame.EnergyCost + w.Magazine.EnergyCost + w.Muzzle.EnergyCost + w.Battery.EnergyCost;
+
+
+
+
 
         if (energyCost < 0)
             energyCost = 0;
@@ -86,9 +124,9 @@ public struct WeaponStats
             effects = new List<WeaponModifier>();
 
         effects.AddRange(w.Frame.Modifiers);
-        effects.AddRange(w.Battery.Modifiers);
-        effects.AddRange(w.Magazine.Modifiers);
-        effects.AddRange(w.Muzzle.Modifiers);
+        if(w.Battery != null) effects.AddRange(w.Battery.Modifiers);
+        if(w.Magazine != null) effects.AddRange(w.Magazine.Modifiers);
+        if(w.Muzzle != null) effects.AddRange(w.Muzzle.Modifiers);
 
         foreach(WeaponAddon addon in w.Addons)
         {
