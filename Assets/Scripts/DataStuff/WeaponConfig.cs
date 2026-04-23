@@ -63,6 +63,7 @@ public struct WeaponConfig
             case "WeaponFrame":
                 _frame = part as WeaponFrame;
                 _addons = new WeaponAddon[_frame.AddonCapacity];
+                AssertValidParts();
                 return;
             case "WeaponBattery":
                 _battery = part as WeaponBattery;
@@ -78,6 +79,13 @@ public struct WeaponConfig
                 return;
 
         }
+    }
+
+    public void AssertValidParts()
+    {
+        if (_battery != null && !IsPartCompatible(_battery)) _battery = null;
+        if (_magazine != null && !IsPartCompatible(_magazine)) _magazine = null;
+        if (_muzzle != null && !IsPartCompatible(_muzzle)) _muzzle = null;
     }
 
     public void RemovePart(System.Type partType)
