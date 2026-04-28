@@ -63,7 +63,10 @@ public class Weapon : MonoBehaviour, IInitializable
             do
             {
                 shots--;
-                GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward * 0.5f), Camera.main.transform.rotation);
+                //GameObject temp = Instantiate(bulletPrefab, Camera.main.transform.position + (Camera.main.transform.forward * 0.5f), Camera.main.transform.rotation);
+                GameObject temp = ProjectilePoolerService.instance.PlayerBulletPool.Get().gameObject;
+                temp.transform.position = Camera.main.transform.position + (Camera.main.transform.forward * 0.5f);
+                temp.transform.rotation = Camera.main.transform.rotation;
                 //ensure projectile's velocity is relative to source
                 temp.GetComponent<Rigidbody>().linearVelocity = gameObject.GetComponent<Rigidbody>().linearVelocity;
                 //initial velocity is applied to the bullet's "forward" direction, thus randomizing the bullet's rotation causes spread

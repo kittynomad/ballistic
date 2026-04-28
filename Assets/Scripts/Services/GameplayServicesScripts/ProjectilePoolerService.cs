@@ -4,16 +4,28 @@ using UnityEngine.Pool;
 public class ProjectilePoolerService : Service
 {
     private ObjectPool<BulletController> playerBulletPool;
-    private BulletController playerBulletPrefab;
+    [SerializeField] private BulletController playerBulletPrefab;
+
+    public static ProjectilePoolerService instance;
 
     public ObjectPool<BulletController> PlayerBulletPool { get => playerBulletPool; set => playerBulletPool = value; }
     public BulletController PlayerBulletPrefab { get => playerBulletPrefab; set => playerBulletPrefab = value; }
 
     public override Awaitable Initialize()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         playerBulletPool = new ObjectPool<BulletController>
             (
                 createFunc: CreateFunc,
+                //actionOnGet: () => ActionOnGet(),
                 ActionOnGet,
                 ActionOnRelease,
                 ActionOnDestroy

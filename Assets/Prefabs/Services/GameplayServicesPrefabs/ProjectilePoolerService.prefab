@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a613aefe6a0f7746872ecb6ca4c9022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectilePoolerService
+  playerBulletPrefab: {fileID: 5767449415326854278, guid: f8345bb6bdec83f489709d6daefffdb6, type: 3}
