@@ -15,6 +15,12 @@ public abstract class LimitedLifespanEntity : MonoBehaviour
         StartCoroutine(CountDownLife());
     }
 
+    public virtual void ResetLifeTimer()
+    {
+        StopAllCoroutines();
+        currentLifespan = _totalLifespan;
+    }
+
     public IEnumerator CountDownLife()
     {
         //looping in fixed update so lifespan can be tracked (idk if i'll actually use this)
@@ -24,6 +30,11 @@ public abstract class LimitedLifespanEntity : MonoBehaviour
             currentLifespan -= Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }
+        EndLifeBehavior();
+    }
+
+    public virtual void EndLifeBehavior()
+    {
         Destroy(gameObject);
     }
 }

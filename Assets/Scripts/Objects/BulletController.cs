@@ -32,4 +32,10 @@ public class BulletController : LimitedLifespanEntity, IInitializable
         /*HudService.Instance.PushConsoleMessage(
             "Hit " + c.gameObject.name);*/
     }
+
+    public override void EndLifeBehavior()
+    {
+        base.ResetLifeTimer();
+        ProjectilePoolerService.instance.PlayerBulletPool.Release(this);
+    }
 }
