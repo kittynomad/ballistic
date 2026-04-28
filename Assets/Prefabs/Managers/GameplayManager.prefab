@@ -49,5 +49,6 @@ MonoBehaviour:
   - {fileID: 8562298371265427965, guid: 8f91d110e5da2ae4e9f520f60c92680d, type: 3}
   - {fileID: 1988120136269453896, guid: 726b31cf27cca5345bdbc54ff9221f3e, type: 3}
   - {fileID: 547007510151251164, guid: 2225f6a5979a72f4583487c6e302810b, type: 3}
+  - {fileID: -6939828921214193374, guid: 04937b0bcb36ff34f98f60b37db9b6e4, type: 3}
   ServiceInstances: []
   _playerPrefab: {fileID: 969261104268648095, guid: 4fbefcbf0acbd8f45961458a079d287e, type: 3}
