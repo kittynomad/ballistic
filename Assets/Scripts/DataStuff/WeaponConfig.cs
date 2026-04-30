@@ -111,6 +111,27 @@ public struct WeaponConfig
         }
     }
 
+    public static bool IsPartCompatible(WeaponFrame frame, WeaponPart part)
+    {
+        foreach (PartTagContainer i in part.PartTags)
+        {
+            PartCategoryTag partTag = i.PartCategory;
+
+            foreach (PartTagContainer j in frame.PartTags)
+            {
+                PartCategoryTag frameTag = j.PartCategory;
+
+                if (partTag.GetType().Name == frameTag.GetType().Name)
+                {
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
+    }
+
     private bool IsPartCompatible(WeaponPart part)
     {
         foreach(PartTagContainer i in part.PartTags)
