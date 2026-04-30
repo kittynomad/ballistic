@@ -189,6 +189,11 @@ public struct WeaponConfig
             if(addon != null)
             output += "\nAddon: " + addon.ItemName;
         }
+        output += "\nUSABLE PART CATEGORIES: ";
+        foreach(PartTagContainer t in _frame.PartTags)
+        {
+            output += t.PartCategory.DisplayName + ", ";
+        }
         return output;
     }
 }
