@@ -134,6 +134,11 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
         }
     }
 
+    public void SaveLoadoutToDatabase()
+    {
+        ComponentDataService.Instance.SaveLoadoutToDatabase();
+    }
+
     public void ConfirmLoadout()
     {
         FindAnyObjectByType<AssemblyUIService>().ConfirmLoadout();

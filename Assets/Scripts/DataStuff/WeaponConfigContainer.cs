@@ -1,9 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class WeaponConfigContainer
 {
-    [SerializeField] private WeaponConfigIDContainer[] _weaponConfigs;
+    [SerializeField] private List<WeaponConfigIDContainer> _weaponConfigs;
 
-    public WeaponConfigIDContainer[] WeaponConfigs { get => _weaponConfigs; set => _weaponConfigs = value; }
+    public List<WeaponConfigIDContainer> WeaponConfigs { get => _weaponConfigs; set => _weaponConfigs = value; }
 }

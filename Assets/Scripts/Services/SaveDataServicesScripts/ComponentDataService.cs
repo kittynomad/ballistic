@@ -47,6 +47,12 @@ public class ComponentDataService : Service
         return currentConfig;
     }
 
+    public void SaveLoadoutToDatabase()
+    {
+        WeaponConfigIDContainer newLoadout =  WeaponConfigIDContainer.WeaponToIDContainer(FindAnyObjectByType<AssemblyUIService>().CurrentConfig);
+        _weaponLoadouts.WeaponConfigs.Add(newLoadout);
+    }
+
     #region savingFunctions
     public void SavePartDatabase(string path)
     {
