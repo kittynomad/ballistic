@@ -82,6 +82,12 @@ public class AssemblyUIService : Service
         UpdateWeaponViewModel();
     }
 
+    public void ReplaceConfigData(WeaponConfig wc)
+    {
+        currentConfig = wc;
+        UpdateWeaponViewModel();
+    }
+
     [Button]
     public void RemoveParts()
     {

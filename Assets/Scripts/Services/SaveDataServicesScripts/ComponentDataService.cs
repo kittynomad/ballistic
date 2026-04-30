@@ -53,6 +53,11 @@ public class ComponentDataService : Service
         _weaponLoadouts.WeaponConfigs.Add(newLoadout);
     }
 
+    public WeaponConfig GetConfigFromDatabase(int index)
+    {
+        return WeaponConfigIDContainer.IDContainerToWeaponConfig(_weaponLoadouts.WeaponConfigs[index]);
+    }
+
     #region savingFunctions
     public void SavePartDatabase(string path)
     {
