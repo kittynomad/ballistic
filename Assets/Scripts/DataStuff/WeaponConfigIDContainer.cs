@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public struct WeaponConfigIDContainer
+[System.Serializable]
+public class WeaponConfigIDContainer
 {
     [SerializeField] private string _frameID;
     [SerializeField] private string _batteryID;

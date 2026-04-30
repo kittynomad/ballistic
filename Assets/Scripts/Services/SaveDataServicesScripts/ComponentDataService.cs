@@ -16,8 +16,10 @@ public class ComponentDataService : Service
     public static ComponentDataService Instance;
 
     [SerializeField] private PartDatabase _parts;
+    [SerializeField] private WeaponConfigContainer _weaponLoadouts;
 
     public PartDatabase Parts { get => _parts; set => _parts = value; }
+    public WeaponConfigContainer WeaponLoadouts { get => _weaponLoadouts; set => _weaponLoadouts = value; }
 
     public override async Awaitable Initialize()
     {
@@ -71,6 +73,31 @@ public class ComponentDataService : Service
         _parts = JsonUtility.FromJson<PartDatabase>(r);
     }
 
+    public void SaveConfigDatabase(string path)
+    {
+        string s = JsonUtility.ToJson(_weaponLoadouts, true);
+        try
+        {
+            GUIUtility.systemCopyBuffer = path + "/WeaponLoadouts.json";
+            Debug.Log(path + "/WeaponLoadouts.json");
+
+        }
+        catch
+        {
+            Debug.LogWarning("Unable to display save directory");
+        }
+
+
+        File.WriteAllText(path + "/WeaponLoadouts.json", s);
+
+    }
+
+    public void LoadConfigDatabase(string path)
+    {
+        string r = File.ReadAllText(path + "/WeaponLoadouts.json");
+        _weaponLoadouts = JsonUtility.FromJson<WeaponConfigContainer>(r);
+    }
+
     [Button]
     public void SavePartDatabaseInternally() { SavePartDatabase(Application.streamingAssetsPath); }
     [Button]
@@ -79,6 +106,15 @@ public class ComponentDataService : Service
     public void LoadPartDatabaseInternally() { LoadPartDatabase(Application.streamingAssetsPath); }
     [Button]
     public void LoadPartDatabaseExternally() { LoadPartDatabase(Application.persistentDataPath); }
+
+    [Button]
+    public void SaveConfigDatabaseInternally() { SaveConfigDatabase(Application.streamingAssetsPath); }
+    [Button]
+    public void SaveConfigDatabaseExternally() { SaveConfigDatabase(Application.persistentDataPath); }
+    [Button]
+    public void LoadConfigDatabaseInternally() { LoadConfigDatabase(Application.streamingAssetsPath); }
+    [Button]
+    public void LoadConfigDatabaseExternally() { LoadConfigDatabase(Application.persistentDataPath); }
 
     #endregion
 }

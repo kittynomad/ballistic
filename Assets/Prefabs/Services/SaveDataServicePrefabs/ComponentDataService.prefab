@@ -435,6 +435,8 @@ MonoBehaviour:
       - _partCategory:
           rid: 7932402987427430523
       _itemModelPath: Prefabs/mw_modifier
+  _weaponLoadouts:
+    _weaponConfigs: []
   references:
     version: 2
     RefIds:
