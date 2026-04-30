@@ -159,18 +159,6 @@ MonoBehaviour:
       _itemModelPath: Prefabs/batteryNormal
       _capacity: 150
       _rechargeRate: 45
-    - _itemName: No Battery
-      _id: 19999
-      _itemDescription: no battery is equipped.
-      _itemIconPath: Textures/PartIcons/batteryIcon
-      _energyCost: 0
-      _modifiers: []
-      _partTags:
-      - _partCategory:
-          rid: 7932402987427430554
-      _itemModelPath: Prefabs/batteryNormal
-      _capacity: 0
-      _rechargeRate: 0
     _weaponMagazines:
     - _itemName: Revolver Mag
       _id: 20000
@@ -551,9 +539,6 @@ MonoBehaviour:
       data: 
     - rid: 7932402987427430552
       type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430554
-      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
       data: 
     - rid: 7932402987427430556
       type: {class: PistolCategory, ns: , asm: Assembly-CSharp}

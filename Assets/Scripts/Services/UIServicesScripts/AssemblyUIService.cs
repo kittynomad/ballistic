@@ -19,6 +19,8 @@ public class AssemblyUIService : Service
 
     public GameObject AssemblyUI { get => assemblyUI; set => assemblyUI = value; }
 
+    public WeaponConfig CurrentConfig { get => currentConfig; set => currentConfig = value; }
+
     public override async Awaitable Initialize()
     {
         await InitiateConfig();

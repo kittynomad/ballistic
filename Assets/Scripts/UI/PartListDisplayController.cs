@@ -104,13 +104,13 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
         }
     }
 
-    public async Awaitable UpdateListDisplay<T>(List<T> parts)
+    public async Awaitable UpdateListDisplay<T>(List<T> parts, bool filterUnusableParts = true)
     {
         await ClearListDisplay();
 
         foreach (T p in parts)
         {
-            if(p is WeaponPart)
+            if(p is WeaponPart && (!filterUnusableParts || WeaponConfig.IsPartCompatible(FindAnyObjectByType<AssemblyUIService>().CurrentConfig.Frame, p as WeaponPart)))
             {
                 WeaponPart temp = p as WeaponPart;
                 GameObject g = Instantiate(itemDisplayer, _listParent.transform);
