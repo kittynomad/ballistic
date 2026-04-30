@@ -179,11 +179,12 @@ public struct WeaponConfig
 
     public override string ToString()
     {
+        string missingPartString = "<color=red>!!NONE!!</color>";
         string output = "CONFIG\n----------";
         output += "\nFrame: " + _frame.ItemName;
-        output += "\nBattery: " + (_battery == null ? "!!NONE!!" : _battery.ItemName);
-        output += "\nMagazine: " + (_magazine == null ? "!!NONE!!" : _magazine.ItemName);
-        output += "\nMuzzle: " + (_muzzle == null ? "!!NONE!!" : _muzzle.ItemName);
+        output += "\nBattery: " + (_battery == null ? missingPartString : _battery.ItemName);
+        output += "\nMagazine: " + (_magazine == null ? missingPartString : _magazine.ItemName);
+        output += "\nMuzzle: " + (_muzzle == null ? missingPartString : _muzzle.ItemName);
         foreach(WeaponAddon addon in _addons)
         {
             if(addon != null)
