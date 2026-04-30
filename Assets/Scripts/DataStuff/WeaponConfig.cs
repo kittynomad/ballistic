@@ -24,6 +24,8 @@ public struct WeaponConfig
     public WeaponMuzzle Muzzle { get => _muzzle; set => _muzzle = value; }
     public WeaponAddon[] Addons { get => _addons; set => _addons = value; }
 
+    public bool IsMissingPart { get => _battery == null || _magazine == null || _muzzle == null; }
+
     public WeaponConfig(WeaponFrame f, WeaponBattery b, WeaponMagazine mag, WeaponMuzzle muzzle, WeaponAddon[] addons)
     {
         _frame = f;

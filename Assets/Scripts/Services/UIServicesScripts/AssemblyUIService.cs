@@ -126,5 +126,6 @@ public class AssemblyUIService : Service
         FindAnyObjectByType<WeaponAssemblyService>().AssembleWeapon(currentConfig);
         FindAnyObjectByType<CameraManager>().SetGameplayModeCamera();
         HudService.Instance.PushConsoleMessage("Weapon assembled! Press M to edit");
+        if (currentConfig.IsMissingPart) HudService.Instance.PushConsoleMessage("<color=red>Weapon is missing one or more essential parts!</color>");
     }
 }
