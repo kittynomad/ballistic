@@ -91,12 +91,20 @@ MonoBehaviour:
       _fireVelocity: 1
       _addonCapacity: 5
       _baseCritChance: 7
-    - _itemName: Pickle
+    - _itemName: Pickle Shotgun
       _id: 00005
       _itemDescription: Pickle.
       _itemIconPath: Textures/pickle
       _energyCost: 1
-      _modifiers: []
+      _modifiers:
+      - mod:
+          rid: 6744607864957698121
+        _modOperator: 0
+        _modStrength: 6
+      - mod:
+          rid: 6744607864957698122
+        _modOperator: 0
+        _modStrength: 12
       _partTags:
       - _partCategory:
           rid: 7932402987427430557
@@ -183,7 +191,7 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
+          rid: 6744607864957698117
       _itemModelPath: Prefabs/magazineExtended
       _damage: 5
       _magSize: 25
@@ -234,7 +242,7 @@ MonoBehaviour:
         _modStrength: 0.5
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
+          rid: 6744607864957698119
       _itemModelPath: Prefabs/magazineExtended
       _damage: 0.1
       _magSize: 50
@@ -256,6 +264,21 @@ MonoBehaviour:
           rid: 7932402987427430523
       _itemModelPath: Prefabs/revolverMag
       _damage: 0
+      _magSize: 3
+      _reloadTime: 1
+      _timeBetweenShots: 1
+      _automaticFire: 0
+    - _itemName: Shotgun Mag
+      _id: 20005
+      _itemDescription: Nuff said
+      _itemIconPath: Textures/PartIcons/revolverMagIcon
+      _energyCost: 1
+      _modifiers: []
+      _partTags:
+      - _partCategory:
+          rid: 6744607864957698120
+      _itemModelPath: Prefabs/revolverMag
+      _damage: 1
       _magSize: 3
       _reloadTime: 1
       _timeBetweenShots: 1
@@ -440,6 +463,21 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 6744607864957698117
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698119
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698120
+      type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698121
+      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698122
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
     - rid: 7932402987427430514
       type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
       data: 

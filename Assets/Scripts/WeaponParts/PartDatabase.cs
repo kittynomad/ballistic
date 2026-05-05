@@ -18,6 +18,11 @@ public class PartDatabase
 
     public WeaponPart GetPartByID(string ID)
     {
+        if(ID == null)
+        {
+            return null;
+        }
+
         //i'm so sorry
         switch(ID[0])
         {

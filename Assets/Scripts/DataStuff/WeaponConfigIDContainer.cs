@@ -19,13 +19,14 @@ public class WeaponConfigIDContainer
     {
         WeaponConfigIDContainer output = new WeaponConfigIDContainer();
         output.FrameID = wc.Frame.Id;
-        output.BatteryID = wc.Battery.Id;
-        output.MagazineID = wc.Magazine.Id;
-        output.MuzzleID = wc.Muzzle.Id;
+        output.BatteryID = wc.Battery == null ? null : wc.Battery.Id;
+        output.MagazineID = wc.Magazine == null ? null : wc.Magazine.Id;
+        output.MuzzleID = wc.Muzzle == null ? null : wc.Muzzle.Id;
         output.AddonIDs = new string[wc.Addons.Length];
 
         for(int i = 0; i < wc.Addons.Length; i++)
         {
+            if(wc.Addons[i] != null)
             output.AddonIDs[i] = wc.Addons[i].Id;
         }
 
