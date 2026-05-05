@@ -54,10 +54,10 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430514
+          rid: 6744607864957698203
       - _partCategory:
-          rid: 7932402987427430515
-      _itemModelPath: Prefabs/modularRevolver_frame
+          rid: 6744607864957698204
+      _itemModelPath: Prefabs/PartModels/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 3
       _baseCritChance: 10
@@ -69,10 +69,10 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430516
+          rid: 6744607864957698205
       - _partCategory:
-          rid: 7932402987427430517
-      _itemModelPath: Prefabs/modularRevolver_frame
+          rid: 6744607864957698206
+      _itemModelPath: Prefabs/PartModels/modularRevolver_frame
       _fireVelocity: 1
       _addonCapacity: 2
       _baseCritChance: 50
@@ -84,10 +84,10 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430518
+          rid: 6744607864957698207
       - _partCategory:
-          rid: 7932402987427430519
-      _itemModelPath: Prefabs/bigIron_frame
+          rid: 6744607864957698208
+      _itemModelPath: Prefabs/PartModels/bigIron_frame
       _fireVelocity: 1
       _addonCapacity: 5
       _baseCritChance: 7
@@ -98,19 +98,19 @@ MonoBehaviour:
       _energyCost: 1
       _modifiers:
       - mod:
-          rid: 6744607864957698121
+          rid: 6744607864957698209
         _modOperator: 0
         _modStrength: 6
       - mod:
-          rid: 6744607864957698122
+          rid: 6744607864957698210
         _modOperator: 0
         _modStrength: 12
       _partTags:
       - _partCategory:
-          rid: 7932402987427430557
+          rid: 6744607864957698211
       - _partCategory:
-          rid: 7932402987427430521
-      _itemModelPath: Prefabs/Pickle
+          rid: 6744607864957698212
+      _itemModelPath: Prefabs/PartModels/Pickle
       _fireVelocity: 1
       _addonCapacity: 9
       _baseCritChance: 100
@@ -123,8 +123,8 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430522
-      _itemModelPath: Prefabs/batteryNormal
+          rid: 6744607864957698213
+      _itemModelPath: Prefabs/PartModels/batteryNormal
       _capacity: 100
       _rechargeRate: 25
     - _itemName: Super Battery
@@ -135,8 +135,8 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/batteryNormal
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/batteryNormal
       _capacity: 1000
       _rechargeRate: 2500
     - _itemName: Momentum Absorber
@@ -146,13 +146,13 @@ MonoBehaviour:
       _energyCost: -5
       _modifiers:
       - mod:
-          rid: 7932402987427430524
+          rid: 6744607864957698215
         _modOperator: 3
         _modStrength: 1.2
       _partTags:
       - _partCategory:
-          rid: 7932402987427430525
-      _itemModelPath: Prefabs/batteryNormal
+          rid: 6744607864957698216
+      _itemModelPath: Prefabs/PartModels/batteryNormal
       _capacity: 100
       _rechargeRate: 30
     - _itemName: XL Battery
@@ -163,8 +163,8 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430550
-      _itemModelPath: Prefabs/batteryNormal
+          rid: 6744607864957698217
+      _itemModelPath: Prefabs/PartModels/batteryNormal
       _capacity: 150
       _rechargeRate: 45
     _weaponMagazines:
@@ -176,14 +176,14 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430556
-      _itemModelPath: Prefabs/revolverMag
+          rid: 6744607864957698218
+      _itemModelPath: Prefabs/PartModels/revolverMag
       _damage: 5
       _magSize: 6
       _reloadTime: 1
       _timeBetweenShots: 1
       _automaticFire: 0
-      _projectilePrefabDirectory: Prefabs/Bullet
+      _projectilePrefabDirectory: Prefabs/Projectiles/Bullet
     - _itemName: Extended Mag
       _id: 20001
       _itemDescription: More bullets, auto fire built in.
@@ -192,14 +192,14 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 6744607864957698117
-      _itemModelPath: Prefabs/magazineExtended
+          rid: 6744607864957698219
+      _itemModelPath: Prefabs/PartModels/magazineExtended
       _damage: 5
       _magSize: 25
       _reloadTime: 2
       _timeBetweenShots: 0.2
       _automaticFire: 1
-      _projectilePrefabDirectory: Prefabs/Bullet
+      _projectilePrefabDirectory: Prefabs/Projectiles/Bullet
     - _itemName: Cartridge of Junk
       _id: 20002
       _itemDescription: Shoots massive amounts of harmless projectiles with absurd
@@ -208,27 +208,27 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402987427430526
+          rid: 6744607864957698220
         _modOperator: 0
         _modStrength: 25
       - mod:
-          rid: 7932402987427430527
+          rid: 6744607864957698221
         _modOperator: 0
         _modStrength: 1
       - mod:
-          rid: 7932402987427430528
+          rid: 6744607864957698222
         _modOperator: 0
         _modStrength: 25
       _partTags:
       - _partCategory:
-          rid: 7932402987427430552
-      _itemModelPath: Prefabs/junkMag
+          rid: 6744607864957698223
+      _itemModelPath: Prefabs/PartModels/junkMag
       _damage: 0.01
       _magSize: 1
       _reloadTime: 2
       _timeBetweenShots: 2
       _automaticFire: 0
-      _projectilePrefabDirectory: Prefabs/RedBullet
+      _projectilePrefabDirectory: Prefabs/Projectiles/RedBullet
     - _itemName: Rapid Fire Cartridge
       _id: 20003
       _itemDescription: Shoots weaker projectiles rapidly.
@@ -236,23 +236,23 @@ MonoBehaviour:
       _energyCost: 1
       _modifiers:
       - mod:
-          rid: 7932402987427430529
+          rid: 6744607864957698224
         _modOperator: 0
         _modStrength: 5
       - mod:
-          rid: 7932402987427430530
+          rid: 6744607864957698225
         _modOperator: 0
         _modStrength: 0.5
       _partTags:
       - _partCategory:
-          rid: 6744607864957698119
-      _itemModelPath: Prefabs/magazineExtended
+          rid: 6744607864957698226
+      _itemModelPath: Prefabs/PartModels/magazineExtended
       _damage: 0.1
       _magSize: 50
       _reloadTime: 1
       _timeBetweenShots: 0.05
       _automaticFire: 1
-      _projectilePrefabDirectory: Prefabs/Bullet
+      _projectilePrefabDirectory: Prefabs/Projectiles/Bullet
     - _itemName: Shots
       _id: 20004
       _itemDescription: Fires healing projectiles.
@@ -260,19 +260,19 @@ MonoBehaviour:
       _energyCost: 1
       _modifiers:
       - mod:
-          rid: 7932402987427430531
+          rid: 6744607864957698227
         _modOperator: 0
         _modStrength: 5
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/revolverMag
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/revolverMag
       _damage: 0
       _magSize: 3
       _reloadTime: 1
       _timeBetweenShots: 1
       _automaticFire: 0
-      _projectilePrefabDirectory: Prefabs/Bullet
+      _projectilePrefabDirectory: Prefabs/Projectiles/Bullet
     - _itemName: Shotgun Mag
       _id: 20005
       _itemDescription: Nuff said
@@ -281,14 +281,14 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 6744607864957698120
-      _itemModelPath: Prefabs/revolverMag
+          rid: 6744607864957698228
+      _itemModelPath: Prefabs/PartModels/revolverMag
       _damage: 1
       _magSize: 3
       _reloadTime: 1
       _timeBetweenShots: 1
       _automaticFire: 0
-      _projectilePrefabDirectory: Prefabs/Bullet
+      _projectilePrefabDirectory: Prefabs/Projectiles/Bullet
     _weaponMuzzles:
     - _itemName: Standard Muzzle
       _id: 30000
@@ -298,8 +298,8 @@ MonoBehaviour:
       _modifiers: []
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/muzzleNormal
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/muzzleNormal
       _spread: 5
     - _itemName: Trumpet
       _id: 30001
@@ -308,21 +308,21 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - mod:
-          rid: 7932402987427430532
+          rid: 6744607864957698229
         _modOperator: 2
         _modStrength: 4
       - mod:
-          rid: 7932402987427430533
+          rid: 6744607864957698230
         _modOperator: 2
         _modStrength: 2
       - mod:
-          rid: 7932402987427430534
+          rid: 6744607864957698231
         _modOperator: 2
         _modStrength: 0.3
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/muzzleTrumpet
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/muzzleTrumpet
       _spread: 10
     - _itemName: Silencer
       _id: 30002
@@ -331,13 +331,13 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - mod:
-          rid: 7932402987427430535
+          rid: 6744607864957698232
         _modOperator: 3
         _modStrength: 1.25
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/muzzleNormal
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/muzzleNormal
       _spread: 0.25
     _weaponAddons:
     - _itemName: Fire thing
@@ -347,13 +347,13 @@ MonoBehaviour:
       _energyCost: 10
       _modifiers:
       - mod:
-          rid: 7932402987427430536
+          rid: 6744607864957698233
         _modOperator: 0
         _modStrength: 3
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
     - _itemName: duplicator
       _id: 40002
       _itemDescription: doubles projectile count
@@ -361,21 +361,21 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402987427430537
+          rid: 6744607864957698234
         _modOperator: 2
         _modStrength: 2
       - mod:
-          rid: 7932402987427430538
+          rid: 6744607864957698235
         _modOperator: 2
         _modStrength: 0.75
       - mod:
-          rid: 7932402987427430539
+          rid: 6744607864957698236
         _modOperator: 2
         _modStrength: 1.5
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
     - _itemName: venom coating
       _id: 40005
       _itemDescription: paralyzes enemies it hits
@@ -383,13 +383,13 @@ MonoBehaviour:
       _energyCost: 25
       _modifiers:
       - mod:
-          rid: 7932402987427430540
+          rid: 6744607864957698237
         _modOperator: 0
         _modStrength: 5
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
     - _itemName: fast speedy
       _id: 40003
       _itemDescription: makes projectiles faster
@@ -397,13 +397,13 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402987427430541
+          rid: 6744607864957698238
         _modOperator: 2
         _modStrength: 1.2
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
     - _itemName: dampener
       _id: 40004
       _itemDescription: makes projectiles slower, slightly increases damage
@@ -411,17 +411,17 @@ MonoBehaviour:
       _energyCost: 5
       _modifiers:
       - mod:
-          rid: 7932402987427430542
+          rid: 6744607864957698239
         _modOperator: 3
         _modStrength: 2
       - mod:
-          rid: 7932402987427430543
+          rid: 6744607864957698240
         _modOperator: 2
         _modStrength: 1.1
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
     - _itemName: spikener
       _id: 40000
       _itemDescription: slightly increases damage.
@@ -429,13 +429,13 @@ MonoBehaviour:
       _energyCost: 15
       _modifiers:
       - mod:
-          rid: 7932402987427430544
+          rid: 6744607864957698241
         _modOperator: 2
         _modStrength: 1.5
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
     - _itemName: Time Warper
       _id: 40005
       _itemDescription: reduces time between shots.
@@ -443,13 +443,13 @@ MonoBehaviour:
       _energyCost: 15
       _modifiers:
       - mod:
-          rid: 7932402987427430545
+          rid: 6744607864957698242
         _modOperator: 2
         _modStrength: 0.5
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
     - _itemName: Micro-slots
       _id: 40006
       _itemDescription: increases crit chance.
@@ -457,138 +457,138 @@ MonoBehaviour:
       _energyCost: 0
       _modifiers:
       - mod:
-          rid: 7932402987427430546
+          rid: 6744607864957698243
         _modOperator: 2
         _modStrength: 1.5
       _partTags:
       - _partCategory:
-          rid: 7932402987427430523
-      _itemModelPath: Prefabs/mw_modifier
+          rid: 6744607864957698214
+      _itemModelPath: Prefabs/PartModels/mw_modifier
   _weaponLoadouts:
     _weaponConfigs: []
   references:
     version: 2
     RefIds:
-    - rid: 6744607864957698117
+    - rid: 6744607864957698203
       type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 6744607864957698119
+    - rid: 6744607864957698204
       type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 6744607864957698120
+    - rid: 6744607864957698205
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698206
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698207
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698208
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698209
+      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698210
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698211
       type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 6744607864957698121
+    - rid: 6744607864957698212
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698213
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698214
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698215
+      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698216
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698217
+      type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698218
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698219
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698220
       type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 6744607864957698122
-      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430514
-      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430515
-      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430516
-      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430517
-      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430518
-      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430519
-      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430521
-      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430522
-      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430523
-      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430524
+    - rid: 6744607864957698221
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430525
+    - rid: 6744607864957698222
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698223
+      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698224
+      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698225
+      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698226
       type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430526
-      type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430527
-      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430528
-      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430529
-      type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430530
-      type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430531
+    - rid: 6744607864957698227
       type: {class: HealingModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430532
+    - rid: 6744607864957698228
+      type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
+      data: 
+    - rid: 6744607864957698229
       type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430533
+    - rid: 6744607864957698230
       type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430534
+    - rid: 6744607864957698231
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430535
+    - rid: 6744607864957698232
       type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430536
+    - rid: 6744607864957698233
       type: {class: FireModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430537
+    - rid: 6744607864957698234
       type: {class: MultishotModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430538
+    - rid: 6744607864957698235
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430539
+    - rid: 6744607864957698236
       type: {class: SpreadModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430540
+    - rid: 6744607864957698237
       type: {class: ParalysisModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430541
+    - rid: 6744607864957698238
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430542
+    - rid: 6744607864957698239
       type: {class: VelocityModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430543
+    - rid: 6744607864957698240
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430544
+    - rid: 6744607864957698241
       type: {class: DamageModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430545
+    - rid: 6744607864957698242
       type: {class: CooldownModifier, ns: , asm: Assembly-CSharp}
       data: 
-    - rid: 7932402987427430546
+    - rid: 6744607864957698243
       type: {class: CriticalChanceModifier, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430550
-      type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430552
-      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430556
-      type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
-      data: 
-    - rid: 7932402987427430557
-      type: {class: ShotgunCategory, ns: , asm: Assembly-CSharp}
       data: 
