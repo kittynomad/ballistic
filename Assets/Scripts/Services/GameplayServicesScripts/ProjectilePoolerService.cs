@@ -56,4 +56,10 @@ public class ProjectilePoolerService : Service
         obj.transform.gameObject.SetActive(true);
         //obj.Fire();
     }
+
+    public void ChangePlayerProjectile(BulletController newProj)
+    {
+        PlayerBulletPool.Clear();
+        playerBulletPrefab = newProj;
+    }
 }
