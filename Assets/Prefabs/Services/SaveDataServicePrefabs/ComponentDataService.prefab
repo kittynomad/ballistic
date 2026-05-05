@@ -183,6 +183,7 @@ MonoBehaviour:
       _reloadTime: 1
       _timeBetweenShots: 1
       _automaticFire: 0
+      _projectilePrefabDirectory: Prefabs/Bullet
     - _itemName: Extended Mag
       _id: 20001
       _itemDescription: More bullets, auto fire built in.
@@ -198,6 +199,7 @@ MonoBehaviour:
       _reloadTime: 2
       _timeBetweenShots: 0.2
       _automaticFire: 1
+      _projectilePrefabDirectory: Prefabs/Bullet
     - _itemName: Cartridge of Junk
       _id: 20002
       _itemDescription: Shoots massive amounts of harmless projectiles with absurd
@@ -226,6 +228,7 @@ MonoBehaviour:
       _reloadTime: 2
       _timeBetweenShots: 2
       _automaticFire: 0
+      _projectilePrefabDirectory: Prefabs/RedBullet
     - _itemName: Rapid Fire Cartridge
       _id: 20003
       _itemDescription: Shoots weaker projectiles rapidly.
@@ -249,6 +252,7 @@ MonoBehaviour:
       _reloadTime: 1
       _timeBetweenShots: 0.05
       _automaticFire: 1
+      _projectilePrefabDirectory: Prefabs/Bullet
     - _itemName: Shots
       _id: 20004
       _itemDescription: Fires healing projectiles.
@@ -268,6 +272,7 @@ MonoBehaviour:
       _reloadTime: 1
       _timeBetweenShots: 1
       _automaticFire: 0
+      _projectilePrefabDirectory: Prefabs/Bullet
     - _itemName: Shotgun Mag
       _id: 20005
       _itemDescription: Nuff said
@@ -283,6 +288,7 @@ MonoBehaviour:
       _reloadTime: 1
       _timeBetweenShots: 1
       _automaticFire: 0
+      _projectilePrefabDirectory: Prefabs/Bullet
     _weaponMuzzles:
     - _itemName: Standard Muzzle
       _id: 30000

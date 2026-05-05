@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Pool;
+using System;
 
 public class ProjectilePoolerService : Service
 {
@@ -10,6 +11,8 @@ public class ProjectilePoolerService : Service
 
     public ObjectPool<BulletController> PlayerBulletPool { get => playerBulletPool; set => playerBulletPool = value; }
     public BulletController PlayerBulletPrefab { get => playerBulletPrefab; set => playerBulletPrefab = value; }
+
+    public static Action ProjectileChange;
 
     public override Awaitable Initialize()
     {
@@ -42,7 +45,8 @@ public class ProjectilePoolerService : Service
     }
     public void ActionOnDestroy(BulletController obj)
     {
-        throw new System.NotImplementedException();
+        Destroy(obj.gameObject);
+        Destroy(obj);
     }
 
     public void ActionOnRelease(BulletController obj)
@@ -59,7 +63,13 @@ public class ProjectilePoolerService : Service
 
     public void ChangePlayerProjectile(BulletController newProj)
     {
-        PlayerBulletPool.Clear();
+        ProjectileChange?.Invoke();
+
+        playerBulletPool.Clear();
+        playerBulletPool.Dispose();
+        playerBulletPool.Clear();
+
+
         playerBulletPrefab = newProj;
     }
 }

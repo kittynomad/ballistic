@@ -18,9 +18,12 @@ public class WeaponMagazine : WeaponPart
     [Tooltip("If true, the weapon will fire constantly while the trigger is held. if false, trigger must be pulled for each shot.")]
     [SerializeField] private bool _automaticFire = false;
 
+    [SerializeField] private string _projectilePrefabDirectory = "Prefabs/Bullet";
+
     public int MagSize { get => _magSize; set => _magSize = value; }
     public float ReloadTime { get => _reloadTime; set => _reloadTime = value; }
     public bool AutomaticFire { get => _automaticFire; set => _automaticFire = value; }
     public float Damage { get => _damage; set => _damage = value; }
     public float TimeBetweenShots { get => _timeBetweenShots; set => _timeBetweenShots = value; }
+    public string ProjectilePrefabDirectory { get => _projectilePrefabDirectory; set => _projectilePrefabDirectory = value; }
 }

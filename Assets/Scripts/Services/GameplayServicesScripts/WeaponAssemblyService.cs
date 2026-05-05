@@ -33,6 +33,10 @@ public class WeaponAssemblyService : Service
         stats.ApplyModifiers(parts);
 
         w.Stats = stats;
+
+        GameObject newProjectile = Resources.Load(w.Config.Magazine.ProjectilePrefabDirectory) as GameObject;
+
+        FindAnyObjectByType<ProjectilePoolerService>().ChangePlayerProjectile(newProjectile.GetComponent<BulletController>());
         print(w);
         HudService.Instance.PushConsoleMessage(w.ToString());
         w.Initialize();

@@ -78,7 +78,8 @@ public abstract class ShootableEntity : MonoBehaviour, IInitializable, IShootabl
 
         ApplyPostFireModifiers(projectile.Stats.Effects);
 
-        ProjectilePoolerService.instance.PlayerBulletPool.Release(projectile);
+        projectile.EndLifeBehavior();
+        //ProjectilePoolerService.instance.PlayerBulletPool.Release(projectile);
         //Destroy(projectile.gameObject);
 
         //if (currentHealth <= 0f)

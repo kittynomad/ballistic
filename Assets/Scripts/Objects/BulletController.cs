@@ -6,6 +6,8 @@ public class BulletController : LimitedLifespanEntity, IInitializable
 
     public WeaponStats Stats { get => stats; set => stats = value; }
 
+    private bool isPooled;
+
     public void DeInitialize()
     {
         throw new System.NotImplementedException();
@@ -13,8 +15,10 @@ public class BulletController : LimitedLifespanEntity, IInitializable
 
     public async Awaitable Initialize()
     {
+        isPooled = true;
         StartLifeTimer();
         await Awaitable.FixedUpdateAsync();
+        ProjectilePoolerService.ProjectileChange += OnProjectileChange;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,6 +30,11 @@ public class BulletController : LimitedLifespanEntity, IInitializable
         HitBehavior(collision);
 
     }
+    public void OnProjectileChange()
+    {
+        isPooled = false;
+        ProjectilePoolerService.ProjectileChange -= OnProjectileChange;
+    }
 
     public void HitBehavior(Collision c)
     {
@@ -35,7 +44,16 @@ public class BulletController : LimitedLifespanEntity, IInitializable
 
     public override void EndLifeBehavior()
     {
-        base.ResetLifeTimer();
-        ProjectilePoolerService.instance.PlayerBulletPool.Release(this);
+        if(isPooled)
+        {
+            base.ResetLifeTimer();
+            ProjectilePoolerService.instance.PlayerBulletPool.Release(this);
+        }
+        else
+        {
+            //ProjectilePoolerService.instance.PlayerBulletPool.
+            Destroy(gameObject);
+        }
+        
     }
 }
