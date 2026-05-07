@@ -1,0 +1,15 @@
+{
+    "_weaponConfigs": [
+        {
+            "_frameID": "00000",
+            "_batteryID": "10000",
+            "_magazineID": "20000",
+            "_muzzleID": "30000",
+            "_addonIDs": [
+                "",
+                "",
+                ""
+            ]
+        }
+    ]
+}

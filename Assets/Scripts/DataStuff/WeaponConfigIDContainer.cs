@@ -39,6 +39,7 @@ public class WeaponConfigIDContainer
 
         for(int i = 0; i < wcic.AddonIDs.Length; i++)
         {
+            if(wcic.AddonIDs[i] != null)
             addons[i] = ComponentDataService.Instance.GetPartByID(wcic.AddonIDs[i]) as WeaponAddon;
         }
 
