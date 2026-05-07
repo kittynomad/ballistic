@@ -277,7 +277,7 @@ MonoBehaviour:
       _id: 20005
       _itemDescription: Nuff said
       _itemIconPath: Textures/PartIcons/revolverMagIcon
-      _energyCost: 1
+      _energyCost: 5
       _modifiers: []
       _partTags:
       - _partCategory:
@@ -289,6 +289,23 @@ MonoBehaviour:
       _timeBetweenShots: 1
       _automaticFire: 0
       _projectilePrefabDirectory: Prefabs/Projectiles/Bullet
+    - _itemName: Zero-G Shooter
+      _id: 20006
+      _itemDescription: Fires projectiles unaffected by gravity at a small energy
+        cost. Automatic.
+      _itemIconPath: Textures/PartIcons/revolverMagIcon
+      _energyCost: 1
+      _modifiers: []
+      _partTags:
+      - _partCategory:
+          rid: 2960681521191583822
+      _itemModelPath: Prefabs/PartModels/revolverMag
+      _damage: 1
+      _magSize: 12
+      _reloadTime: 1
+      _timeBetweenShots: 0.75
+      _automaticFire: 1
+      _projectilePrefabDirectory: Prefabs/Projectiles/WeightlessBullet
     _weaponMuzzles:
     - _itemName: Standard Muzzle
       _id: 30000
@@ -469,6 +486,9 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 2960681521191583822
+      type: {class: CommonCategory, ns: , asm: Assembly-CSharp}
+      data: 
     - rid: 6744607864957698203
       type: {class: PistolCategory, ns: , asm: Assembly-CSharp}
       data: 
