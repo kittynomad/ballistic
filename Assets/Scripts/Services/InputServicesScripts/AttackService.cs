@@ -19,7 +19,7 @@ public class AttackService : Service
     }
     public void OnAttack(bool started)
     {
-        Debug.Log("attack");
+        //Debug.Log("attack");
         //get weapon indirectly since it may be reinstantiated
         if(pb.gameObject.TryGetComponent(out Weapon w))
         {

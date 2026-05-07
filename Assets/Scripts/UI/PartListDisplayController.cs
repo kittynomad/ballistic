@@ -141,7 +141,14 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
 
     public void GetLoadoutFromDatabase(int index)
     {
-        FindAnyObjectByType<AssemblyUIService>().ReplaceConfigData(ComponentDataService.Instance.GetConfigFromDatabase(index));
+        try
+        {
+            FindAnyObjectByType<AssemblyUIService>().ReplaceConfigData(ComponentDataService.Instance.GetConfigFromDatabase(index));
+        }
+        catch
+        {
+            Debug.Log("No saved loadout, aborting");
+        }
     }
 
     public void ConfirmLoadout()

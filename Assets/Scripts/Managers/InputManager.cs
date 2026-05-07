@@ -42,7 +42,7 @@ public class InputManager : Manager
 
     public void OnAttack(InputValue iVal)
     {
-        Debug.Log(iVal.Get<float>());
+        //Debug.Log(iVal.Get<float>());
         att.OnAttack(iVal.Get<float>() > 0);
     }
 
