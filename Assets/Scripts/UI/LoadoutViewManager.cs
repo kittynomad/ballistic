@@ -14,6 +14,7 @@ public class LoadoutViewManager : MonoBehaviour
     {
         loadoutIndex = index;
         WeaponConfigIDContainer wcID = ComponentDataService.Instance.WeaponLoadouts.WeaponConfigs[loadoutIndex];
+        Debug.Log(index);
         wc = WeaponConfigIDContainer.IDContainerToWeaponConfig(wcID);
 
         _loadoutNameDisplay.text = "Loadout " + (loadoutIndex + 1);

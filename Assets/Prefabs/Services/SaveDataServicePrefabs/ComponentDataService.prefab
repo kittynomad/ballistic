@@ -482,7 +482,15 @@ MonoBehaviour:
           rid: 6744607864957698214
       _itemModelPath: Prefabs/PartModels/mw_modifier
   _weaponLoadouts:
-    _weaponConfigs: []
+    _weaponConfigs:
+    - _frameID: 00000
+      _batteryID: 10000
+      _magazineID: 20000
+      _muzzleID: 30000
+      _addonIDs:
+      - 
+      - 
+      - 
   references:
     version: 2
     RefIds:

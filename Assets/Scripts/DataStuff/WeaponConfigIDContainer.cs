@@ -35,20 +35,26 @@ public class WeaponConfigIDContainer
 
     public static WeaponConfig IDContainerToWeaponConfig(WeaponConfigIDContainer wcic)
     {
+        Debug.Log("foo");
         WeaponAddon[] addons = new WeaponAddon[wcic.AddonIDs.Length];
-
-        for(int i = 0; i < wcic.AddonIDs.Length; i++)
+        
+        for (int i = 0; i < wcic.AddonIDs.Length; i++)
         {
-            if(wcic.AddonIDs[i] != null)
-            addons[i] = ComponentDataService.Instance.GetPartByID(wcic.AddonIDs[i]) as WeaponAddon;
+            
+            if (wcic.AddonIDs[i] != null && wcic.AddonIDs[i] != "")
+            {
+                addons[i] = ComponentDataService.Instance.GetPartByID(wcic.AddonIDs[i]) as WeaponAddon;
+            }
         }
 
         WeaponConfig output = new WeaponConfig(
             ComponentDataService.Instance.GetPartByID(wcic.FrameID) as WeaponFrame,
             ComponentDataService.Instance.GetPartByID(wcic.BatteryID) as WeaponBattery,
             ComponentDataService.Instance.GetPartByID(wcic.MagazineID) as WeaponMagazine,
-            ComponentDataService.Instance.GetPartByID(wcic.MuzzleID) as WeaponMuzzle,
-            addons);
+            ComponentDataService.Instance.GetPartByID(wcic.MuzzleID) as WeaponMuzzle
+            );
+        
+        output.Addons = addons;
 
         return output;
     }
