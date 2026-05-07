@@ -12,6 +12,7 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     [SerializeField] private GameObject _addonListParent;
     private GameObject itemDisplayer;
     private GameObject addonDisplayer;
+    private GameObject loadoutDisplayer;
     private List<GameObject> currentDisplayedParts = new List<GameObject>();
     private List<GameObject> currentEquippedAddons = new List<GameObject>();
 
@@ -22,6 +23,7 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
     {
         itemDisplayer = Resources.Load("UI/PartUIElement") as GameObject;
         addonDisplayer = Resources.Load("UI/SingleAddonUI") as GameObject;
+        loadoutDisplayer = Resources.Load("UI/LoadoutUIElement") as GameObject;
         await UpdateListDisplay(ComponentDataService.Instance.Parts.WeaponFrames);
         return;
     }
@@ -102,6 +104,26 @@ public class PartListDisplayController : MonoBehaviour, IInitializable
             Destroy(temp);
             await Awaitable.NextFrameAsync();
         }
+    }
+
+    public void LoadLoadouts()
+    {
+        DisplayLoadouts();
+    }
+
+    public async Awaitable DisplayLoadouts()
+    {
+        await ClearListDisplay();
+
+        for(int i = 0; i < ComponentDataService.Instance.WeaponLoadouts.WeaponConfigs.Count; i++)
+        {
+            GameObject g = Instantiate(loadoutDisplayer, _listParent.transform);
+            g.GetComponent<LoadoutViewManager>().InitializeLoadoutDisplay(i);
+            currentDisplayedParts.Add(g);
+            await Awaitable.NextFrameAsync();
+        }
+
+        //ComponentDataService.Instance.WeaponLoadouts
     }
 
     public async Awaitable UpdateListDisplay<T>(List<T> parts, bool filterUnusableParts = true)

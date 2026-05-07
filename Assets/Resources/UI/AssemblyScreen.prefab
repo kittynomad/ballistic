@@ -1467,8 +1467,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8098536864217964290}
         m_TargetAssemblyTypeName: PartListDisplayController, Assembly-CSharp
-        m_MethodName: GetLoadoutFromDatabase
-        m_Mode: 3
+        m_MethodName: LoadLoadouts
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4351,7 +4351,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7439055253398440613}
   m_HandleRect: {fileID: 6639258289421662814}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
